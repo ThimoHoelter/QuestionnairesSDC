@@ -1,5 +1,0 @@
-Output File                           Name               Type      FSH File               Lines
-Patient-PatientBeispiel.json          PatientBeispiel    Instance  MeinPatient.fsh        1 - 6
-Questionnaire-MeinQuestionnaire.json  MeinQuestionnaire  Instance  MeinQuest.fsh          1 - 23
-Questionnaire-QuestionnaireDemo.json  QuestionnaireDemo  Instance  QuestionnaireDemo.fsh  6 - 231
-ValueSet-valueset-pflegegrad-de.json  PflegegradDE       ValueSet  ValueSets.fsh          3 - 37

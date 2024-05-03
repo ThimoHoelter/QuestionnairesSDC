@@ -26,10 +26,6 @@ InstanceOf: Questionnaire
   * linkId = "info"
   * type = #display
   * text = "Ein zweiter Name?"
-  * enableWhen
-    * question = "Name.V"
-    * operator = #exists
-    *   
 
 RuleSet: stringItem(id, text)
 * linkId = {id}

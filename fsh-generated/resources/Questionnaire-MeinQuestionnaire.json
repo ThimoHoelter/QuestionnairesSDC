@@ -82,6 +82,11 @@
           "valueBoolean": true
         }
       ]
+    },
+    {
+      "linkId": "info",
+      "type": "display",
+      "text": "Ein zweiter Name?"
     }
   ]
 }
