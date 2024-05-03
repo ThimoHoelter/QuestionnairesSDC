@@ -1,0 +1,87 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "MeinQuestionnaire",
+  "url": "http://example.org/fhir/Questionnaire/MeinQuestionnaire",
+  "version": "0.1",
+  "title": "Formular",
+  "status": "draft",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patientenkontext"
+        }
+      ]
+    }
+  ],
+  "item": [
+    {
+      "linkId": "Name.V",
+      "text": "Geben Sie bitte ihren Vornamen ein.",
+      "code": [
+        {
+          "code": "97848-6",
+          "system": "http://loinc.org",
+          "display": "First (Given) name Person"
+        }
+      ],
+      "type": "string",
+      "repeats": true,
+      "required": true,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%patient.name[0].given[0]",
+            "description": "Erster Vorname des ersten Namens des ersten Patienten"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Name.N",
+      "type": "string",
+      "text": "Geben Sie bitte ihren Nachnamen ein.",
+      "required": true,
+      "code": [
+        {
+          "code": "97847-8",
+          "system": "http://loinc.org",
+          "display": "Last (Family) name Person"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "%patient.name[0].family",
+            "description": "Erster Nachname des ersten Namens des ersten Patienten"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ]
+}
