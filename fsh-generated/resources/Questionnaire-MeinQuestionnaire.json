@@ -82,6 +82,17 @@
           "valueBoolean": true
         }
       ]
+    },
+    {
+      "linkId": "info",
+      "type": "display",
+      "text": "Ein zweiter Name?",
+      "enableWhen": [
+        {
+          "question": "Name.V",
+          "operator": "exists"
+        }
+      ]
     }
   ]
 }

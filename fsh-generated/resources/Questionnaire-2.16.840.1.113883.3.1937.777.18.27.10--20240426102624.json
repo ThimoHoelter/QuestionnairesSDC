@@ -1,0 +1,438 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "2.16.840.1.113883.3.1937.777.18.27.10--20240426102624",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z",
+    "source": "https://art-decor.org/fhir/4.0/pathdv-",
+    "tag": [
+      {
+        "code": "4.0.1",
+        "system": "http://hl7.org/fhir/FHIR-version"
+      }
+    ]
+  },
+  "language": "de-DE",
+  "url": "https://art-decor.org/fhir/Questionnaire/2.16.840.1.113883.3.1937.777.18.27.10--20240426102624",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+    }
+  ],
+  "name": "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien",
+  "title": "Eingabeformular für Klinische Angaben bei Stanzbiopsien",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-04-26T10:26:24Z",
+  "effectivePeriod": {
+    "start": "2024-04-26T10:26:24Z"
+  },
+  "item": [
+    {
+      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10000",
+      "text": "Prostatakarzinome",
+      "type": "group",
+      "required": true,
+      "repeats": false,
+      "readOnly": false,
+      "item": [
+        {
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10010",
+          "code": [
+            {
+              "code": "22636-5",
+              "system": "http://loinc.org",
+              "display": "Pathology report relevant history Narrative"
+            }
+          ],
+          "text": "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien, TUR und Resektaten",
+          "type": "group",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "radio-button",
+                        "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                        "display": "Radio button"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.27",
+              "code": [
+                {
+                  "code": "125156009",
+                  "system": "http://snomed.info/sct",
+                  "display": "Satisfactory for evaluation but limited by lack of pertinent clinical patient information (finding)"
+                }
+              ],
+              "text": "Proben limitiert auswertbar wegen fehlender klinischer Informationen",
+              "type": "boolean",
+              "enableBehavior": "all",
+              "required": true,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10110",
+              "code": [
+                {
+                  "code": "11450-4",
+                  "system": "http://loinc.org",
+                  "display": "Problem list - Reported"
+                },
+                {
+                  "code": "10164-2",
+                  "system": "http://loinc.org",
+                  "display": "History of Present illness Narrative"
+                }
+              ],
+              "text": "Anamnestische Angaben",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "2.16.840.1.113883.3.1937.777.18.2.27",
+                  "operator": "=",
+                  "answerBoolean": false
+                }
+              ],
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": true,
+              "readOnly": false
+            },
+            {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10120",
+              "code": [
+                {
+                  "code": "28636-9",
+                  "system": "http://loinc.org",
+                  "display": "Initial evaluation note"
+                },
+                {
+                  "code": "90013-4",
+                  "system": "http://loinc.org",
+                  "display": "Clinical pathology Initial evaluation note"
+                }
+              ],
+              "text": "Vorbefunde",
+              "type": "text",
+              "enableWhen": [
+                {
+                  "question": "2.16.840.1.113883.3.1937.777.18.2.27",
+                  "operator": "=",
+                  "answerBoolean": false
+                }
+              ],
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": true,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                  "valueCoding": {
+                    "code": "ng/mL",
+                    "system": "http://unitsofmeasure.org",
+                    "display": "ng/ml"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                  "valueInteger": 3
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+              "code": [
+                {
+                  "code": "2857-1",
+                  "system": "http://loinc.org",
+                  "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+                }
+              ],
+              "text": "Angaben zur PSA-Serologie",
+              "type": "quantity",
+              "enableWhen": [
+                {
+                  "question": "2.16.840.1.113883.3.1937.777.18.2.27",
+                  "operator": "=",
+                  "answerBoolean": false
+                }
+              ],
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10140",
+              "code": [
+                {
+                  "code": "75620-5",
+                  "system": "http://loinc.org",
+                  "display": "TNM clinical staging before treatment panel Cancer"
+                }
+              ],
+              "text": "Klinisches TNM",
+              "type": "text",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10060",
+              "code": [
+                {
+                  "code": "399435001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Specimen measurable (observable entity)"
+                }
+              ],
+              "text": "Angaben zur Herkunft und Eigenschaften von Proben",
+              "type": "group",
+              "enableBehavior": "all",
+              "required": true,
+              "repeats": true,
+              "readOnly": true,
+              "item": [
+                {
+                  "linkId": "d7599448-400b-4ce4-a085-8d5efe78aee9",
+                  "code": [
+                    {
+                      "code": "372274003",
+                      "system": "http://snomed.info/sct",
+                      "display": "Sample identification number (observable entity)"
+                    }
+                  ],
+                  "text": "Proben-ID (-nummer)",
+                  "type": "string",
+                  "enableBehavior": "all",
+                  "required": true
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "display": "Radio button"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10070",
+                  "code": [
+                    {
+                      "code": "94738-2",
+                      "system": "http://loinc.org",
+                      "display": "Biopsy site"
+                    }
+                  ],
+                  "text": "Lokalisation der Entnahmestelle",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "716917000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716934008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of apical part of peripheral zone of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716909008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716892006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716911004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of middle regional part of transition zone of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716918005",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of lateral middle regional part of peripheral zone of left half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716935009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of apical part of peripheral zone"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716910003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of middle regional part of anterior fibromuscular stroma of left half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716893001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of basal part of anterior fibromuscular stroma of left half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716912006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of middle regional part of transition zone of left half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716902004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of basal part of peripheral zone of right half prostate (body structure)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "716903009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of basal part of peripheral zone of left half prostate (body structure)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10050",
+                  "code": [
+                    {
+                      "code": "44652-6",
+                      "system": "http://loinc.org",
+                      "display": "Total # of cores Tissue Core"
+                    }
+                  ],
+                  "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
+                  "type": "integer",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "cm"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                      "valueInteger": 3
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11208",
+                  "code": [
+                    {
+                      "code": "44619-5",
+                      "system": "http://loinc.org",
+                      "display": "Length of tissue core(s)"
+                    }
+                  ],
+                  "text": "Länge der/des Stanzzylinders in cm",
+                  "type": "quantity",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "radio-button",
+                            "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                            "display": "Radio button"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10080",
+                  "code": [
+                    {
+                      "code": "20228-3",
+                      "system": "http://loinc.org",
+                      "display": "Anatomic part Laterality"
+                    }
+                  ],
+                  "text": "Seitenangabe",
+                  "type": "choice",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "24028007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Right (qualifier value)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "7771000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Left (qualifier value)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
