@@ -1,4 +1,4 @@
-Instance: MeinQuestionnaire
+Instance: IhrQuestionnaire
 InstanceOf: Questionnaire
 * url = "http://fhir.gefyra.de/Questionnaire/MeinQuestionnaire"
 * version = "0.1"
@@ -68,8 +68,4 @@ RuleSet: decimalItem(id, text, unit, maxplace)
   * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
   * valueInteger = {maxplace}
 
-RuleSet: stringItem(id, text)
-* linkId = {id}
-* type = #string
-* text = {text}
 

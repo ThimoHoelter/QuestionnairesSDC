@@ -86,6 +86,7 @@
     {
       "linkId": "info",
       "type": "display",
+<<<<<<< HEAD
       "text": "Ein zweiter Name?",
       "enableWhen": [
         {
@@ -93,6 +94,9 @@
           "operator": "exists"
         }
       ]
+=======
+      "text": "Ein zweiter Name?"
+>>>>>>> refs/remotes/origin/main
     }
   ]
 }
