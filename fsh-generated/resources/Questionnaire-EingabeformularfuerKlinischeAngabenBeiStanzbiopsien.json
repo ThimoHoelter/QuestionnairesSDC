@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "2.16.840.1.113883.3.1937.777.18.27.10--20240426102624",
+  "id": "EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "meta": {
     "lastUpdated": "2024-05-05T12:48:40Z",
     "source": "https://art-decor.org/fhir/4.0/pathdv-",
@@ -11,8 +11,8 @@
       }
     ]
   },
+  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "language": "de-DE",
-  "url": "https://art-decor.org/fhir/Questionnaire/2.16.840.1.113883.3.1937.777.18.27.10--20240426102624",
   "identifier": [
     {
       "system": "urn:ietf:rfc:3986",

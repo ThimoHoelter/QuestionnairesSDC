@@ -86,17 +86,7 @@
     {
       "linkId": "info",
       "type": "display",
-<<<<<<< HEAD
-      "text": "Ein zweiter Name?",
-      "enableWhen": [
-        {
-          "question": "Name.V",
-          "operator": "exists"
-        }
-      ]
-=======
       "text": "Ein zweiter Name?"
->>>>>>> refs/remotes/origin/main
     }
   ]
 }

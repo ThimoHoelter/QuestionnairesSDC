@@ -1,6 +1,6 @@
 FSHOnly: true
 #name: FSH-LOESUNGEN
-canonical: http://gefyra.de/fhir/spezifizierer-workshop # Namensraum für FHIR-Artefakte (SUSHI hängt automatisch .../<Ressourcentyp>/<name> an)
+canonical: http://example.org/fhir/QuestionnairesSDC 
 #status: draft # draft | active | retired | unknown
 version: 0.1.0 # gewünschte Version für FHIR-Artefakte
 fhirVersion: 4.0.1 # siehe http://hl7.org/fhir/directory.html

@@ -3,14 +3,14 @@ Alias: $loinc = http://loinc.org
 Alias: $questionnaire-itemControl = http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl
 Alias: $sct = http://snomed.info/sct
 
-Instance: 2.16.840.1.113883.3.1937.777.18.27.10--20240426102624
+Instance: EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
 InstanceOf: Questionnaire
-Usage: #example
+Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
 * meta.source = "https://art-decor.org/fhir/4.0/pathdv-"
 * meta.tag = $FHIR-version#4.0.1
 * language = #de-DE
-* url = "https://art-decor.org/fhir/Questionnaire/2.16.840.1.113883.3.1937.777.18.27.10--20240426102624"
+* url = "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
 * name = "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien"
@@ -19,12 +19,16 @@ Usage: #example
 * experimental = false
 * date = "2024-04-26T10:26:24Z"
 * effectivePeriod.start = "2024-04-26T10:26:24Z"
+
+//Erster Grouper
 * item.linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10000"
 * item.text = "Prostatakarzinome"
 * item.type = #group
 * item.required = true
 * item.repeats = false
 * item.readOnly = false
+
+// Zweiter Grouper
 * item.item.linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10010"
 * item.item.code = $loinc#22636-5 "Pathology report relevant history Narrative"
 * item.item.text = "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien, TUR und Resektaten"
@@ -32,6 +36,8 @@ Usage: #example
 * item.item.required = false
 * item.item.repeats = false
 * item.item.readOnly = false
+
+// Boolsche Frage ob Klinische Angaben fehlen
 * item.item.item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item.item[=].extension.valueCodeableConcept = $questionnaire-itemControl#radio-button "Radio button"
 * item.item.item[=].linkId = "2.16.840.1.113883.3.1937.777.18.2.27"
@@ -42,6 +48,8 @@ Usage: #example
 * item.item.item[=].required = true
 * item.item.item[=].repeats = false
 * item.item.item[=].readOnly = false
+
+// Frage zu Anamnestische Angaben (Wird nur angezeigt wenn vorherige Frage auf true)
 * item.item.item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10110"
 * item.item.item[=].code[+] = $loinc#11450-4 "Problem list - Reported"
 * item.item.item[=].code[+] = $loinc#10164-2 "History of Present illness Narrative"
@@ -54,6 +62,8 @@ Usage: #example
 * item.item.item[=].required = false
 * item.item.item[=].repeats = true
 * item.item.item[=].readOnly = false
+
+// Frage zu Vorbefunden (Gleiche Bedinung)
 * item.item.item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10120"
 * item.item.item[=].code[+] = $loinc#28636-9 "Initial evaluation note"
 * item.item.item[=].code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
@@ -66,6 +76,8 @@ Usage: #example
 * item.item.item[=].required = false
 * item.item.item[=].repeats = true
 * item.item.item[=].readOnly = false
+
+// Frage zur PSA-Serologie (Gleiche Bedinung)
 * item.item.item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption"
 * item.item.item[=].extension[=].valueCoding = UCUM#ng/mL "ng/ml"
 * item.item.item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
@@ -81,6 +93,8 @@ Usage: #example
 * item.item.item[=].required = false
 * item.item.item[=].repeats = false
 * item.item.item[=].readOnly = false
+
+// Frage zu TNM
 * item.item.item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10140"
 * item.item.item[=].code = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
 * item.item.item[=].text = "Klinisches TNM"
@@ -89,6 +103,8 @@ Usage: #example
 * item.item.item[=].required = false
 * item.item.item[=].repeats = false
 * item.item.item[=].readOnly = false
+
+// Grouper Angaben zur Probe
 * item.item.item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10060"
 * item.item.item[=].code = $sct#399435001 "Specimen measurable (observable entity)"
 * item.item.item[=].text = "Angaben zur Herkunft und Eigenschaften von Proben"
@@ -97,12 +113,14 @@ Usage: #example
 * item.item.item[=].required = true
 * item.item.item[=].repeats = true
 * item.item.item[=].readOnly = true
+// ProbenID (meist drei Buchstaben)
 * item.item.item[=].item[+].linkId = "d7599448-400b-4ce4-a085-8d5efe78aee9"
 * item.item.item[=].item[=].code = $sct#372274003 "Sample identification number (observable entity)"
 * item.item.item[=].item[=].text = "Proben-ID (-nummer)"
 * item.item.item[=].item[=].type = #string
 * item.item.item[=].item[=].enableBehavior = #all
 * item.item.item[=].item[=].required = true
+// Entnahmestelle
 * item.item.item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item.item[=].item[=].extension.valueCodeableConcept = $questionnaire-itemControl#radio-button "Radio button"
 * item.item.item[=].item[=].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10070"
@@ -125,6 +143,7 @@ Usage: #example
 * item.item.item[=].item[=].answerOption[+].valueCoding = $sct#716912006 "Structure of middle regional part of transition zone of left half prostate (body structure)"
 * item.item.item[=].item[=].answerOption[+].valueCoding = $sct#716902004 "Structure of basal part of peripheral zone of right half prostate (body structure)"
 * item.item.item[=].item[=].answerOption[+].valueCoding = $sct#716903009 "Structure of basal part of peripheral zone of left half prostate (body structure)"
+// Anzahl der Stanzzylinder
 * item.item.item[=].item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10050"
 * item.item.item[=].item[=].code = $loinc#44652-6 "Total # of cores Tissue Core"
 * item.item.item[=].item[=].text = "Anzahl der Stanzzylinder im Einsendungsgefäß"
@@ -133,6 +152,7 @@ Usage: #example
 * item.item.item[=].item[=].required = true
 * item.item.item[=].item[=].repeats = false
 * item.item.item[=].item[=].readOnly = false
+// Länge in cm
 * item.item.item[=].item[+].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption"
 * item.item.item[=].item[=].extension[=].valueCoding = UCUM#cm "cm"
 * item.item.item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
@@ -145,6 +165,7 @@ Usage: #example
 * item.item.item[=].item[=].required = true
 * item.item.item[=].item[=].repeats = false
 * item.item.item[=].item[=].readOnly = false
+// Seitenangabe
 * item.item.item[=].item[+].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
 * item.item.item[=].item[=].extension.valueCodeableConcept = $questionnaire-itemControl#radio-button "Radio button"
 * item.item.item[=].item[=].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10080"

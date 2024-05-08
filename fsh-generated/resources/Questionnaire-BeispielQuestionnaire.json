@@ -1,7 +1,7 @@
 {
   "resourceType": "Questionnaire",
-  "id": "IhrQuestionnaire",
-  "url": "http://fhir.gefyra.de/Questionnaire/MeinQuestionnaire",
+  "id": "BeispielQuestionnaire",
+  "url": "http://example.org/fhir/Questionnaire/BeispielQuestionnaire",
   "version": "0.1",
   "title": "Hallo Welt!",
   "status": "draft",

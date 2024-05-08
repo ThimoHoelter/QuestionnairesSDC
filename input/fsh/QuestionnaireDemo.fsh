@@ -11,7 +11,7 @@ InstanceOf: Questionnaire
 * status = #draft
 * title = "Questionnaire Feature Demo (LHC kompatibel)"
 * description = "Beispiel-Questionnaire zur Demonstration diverser SDC Funktionalitäten, z.B. Prepopulation, Extraction, Advanced Rendering"
-* url = "http://gefyra.de/fhir/sdc/Questionnaire/Demo"
+* url = "http://example.org/fhir/Questionnaire/Demo"
 //Teil1: Demografische Patientendaten
 * item[+]
   * type = #group

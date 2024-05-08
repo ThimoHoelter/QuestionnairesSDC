@@ -1,6 +1,6 @@
-Instance: IhrQuestionnaire
+Instance: BeispielQuestionnaire
 InstanceOf: Questionnaire
-* url = "http://fhir.gefyra.de/Questionnaire/MeinQuestionnaire"
+* url = "http://example.org/fhir/Questionnaire/BeispielQuestionnaire"
 * version = "0.1"
 * title = "Hallo Welt!"
 * status = #draft
