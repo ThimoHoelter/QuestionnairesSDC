@@ -1,7 +1,7 @@
 Output File                                                             Name                                                 Type      FSH File                             Lines
 Patient-PatientBeispiel.json                                            PatientBeispiel                                      Instance  MeinPatient.fsh                      1 - 6
 Questionnaire-BeispielQuestionnaire.json                                BeispielQuestionnaire                                Instance  Questionnaire.fsh                    1 - 55
-Questionnaire-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json  EingabeformularfuerKlinischeAngabenBeiStanzbiopsien  Instance  KlinischeAngabenBeiStanzbiopsie.fsh  6 - 180
+Questionnaire-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json  EingabeformularfuerKlinischeAngabenBeiStanzbiopsien  Instance  KlinischeAngabenBeiStanzbiopsie.fsh  1 - 156
 Questionnaire-MeinQuestionnaire.json                                    MeinQuestionnaire                                    Instance  MeinQuest.fsh                        1 - 28
-Questionnaire-QuestionnaireDemo.json                                    QuestionnaireDemo                                    Instance  QuestionnaireDemo.fsh                6 - 231
+Questionnaire-QuestionnaireDemo.json                                    QuestionnaireDemo                                    Instance  QuestionnaireDemo.fsh                1 - 226
 ValueSet-valueset-pflegegrad-de.json                                    PflegegradDE                                         ValueSet  ValueSets.fsh                        3 - 37

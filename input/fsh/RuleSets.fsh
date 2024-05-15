@@ -48,8 +48,6 @@ qritem: zur initialisierung eines Items in einer QuestionnaireResponse
   + linkId = {id}
   + text = {text}
 */
-Alias: $unitsofmeasure = http://unitsofmeasure.org
-Alias: $currency = urn:iso:std:iso:4217
 
 RuleSet: debug(variable)
 * item[+]
@@ -98,6 +96,12 @@ RuleSet: launchContext(name, type, description)
   * extension[+]
     * url = "description"
     * valueString = {description}
+
+RuleSet: maxDecimalPlaces(maxPlaces)
+* extension
+  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+  * valueInteger = {maxPlaces}
+
 
 RuleSet: initialExpression(expression, description)
 * extension

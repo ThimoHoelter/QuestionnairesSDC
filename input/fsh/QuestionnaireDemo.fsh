@@ -1,8 +1,3 @@
-Alias: $loinc = http://loinc.org
-Alias: $gender = http://hl7.org/fhir/administrative-gender
-
-
-
 Instance: QuestionnaireDemo
 InstanceOf: Questionnaire
 

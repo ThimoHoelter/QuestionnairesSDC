@@ -33,8 +33,6 @@
       "text": "Prostatakarzinome",
       "type": "group",
       "required": true,
-      "repeats": false,
-      "readOnly": false,
       "item": [
         {
           "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10010",
@@ -47,9 +45,6 @@
           ],
           "text": "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien, TUR und Resektaten",
           "type": "group",
-          "required": false,
-          "repeats": false,
-          "readOnly": false,
           "item": [
             {
               "extension": [
@@ -59,8 +54,7 @@
                     "coding": [
                       {
                         "code": "radio-button",
-                        "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                        "display": "Radio button"
+                        "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
                   }
@@ -77,9 +71,7 @@
               "text": "Proben limitiert auswertbar wegen fehlender klinischer Informationen",
               "type": "boolean",
               "enableBehavior": "all",
-              "required": true,
-              "repeats": false,
-              "readOnly": false
+              "required": true
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10110",
@@ -105,9 +97,7 @@
                 }
               ],
               "enableBehavior": "all",
-              "required": false,
-              "repeats": true,
-              "readOnly": false
+              "repeats": true
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10120",
@@ -133,22 +123,16 @@
                 }
               ],
               "enableBehavior": "all",
-              "required": false,
-              "repeats": true,
-              "readOnly": false
+              "repeats": true
             },
             {
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                   "valueCoding": {
                     "code": "ng/mL",
-                    "system": "http://unitsofmeasure.org",
-                    "display": "ng/ml"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                    "system": "http://unitsofmeasure.org"
+                  },
                   "valueInteger": 3
                 }
               ],
@@ -169,10 +153,7 @@
                   "answerBoolean": false
                 }
               ],
-              "enableBehavior": "all",
-              "required": false,
-              "repeats": false,
-              "readOnly": false
+              "enableBehavior": "all"
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10140",
@@ -185,10 +166,7 @@
               ],
               "text": "Klinisches TNM",
               "type": "text",
-              "enableBehavior": "all",
-              "required": false,
-              "repeats": false,
-              "readOnly": false
+              "enableBehavior": "all"
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10060",
@@ -228,8 +206,7 @@
                         "coding": [
                           {
                             "code": "radio-button",
-                            "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "display": "Radio button"
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
                           }
                         ]
                       }
@@ -247,8 +224,6 @@
                   "type": "open-choice",
                   "enableBehavior": "all",
                   "required": true,
-                  "repeats": false,
-                  "readOnly": false,
                   "answerOption": [
                     {
                       "valueCoding": {
@@ -348,22 +323,16 @@
                   "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
                   "type": "integer",
                   "enableBehavior": "all",
-                  "required": true,
-                  "repeats": false,
-                  "readOnly": false
+                  "required": true
                 },
                 {
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                       "valueCoding": {
                         "code": "cm",
-                        "system": "http://unitsofmeasure.org",
-                        "display": "cm"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                        "system": "http://unitsofmeasure.org"
+                      },
                       "valueInteger": 3
                     }
                   ],
@@ -378,9 +347,7 @@
                   "text": "Länge der/des Stanzzylinders in cm",
                   "type": "quantity",
                   "enableBehavior": "all",
-                  "required": true,
-                  "repeats": false,
-                  "readOnly": false
+                  "required": true
                 },
                 {
                   "extension": [
@@ -390,8 +357,7 @@
                         "coding": [
                           {
                             "code": "radio-button",
-                            "system": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                            "display": "Radio button"
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
                           }
                         ]
                       }
@@ -409,8 +375,6 @@
                   "type": "choice",
                   "enableBehavior": "all",
                   "required": true,
-                  "repeats": false,
-                  "readOnly": false,
                   "answerOption": [
                     {
                       "valueCoding": {

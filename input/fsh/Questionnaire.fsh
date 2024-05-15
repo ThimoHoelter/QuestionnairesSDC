@@ -2,7 +2,7 @@ Instance: BeispielQuestionnaire
 InstanceOf: Questionnaire
 * url = "http://example.org/fhir/Questionnaire/BeispielQuestionnaire"
 * version = "0.1"
-* title = "Hallo Welt!"
+* title = "Formularname XYZ"
 * status = #draft
 * insert launchContext("patient", #Patient, "Patientenkontext")
 // Hier fangen die Items an
