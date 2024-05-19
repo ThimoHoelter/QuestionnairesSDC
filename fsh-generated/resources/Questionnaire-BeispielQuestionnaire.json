@@ -150,7 +150,7 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "help",
+                        "code": "#help",
                         "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]

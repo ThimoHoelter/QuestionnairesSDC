@@ -84,6 +84,7 @@
           "linkId": "1.2a",
           "type": "string",
           "text": "Name",
+          "enableBehavior": "all",
           "required": true,
           "extension": [
             {
@@ -148,7 +149,7 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "help",
+                        "code": "#help",
                         "system": "http://hl7.org/fhir/questionnaire-item-control"
                       }
                     ]
@@ -192,7 +193,7 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "radio-button",
+                    "code": "#radio-button",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
@@ -449,6 +450,7 @@
       "linkId": "wohn-group",
       "type": "group",
       "text": "Wohnsituation",
+      "enableBehavior": "all",
       "repeats": true,
       "extension": [
         {
@@ -456,7 +458,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "gtable",
+                "code": "#gtable",
                 "system": "http://hl7.org/fhir/questionnaire-item-control"
               }
             ]
@@ -467,17 +469,20 @@
         {
           "linkId": "wohn-ort",
           "type": "string",
-          "text": "Adresse"
+          "text": "Adresse",
+          "enableBehavior": "all"
         },
         {
           "linkId": "wohn-von",
           "type": "date",
-          "text": "Wohnhaft von"
+          "text": "Wohnhaft von",
+          "enableBehavior": "all"
         },
         {
           "linkId": "wohn-bis",
           "type": "date",
-          "text": "Wohnhaft bis"
+          "text": "Wohnhaft bis",
+          "enableBehavior": "all"
         }
       ]
     },
@@ -485,18 +490,20 @@
       "linkId": "fav",
       "type": "group",
       "text": "Favoriten",
+      "enableBehavior": "all",
       "item": [
         {
           "linkId": "item-ctl",
           "type": "choice",
           "text": "Welches ist dein liebstes Item?",
+          "enableBehavior": "all",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "autocomplete",
+                    "code": "#autocomplete",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]
@@ -509,13 +516,14 @@
           "linkId": "kaffee",
           "type": "choice",
           "text": "Kaffee?",
+          "enableBehavior": "all",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "code": "check-box",
+                    "code": "#check-box",
                     "system": "http://hl7.org/fhir/questionnaire-item-control"
                   }
                 ]

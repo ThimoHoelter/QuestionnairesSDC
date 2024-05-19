@@ -21,7 +21,7 @@
     "fshType": "Instance",
     "fshFile": "KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
-    "endLine": 156
+    "endLine": 132
   },
   {
     "outputFile": "Questionnaire-MeinQuestionnaire.json",
@@ -32,12 +32,28 @@
     "endLine": 28
   },
   {
+    "outputFile": "Questionnaire-MinimalPSAExample.json",
+    "fshName": "MinimalPSAExample",
+    "fshType": "Instance",
+    "fshFile": "Questionnaire-minimal-example-PSA.fsh",
+    "startLine": 1,
+    "endLine": 31
+  },
+  {
     "outputFile": "Questionnaire-QuestionnaireDemo.json",
     "fshName": "QuestionnaireDemo",
     "fshType": "Instance",
     "fshFile": "QuestionnaireDemo.fsh",
     "startLine": 1,
     "endLine": 226
+  },
+  {
+    "outputFile": "Questionnaire-StanzbiopsienEinzelstanze.json",
+    "fshName": "StanzbiopsienEinzelstanze",
+    "fshType": "Instance",
+    "fshFile": "Stanzbiopsien_Einzelstanze.fsh",
+    "startLine": 1,
+    "endLine": 368
   },
   {
     "outputFile": "ValueSet-valueset-pflegegrad-de.json",

@@ -1,4 +1,4 @@
-Instance: Stanzbiopsien_Einzelstanze
+Instance: StanzbiopsienEinzelstanze
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-08T10:31:16Z"
@@ -18,7 +18,7 @@ Usage: #definition
 
 // Erster Grouper
 * item[+]
-  linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10000"
+  * linkId = "2.16.840.1.113883.3.1937.777.18.2.4.10000"
   * text = "Prostatakarzinome"
   * type = #group
   * required = true
@@ -54,7 +54,7 @@ Usage: #definition
 * item.item.item.item[=].enableBehavior = #all
 * item.item.item.item[=].required = true
 * item.item.item.item[=].repeats = false
-* item.item.item.item[=].readOnly = false#
+* item.item.item.item[=].readOnly = false
 
 // Lokalisation der Entnahmestelle
 * item.item.item.item[+].linkId = "2.16.840.1.113883.3.1937.777.18.2.4.11243"

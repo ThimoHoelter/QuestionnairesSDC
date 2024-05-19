@@ -1,0 +1,53 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "MinimalPSAExample",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z",
+    "source": "https://art-decor.org/fhir/4.0/pathdv-"
+  },
+  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+  "language": "de-DE",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+    }
+  ],
+  "name": "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien",
+  "title": "Eingabeformular für Klinische Angaben bei Stanzbiopsien",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-04-26T10:26:24Z",
+  "item": [
+    {
+      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+      "type": "decimal",
+      "text": "Angaben zur PSA-Serologie",
+      "code": [
+        {
+          "code": "2857-1",
+          "system": "http://loinc.org",
+          "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+        }
+      ],
+      "enableBehavior": "all",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+          "valueInteger": 3
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+          "valueCoding": {
+            "code": "ng/mL",
+            "system": "http://unitsofmeasure.org"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+          "valueBoolean": true
+        }
+      ]
+    }
+  ]
+}

@@ -57,15 +57,17 @@ RuleSet: debug(variable)
   * readOnly = true
   * insert calculatedExpression("debug", {variable})
 
-
+/*
 RuleSet: addItem(linkId, type, text)
 * linkId = {linkId}
 * type = {type}
 * text = {text}
+* enableBehavior = #all
 
 RuleSet: addRItem(linkId, type, text)
 * insert addItem({linkId}, {type}, {text})
 * required = true
+*/
 
 RuleSet: minMaxInteger(min, max)
 * extension[+] 
@@ -96,11 +98,23 @@ RuleSet: launchContext(name, type, description)
   * extension[+]
     * url = "description"
     * valueString = {description}
-
+/*
 RuleSet: maxDecimalPlaces(maxPlaces)
 * extension
   * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
   * valueInteger = {maxPlaces}
+
+  RuleSet: uunit(code)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
+  * valueCoding = $unitsofmeasure#{code}
+
+  RuleSet: itemControl(code)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+  * valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#{code}
+*/
+
 
 
 RuleSet: initialExpression(expression, description)
@@ -115,12 +129,12 @@ RuleSet: observationLinkPeriod(duration) //Wie alt darf eine Observation max sei
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationLinkPeriod"
   * valueDuration = {duration}
-
+/*
 RuleSet: observationExtract
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
   * valueBoolean = true
-
+*/
 //nicht supported in LHC Forms!
 RuleSet: supportLink(link)
 * extension[+]
@@ -143,10 +157,7 @@ RuleSet: query(name, query)
     * language = #application/x-fhir-query
     * expression = {query}
 
-RuleSet: uunit(code)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-  * valueCoding = $unitsofmeasure#{code}
+
 
 RuleSet: munit(code)
 * extension[+]
@@ -166,11 +177,6 @@ RuleSet: entryFormat(string)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/entryFormat"
   * valueString = {string}
-
-RuleSet: itemControl(code)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-  * valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control{code}
 
 RuleSet: ordinalValue(decimal)
 * extension[+]

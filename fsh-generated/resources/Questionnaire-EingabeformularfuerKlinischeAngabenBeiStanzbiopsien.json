@@ -30,12 +30,16 @@
   "item": [
     {
       "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10000",
-      "text": "Prostatakarzinome",
       "type": "group",
+      "text": "Prostatakarzinome",
+      "enableBehavior": "all",
       "required": true,
       "item": [
         {
           "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10010",
+          "type": "group",
+          "text": "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien TUR und Resektaten",
+          "enableBehavior": "all",
           "code": [
             {
               "code": "22636-5",
@@ -43,10 +47,13 @@
               "display": "Pathology report relevant history Narrative"
             }
           ],
-          "text": "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien, TUR und Resektaten",
-          "type": "group",
           "item": [
             {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.27",
+              "type": "boolean",
+              "text": "Proben limitiert auswertbar wegen fehlender klinischer Informationen",
+              "enableBehavior": "all",
+              "required": true,
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -60,21 +67,36 @@
                   }
                 }
               ],
-              "linkId": "2.16.840.1.113883.3.1937.777.18.2.27",
               "code": [
                 {
                   "code": "125156009",
                   "system": "http://snomed.info/sct",
                   "display": "Satisfactory for evaluation but limited by lack of pertinent clinical patient information (finding)"
                 }
-              ],
-              "text": "Proben limitiert auswertbar wegen fehlender klinischer Informationen",
-              "type": "boolean",
-              "enableBehavior": "all",
-              "required": true
+              ]
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10110",
+              "type": "text",
+              "text": "Anamnestische Angaben",
+              "enableBehavior": "all",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "laboratory",
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                }
+              ],
               "code": [
                 {
                   "code": "11450-4",
@@ -87,8 +109,6 @@
                   "display": "History of Present illness Narrative"
                 }
               ],
-              "text": "Anamnestische Angaben",
-              "type": "text",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
@@ -96,11 +116,30 @@
                   "answerBoolean": false
                 }
               ],
-              "enableBehavior": "all",
               "repeats": true
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10120",
+              "type": "text",
+              "text": "Vorbefunde",
+              "enableBehavior": "all",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "laboratory",
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                }
+              ],
               "code": [
                 {
                   "code": "28636-9",
@@ -113,8 +152,6 @@
                   "display": "Clinical pathology Initial evaluation note"
                 }
               ],
-              "text": "Vorbefunde",
-              "type": "text",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
@@ -122,21 +159,41 @@
                   "answerBoolean": false
                 }
               ],
-              "enableBehavior": "all",
               "repeats": true
             },
             {
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+              "type": "decimal",
+              "text": "Angaben zur PSA-Serologie",
+              "enableBehavior": "all",
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "laboratory",
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                   "valueCoding": {
                     "code": "ng/mL",
                     "system": "http://unitsofmeasure.org"
-                  },
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                   "valueInteger": 3
                 }
               ],
-              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
               "code": [
                 {
                   "code": "2857-1",
@@ -144,32 +201,50 @@
                   "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
                 }
               ],
-              "text": "Angaben zur PSA-Serologie",
-              "type": "quantity",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
                   "operator": "=",
                   "answerBoolean": false
                 }
-              ],
-              "enableBehavior": "all"
+              ]
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10140",
+              "type": "text",
+              "text": "Klinisches TNM",
+              "enableBehavior": "all",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                  "valueBoolean": true
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "laboratory",
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                }
+              ],
               "code": [
                 {
                   "code": "75620-5",
                   "system": "http://loinc.org",
                   "display": "TNM clinical staging before treatment panel Cancer"
                 }
-              ],
-              "text": "Klinisches TNM",
-              "type": "text",
-              "enableBehavior": "all"
+              ]
             },
             {
               "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10060",
+              "type": "group",
+              "text": "Angaben zur Herkunft und Eigenschaften von Proben",
+              "enableBehavior": "all",
+              "required": true,
               "code": [
                 {
                   "code": "399435001",
@@ -177,29 +252,62 @@
                   "display": "Specimen measurable (observable entity)"
                 }
               ],
-              "text": "Angaben zur Herkunft und Eigenschaften von Proben",
-              "type": "group",
-              "enableBehavior": "all",
-              "required": true,
               "repeats": true,
               "readOnly": true,
               "item": [
                 {
                   "linkId": "d7599448-400b-4ce4-a085-8d5efe78aee9",
+                  "type": "string",
+                  "text": "Proben-ID -nummer",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "laboratory",
+                            "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    }
+                  ],
                   "code": [
                     {
                       "code": "372274003",
                       "system": "http://snomed.info/sct",
                       "display": "Sample identification number (observable entity)"
                     }
-                  ],
-                  "text": "Proben-ID (-nummer)",
-                  "type": "string",
-                  "enableBehavior": "all",
-                  "required": true
+                  ]
                 },
                 {
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10070",
+                  "type": "open-choice",
+                  "text": "Lokalisation der Entnahmestelle",
+                  "enableBehavior": "all",
+                  "required": true,
                   "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "laboratory",
+                            "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
@@ -212,7 +320,6 @@
                       }
                     }
                   ],
-                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10070",
                   "code": [
                     {
                       "code": "94738-2",
@@ -220,10 +327,6 @@
                       "display": "Biopsy site"
                     }
                   ],
-                  "text": "Lokalisation der Entnahmestelle",
-                  "type": "open-choice",
-                  "enableBehavior": "all",
-                  "required": true,
                   "answerOption": [
                     {
                       "valueCoding": {
@@ -313,44 +416,99 @@
                 },
                 {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10050",
+                  "type": "integer",
+                  "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "laboratory",
+                            "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    }
+                  ],
                   "code": [
                     {
                       "code": "44652-6",
                       "system": "http://loinc.org",
                       "display": "Total # of cores Tissue Core"
                     }
-                  ],
-                  "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
-                  "type": "integer",
-                  "enableBehavior": "all",
-                  "required": true
+                  ]
                 },
                 {
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11208",
+                  "type": "integer",
+                  "text": "Länge der/des Stanzzylinders in cm",
+                  "enableBehavior": "all",
+                  "required": true,
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "laboratory",
+                            "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
                       "valueCoding": {
                         "code": "cm",
                         "system": "http://unitsofmeasure.org"
-                      },
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                       "valueInteger": 3
                     }
                   ],
-                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11208",
                   "code": [
                     {
                       "code": "44619-5",
                       "system": "http://loinc.org",
                       "display": "Length of tissue core(s)"
                     }
-                  ],
-                  "text": "Länge der/des Stanzzylinders in cm",
-                  "type": "quantity",
-                  "enableBehavior": "all",
-                  "required": true
+                  ]
                 },
                 {
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10080",
+                  "type": "choice",
+                  "text": "Seitenangabe",
+                  "enableBehavior": "all",
+                  "required": true,
                   "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "laboratory",
+                            "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
@@ -363,7 +521,6 @@
                       }
                     }
                   ],
-                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10080",
                   "code": [
                     {
                       "code": "20228-3",
@@ -371,10 +528,6 @@
                       "display": "Anatomic part Laterality"
                     }
                   ],
-                  "text": "Seitenangabe",
-                  "type": "choice",
-                  "enableBehavior": "all",
-                  "required": true,
                   "answerOption": [
                     {
                       "valueCoding": {
