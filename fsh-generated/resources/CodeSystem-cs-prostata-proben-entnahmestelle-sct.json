@@ -1,0 +1,66 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CS_ProstataProbeEntnahmestelleSCT",
+  "id": "cs-prostata-proben-entnahmestelle-sct",
+  "title": "MII CS Onkologie Primärtumor Seitenlokalisation",
+  "description": "Codes für Seitenlokalisation, d.h. organspezifische Angabe der betroffenen Seite.",
+  "url": "http://example.org/fhir/CodeSystem/cs-prostata-proben-entnahmestelle-sct",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Struktur des lateralen mittleren regionalen Teils der peripheren Zone der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "2",
+      "display": "Struktur des apikalen Teils der peripheren Zone der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "3",
+      "display": "Struktur des mittleren regionalen Teils des anterioren fibromuskulären Stromas der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "4",
+      "display": "Struktur des basalen Teils des anterioren fibromuskulären Stromas der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "5",
+      "display": "Struktur des mittleren regionalen Teils der Übergangszone der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "6",
+      "display": "Struktur des lateralen mittleren regionalen Teils der peripheren Zone der linken Hälfte der Prostata"
+    },
+    {
+      "code": "7",
+      "display": "Struktur des apikalen Teils der peripheren Zone"
+    },
+    {
+      "code": "8",
+      "display": "Struktur des mittleren regionalen Teils des anterioren fibromuskulären Stromas der linken Hälfte der Prostata"
+    },
+    {
+      "code": "9",
+      "display": "Struktur des basalen Teils des anterioren fibromuskulären Stromas der linken Hälfte der Prostata"
+    },
+    {
+      "code": "10",
+      "display": "Struktur des mittleren regionalen Teils der Übergangszone der linken Hälfte der Prostata"
+    },
+    {
+      "code": "11",
+      "display": "Struktur des basalen Teils der peripheren Zone der rechten Hälfte der Prostata"
+    },
+    {
+      "code": "12",
+      "display": "Struktur des basalen Teils der peripheren Zone der linken Hälfte der Prostata"
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablecodesystem"
+    ]
+  },
+  "count": 12
+}

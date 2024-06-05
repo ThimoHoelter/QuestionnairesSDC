@@ -1,5 +1,21 @@
 [
   {
+    "outputFile": "CodeSystem-cs-prostata-proben-entnahmestelle-sct.json",
+    "fshName": "CS_ProstataProbeEntnahmestelleSCT",
+    "fshType": "CodeSystem",
+    "fshFile": "CodeSystems\\CodeSystem_Lokalisation.fsh",
+    "startLine": 1,
+    "endLine": 20
+  },
+  {
+    "outputFile": "ConceptMap-CM-ProstataProbeEntnahmestelleSCT.json",
+    "fshName": "CM-ProstataProbeEntnahmestelleSCT",
+    "fshType": "Instance",
+    "fshFile": "ConceptMaps\\ConceptMap_Lokalisation_SCT.fsh",
+    "startLine": 1,
+    "endLine": 88
+  },
+  {
     "outputFile": "Patient-PatientBeispiel.json",
     "fshName": "PatientBeispiel",
     "fshType": "Instance",
@@ -21,7 +37,7 @@
     "fshType": "Instance",
     "fshFile": "KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
-    "endLine": 132
+    "endLine": 141
   },
   {
     "outputFile": "Questionnaire-MeinQuestionnaire.json",
@@ -35,9 +51,9 @@
     "outputFile": "Questionnaire-MinimalPSAExample.json",
     "fshName": "MinimalPSAExample",
     "fshType": "Instance",
-    "fshFile": "Questionnaire-minimal-example-PSA.fsh",
-    "startLine": 1,
-    "endLine": 31
+    "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
+    "startLine": 2,
+    "endLine": 35
   },
   {
     "outputFile": "Questionnaire-QuestionnaireDemo.json",
@@ -53,7 +69,15 @@
     "fshType": "Instance",
     "fshFile": "Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
-    "endLine": 368
+    "endLine": 324
+  },
+  {
+    "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",
+    "fshName": "MinimalPSAExampleResponse",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\QuestionnaireResponse-minimal-example-PSA.fsh",
+    "startLine": 1,
+    "endLine": 14
   },
   {
     "outputFile": "ValueSet-valueset-pflegegrad-de.json",
@@ -62,5 +86,13 @@
     "fshFile": "ValueSets.fsh",
     "startLine": 3,
     "endLine": 37
+  },
+  {
+    "outputFile": "ValueSet-vs-prostata-proben-entnahmestelle-sct.json",
+    "fshName": "VS_ProstataProbeEntnahmestelleSCT",
+    "fshType": "ValueSet",
+    "fshFile": "ValueSets\\ValueSet_Lokalisation.fsh",
+    "startLine": 1,
+    "endLine": 9
   }
 ]

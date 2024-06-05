@@ -90,8 +90,20 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "laboratory",
+                        "code": "{laboratory}",
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "22637-3",
+                        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                        "display": "Pathology report diagnosis"
                       }
                     ]
                   }
@@ -133,8 +145,20 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "laboratory",
+                        "code": "{laboratory}",
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "22637-3",
+                        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                        "display": "Pathology report diagnosis"
                       }
                     ]
                   }
@@ -176,8 +200,20 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "laboratory",
+                        "code": "{laboratory}",
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "22637-3",
+                        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                        "display": "Pathology report diagnosis"
                       }
                     ]
                   }
@@ -224,8 +260,20 @@
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "code": "laboratory",
+                        "code": "{laboratory}",
                         "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "22637-3",
+                        "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                        "display": "Pathology report diagnosis"
                       }
                     ]
                   }
@@ -271,8 +319,20 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "laboratory",
+                            "code": "{laboratory}",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "22637-3",
+                            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                            "display": "Pathology report diagnosis"
                           }
                         ]
                       }
@@ -302,8 +362,20 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "laboratory",
+                            "code": "{laboratory}",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "22637-3",
+                            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                            "display": "Pathology report diagnosis"
                           }
                         ]
                       }
@@ -430,8 +502,20 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "laboratory",
+                            "code": "{laboratory}",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "22637-3",
+                            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                            "display": "Pathology report diagnosis"
                           }
                         ]
                       }
@@ -441,7 +525,7 @@
                     {
                       "code": "44652-6",
                       "system": "http://loinc.org",
-                      "display": "Total # of cores Tissue Core"
+                      "display": "Total number of cores Tissue Core"
                     }
                   ]
                 },
@@ -461,8 +545,20 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "laboratory",
+                            "code": "{laboratory}",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "22637-3",
+                            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                            "display": "Pathology report diagnosis"
                           }
                         ]
                       }
@@ -503,8 +599,20 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "laboratory",
+                            "code": "{laboratory}",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "22637-3",
+                            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                            "display": "Pathology report diagnosis"
                           }
                         ]
                       }

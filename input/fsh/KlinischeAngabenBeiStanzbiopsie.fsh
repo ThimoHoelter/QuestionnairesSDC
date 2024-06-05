@@ -16,11 +16,11 @@ Usage: #definition
 * effectivePeriod.start = "2024-04-26T10:26:24Z"
 
 //Erster Grouper
-* item
+* item[+]
   * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10000", #group, "Prostatakarzinome")
 
 // Zweiter Grouper
-  * item
+  * item[+]
     * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10010", #group, "Klinische Angaben zur histopathologischen Untersuchung von Stanzbiopsien TUR und Resektaten") 
     * code = $loinc#22636-5 "Pathology report relevant history Narrative"
 
@@ -30,11 +30,12 @@ Usage: #definition
       * insert itemControl(radio-button)
       * code = $sct#125156009 "Satisfactory for evaluation but limited by lack of pertinent clinical patient information (finding)"
 
-// Frage zu Anamnestische Angaben (Wird nur angezeigt wenn vorherige Frage auf false)
+// Frage zu Anamnestische Angaben (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
       * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10110", #text, "Anamnestische Angaben")
       * insert observationExtract
-      * insert observationExtractCategory(laboratory)
+      * insert observationExtract_laboratory_InCategory
+      * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
       * code[+] = $loinc#11450-4 "Problem list - Reported"
       * code[+] = $loinc#10164-2 "History of Present illness Narrative"
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
@@ -42,11 +43,12 @@ Usage: #definition
       * enableWhen.answerBoolean = false
       * repeats = true
 
-// Frage zu Vorbefunden (Gleiche Bedinung)
+// Frage zu Vorbefunden (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
       * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10120", #text, "Vorbefunde")
       * insert observationExtract
-      * insert observationExtractCategory(laboratory)
+      * insert observationExtract_laboratory_InCategory
+      * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
       * code[+] = $loinc#28636-9 "Initial evaluation note"
       * code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
@@ -54,12 +56,13 @@ Usage: #definition
       * enableWhen.answerBoolean = false
       * repeats = true
 
-// Frage zur PSA-Serologie (Gleiche Bedinung)
+// Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben fehlen)
     * item[+]
       * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie")
-      * insert observationExtract // observation-based extraction is not working...
-      * insert observationExtractCategory(laboratory)
-      * insert uunit(ng/mL) // // ...maybe this is why
+      * insert observationExtract 
+      * insert observationExtract_laboratory_InCategory
+      * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
+      * insert uunit(ng/mL) 
       * insert maxDecimalPlaces(3) // not supported in LHC
       * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
@@ -70,7 +73,8 @@ Usage: #definition
     * item[+]
       * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10140", #text, "Klinisches TNM")
       * insert observationExtract
-      * insert observationExtractCategory(laboratory)
+      * insert observationExtract_laboratory_InCategory
+      * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
       * code = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
 
 // Grouper Angaben zur Probe
@@ -83,14 +87,16 @@ Usage: #definition
       * item[+]
         * insert addRItem("d7599448-400b-4ce4-a085-8d5efe78aee9", #string, "Proben-ID -nummer")
         * insert observationExtract
-        * insert observationExtractCategory(laboratory)
+        * insert observationExtract_laboratory_InCategory
+        * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
         * code = $sct#372274003 "Sample identification number (observable entity)"
 
 // Entnahmestelle
       * item[+]
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10070", #open-choice, "Lokalisation der Entnahmestelle")
         * insert observationExtract
-        * insert observationExtractCategory(laboratory)
+        * insert observationExtract_laboratory_InCategory
+        * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
         * insert itemControl(radio-button)
         * code = $loinc#94738-2 "Biopsy site"
         //* answerValueSet = "http://example.org/fhir/ValueSet/vs-prostata-proben-entnahmestelle-sct"
@@ -111,21 +117,24 @@ Usage: #definition
       * item[+]
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10050", #integer, "Anzahl der Stanzzylinder im Einsendungsgefäß")
         * insert observationExtract
-        * insert observationExtractCategory(laboratory)
-        * code = $loinc#44652-6 "Total # of cores Tissue Core"
+        * insert observationExtract_laboratory_InCategory
+        * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
+        * code = $loinc#44652-6 "Total number of cores Tissue Core"
 // Stanzenlänge in cm
       * item[+]
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.11208", #integer, "Länge der/des Stanzzylinders in cm") // nicht unterstützt im PathoFinding (nur Quantity, Ratio, String & CodeableConcept)
-        * insert observationExtract // observation-based extraction is not working...
-        * insert observationExtractCategory(laboratory)
-        * insert uunit(cm) // ...maybe this is why
+        * insert observationExtract 
+        * insert observationExtract_laboratory_InCategory
+        * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
+        * insert uunit(cm)
         * insert maxDecimalPlaces(3) //not supported in LHC
         * code = $loinc#44619-5 "Length of tissue core(s)"
 // Seitenangabe
       * item[+]
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe")
         * insert observationExtract
-        * insert observationExtractCategory(laboratory)
+        * insert observationExtract_laboratory_InCategory
+        * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
         * insert itemControl(radio-button)
         * code = $loinc#20228-3 "Anatomic part Laterality"
         * answerOption[+].valueCoding = $sct#24028007 "Right (qualifier value)"
@@ -161,10 +170,10 @@ RuleSet: observationExtract
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
   * valueBoolean = true
 
-RuleSet: observationExtractCategory(code)
+RuleSet: observationExtract_laboratory_InCategory
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
-  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#{code}
+  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#{laboratory}
 
 RuleSet: observationExtractSectionInCategory(code)
 * extension[+]

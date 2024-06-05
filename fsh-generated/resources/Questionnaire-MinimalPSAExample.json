@@ -5,8 +5,8 @@
     "lastUpdated": "2024-05-05T12:48:40Z",
     "source": "https://art-decor.org/fhir/4.0/pathdv-"
   },
-  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "language": "de-DE",
+  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "identifier": [
     {
       "system": "urn:ietf:rfc:3986",
@@ -20,7 +20,7 @@
   "date": "2024-04-26T10:26:24Z",
   "item": [
     {
-      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+      "linkId": "PSA-Serologie",
       "type": "decimal",
       "text": "Angaben zur PSA-Serologie",
       "code": [
@@ -34,7 +34,7 @@
       "extension": [
         {
           "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
-          "valueInteger": 3
+          "valueInteger": 2
         },
         {
           "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
@@ -46,6 +46,17 @@
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
           "valueBoolean": true
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
         }
       ]
     }

@@ -1,0 +1,24 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "MinimalPSAExampleResponse",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z",
+    "source": "https://art-decor.org/fhir/4.0/pathdv-"
+  },
+  "language": "de-DE",
+  "questionnaire": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+  "status": "completed",
+  "authored": "2024-04-26T10:26:24Z",
+  "item": [
+    {
+      "linkId": "PSA-Serologie",
+      "answer": [
+        {
+          "valueQuantity": {
+            "value": 1.234
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "VS_ProstataProbeEntnahmestelleSCT",
+  "id": "vs-prostata-proben-entnahmestelle-sct",
+  "description": "Codes zur Lokalisation der Entnahmestelle von Proben aus der Prostata",
+  "url": "http://example.org/fhir/ValueSet/vs-prostata-proben-entnahmestelle-sct",
+  "version": "1.4.0",
+  "experimental": false,
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://example.org/ValueSet/cs-prostata-proben-entnahmestelle-sct"
+      }
+    ]
+  }
+}
