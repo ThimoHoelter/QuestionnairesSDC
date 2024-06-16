@@ -2,36 +2,44 @@
   "resourceType": "Questionnaire",
   "id": "MinimalPSAExample",
   "meta": {
-    "lastUpdated": "2024-05-05T12:48:40Z",
-    "source": "https://art-decor.org/fhir/4.0/pathdv-"
+    "lastUpdated": "2024-05-05T12:48:40Z"
   },
-  "language": "de-DE",
-  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample",
   "identifier": [
     {
       "system": "urn:ietf:rfc:3986",
       "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
     }
   ],
-  "name": "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien",
-  "title": "Eingabeformular für Klinische Angaben bei Stanzbiopsien",
+  "name": "Definition_based_extraction_example",
+  "title": "Example for definition-based extraction",
   "status": "draft",
   "experimental": false,
   "date": "2024-04-26T10:26:24Z",
+  "subjectType": [
+    "Observation"
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+      "valueCode": "Practitioner"
+    }
+  ],
   "item": [
     {
-      "linkId": "PSA-Serologie",
-      "type": "decimal",
-      "text": "Angaben zur PSA-Serologie",
-      "code": [
-        {
-          "code": "2857-1",
-          "system": "http://loinc.org",
-          "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
-        }
-      ],
-      "enableBehavior": "all",
       "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "22637-3",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                "display": "Pathology report diagnosis"
+              }
+            ]
+          }
+        },
         {
           "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
           "valueInteger": 2
@@ -58,7 +66,18 @@
             ]
           }
         }
-      ]
+      ],
+      "linkId": "PSA-Serologie",
+      "type": "decimal",
+      "text": "Angaben zur PSA-Serologie",
+      "code": [
+        {
+          "code": "2857-1",
+          "system": "http://loinc.org",
+          "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+        }
+      ],
+      "enableBehavior": "all"
     }
   ]
 }

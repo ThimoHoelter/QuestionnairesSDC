@@ -1,11 +1,11 @@
-Instance: EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
+Instance: Prostata_EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
 * meta.source = "https://art-decor.org/fhir/4.0/pathdv-"
 * meta.tag = $FHIR-version#4.0.1
 * language = #de-DE
-* url = "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien"
+* url = "https://art-decor.org/fhir/Questionnaire/Prostata_EingabeformularfuerKlinischeAngabenBeiStanzbiopsien"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
 * name = "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien"
@@ -14,8 +14,10 @@ Usage: #definition
 * experimental = false
 * date = "2024-04-26T10:26:24Z"
 * effectivePeriod.start = "2024-04-26T10:26:24Z"
-
-//Erster Grouper
+* extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
+* extension[=].valueCode = $resourceType#Practitioner
+* subjectType = $resourceType#Patient
+// Erster Grouper
 * item[+]
   * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10000", #group, "Prostatakarzinome")
 
@@ -56,7 +58,7 @@ Usage: #definition
       * enableWhen.answerBoolean = false
       * repeats = true
 
-// Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben fehlen)
+// Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
       * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie")
       * insert observationExtract 

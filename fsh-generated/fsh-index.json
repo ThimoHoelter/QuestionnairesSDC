@@ -1,35 +1,19 @@
 [
   {
-    "outputFile": "CodeSystem-cs-prostata-proben-entnahmestelle-sct.json",
-    "fshName": "CS_ProstataProbeEntnahmestelleSCT",
-    "fshType": "CodeSystem",
-    "fshFile": "CodeSystems\\CodeSystem_Lokalisation.fsh",
-    "startLine": 1,
-    "endLine": 20
-  },
-  {
-    "outputFile": "ConceptMap-CM-ProstataProbeEntnahmestelleSCT.json",
-    "fshName": "CM-ProstataProbeEntnahmestelleSCT",
+    "outputFile": "Observation-ObservationExample.json",
+    "fshName": "ObservationExample",
     "fshType": "Instance",
-    "fshFile": "ConceptMaps\\ConceptMap_Lokalisation_SCT.fsh",
+    "fshFile": "MinimalBeispiel\\ObservationExample.fsh",
     "startLine": 1,
-    "endLine": 88
+    "endLine": 5
   },
   {
     "outputFile": "Patient-PatientBeispiel.json",
     "fshName": "PatientBeispiel",
     "fshType": "Instance",
-    "fshFile": "MeinPatient.fsh",
+    "fshFile": "MinimalBeispiel\\PatientExample.fsh",
     "startLine": 1,
-    "endLine": 6
-  },
-  {
-    "outputFile": "Questionnaire-BeispielQuestionnaire.json",
-    "fshName": "BeispielQuestionnaire",
-    "fshType": "Instance",
-    "fshFile": "Questionnaire.fsh",
-    "startLine": 1,
-    "endLine": 55
+    "endLine": 3
   },
   {
     "outputFile": "Questionnaire-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
@@ -37,15 +21,7 @@
     "fshType": "Instance",
     "fshFile": "KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
-    "endLine": 141
-  },
-  {
-    "outputFile": "Questionnaire-MeinQuestionnaire.json",
-    "fshName": "MeinQuestionnaire",
-    "fshType": "Instance",
-    "fshFile": "MeinQuest.fsh",
-    "startLine": 1,
-    "endLine": 28
+    "endLine": 143
   },
   {
     "outputFile": "Questionnaire-MinimalPSAExample.json",
@@ -53,15 +29,7 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
     "startLine": 2,
-    "endLine": 35
-  },
-  {
-    "outputFile": "Questionnaire-QuestionnaireDemo.json",
-    "fshName": "QuestionnaireDemo",
-    "fshType": "Instance",
-    "fshFile": "QuestionnaireDemo.fsh",
-    "startLine": 1,
-    "endLine": 226
+    "endLine": 37
   },
   {
     "outputFile": "Questionnaire-StanzbiopsienEinzelstanze.json",
@@ -69,7 +37,7 @@
     "fshType": "Instance",
     "fshFile": "Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
-    "endLine": 324
+    "endLine": 326
   },
   {
     "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",
@@ -80,19 +48,11 @@
     "endLine": 14
   },
   {
-    "outputFile": "ValueSet-valueset-pflegegrad-de.json",
-    "fshName": "PflegegradDE",
-    "fshType": "ValueSet",
-    "fshFile": "ValueSets.fsh",
-    "startLine": 3,
-    "endLine": 37
-  },
-  {
-    "outputFile": "ValueSet-vs-prostata-proben-entnahmestelle-sct.json",
-    "fshName": "VS_ProstataProbeEntnahmestelleSCT",
-    "fshType": "ValueSet",
-    "fshFile": "ValueSets\\ValueSet_Lokalisation.fsh",
+    "outputFile": "Specimen-Probe.json",
+    "fshName": "Probe",
+    "fshType": "Instance",
+    "fshFile": "Probe.fsh",
     "startLine": 1,
-    "endLine": 9
+    "endLine": 4
   }
 ]

@@ -1,4 +1,4 @@
-ValueSet: VS_ProstataProbeEntnahmestelleSCT
+/*ValueSet: VS_ProstataProbeEntnahmestelleSCT
 Id: vs-prostata-proben-entnahmestelle-sct
 Description: "Codes zur Lokalisation der Entnahmestelle von Proben aus der Prostata"
 * ^status = #active
@@ -7,3 +7,4 @@ Description: "Codes zur Lokalisation der Entnahmestelle von Proben aus der Prost
 * ^experimental = false
 * ^meta.profile = "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
 * include codes from system $cs-prostata-proben-entnahmestelle-sct
+*/

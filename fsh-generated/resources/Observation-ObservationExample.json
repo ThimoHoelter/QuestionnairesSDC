@@ -1,0 +1,14 @@
+{
+  "resourceType": "Observation",
+  "id": "ObservationExample",
+  "code": {
+    "coding": [
+      {
+        "code": "2857-1",
+        "system": "http://loinc.org",
+        "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+      }
+    ]
+  },
+  "status": "registered"
+}

@@ -27,6 +27,15 @@
   "effectivePeriod": {
     "start": "2024-04-26T10:26:24Z"
   },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+      "valueCode": "Practitioner"
+    }
+  ],
+  "subjectType": [
+    "Patient"
+  ],
   "item": [
     {
       "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10000",

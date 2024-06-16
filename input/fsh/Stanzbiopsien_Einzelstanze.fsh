@@ -1,11 +1,11 @@
-Instance: StanzbiopsienEinzelstanze
+Instance: Prostata_Stanzbiopsien_Einzelstanze
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-08T10:31:16Z"
 * meta.source = "https://art-decor.org/fhir/4.0/pathdv-"
 * meta.tag = $FHIR-version#4.0.1
 * language = #de-DE
-* url = "https://art-decor.org/fhir/Questionnaire/Stanzbiopsien_Einzelstanze"
+* url = "https://art-decor.org/fhir/Questionnaire/Prostata_Stanzbiopsien_Einzelstanze"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.11"
 * name = "Eingabe_Formular_fur_Stanzbiopsien_Einzelstanzen"
@@ -15,7 +15,9 @@ Usage: #definition
 * date = "2024-05-07T15:05:24Z"
 * description = "Modell für \"intelligentes\" Formular"
 * effectivePeriod.start = "2024-05-07T15:05:24Z"
-
+* extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
+* extension[=].valueCode = $resourceType#Practitioner
+* subjectType = $resourceType#Patient
 // Erster Grouper
 * item[+] //Code??
   * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10000", #group, "Prostatakarzinome")
@@ -31,7 +33,7 @@ Usage: #definition
       * code[+] = $loinc#66117-3 "Prostate Pathology biopsy report"
       * code[+] = $sct#441817003:116686009=309134005 "Evaluation of biopsy specimen:Has specimen=Prostate tru-cut biopsy sample"
 // -----------------------------------------------------------------------------------------------------------------------------------
-// Erste vier Fragen in einen eigene Fragebogen!
+// Erste vier Fragen in einen eigene Fragebogen!?
 // Proben ID 
       * item[+] //Prepopulation!
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.29", #string, "Proben-ID")
@@ -60,7 +62,7 @@ Usage: #definition
 
 // Länge der Stanzzylinder
       * item[+] //Prepoplulation von Klinische Informationen?
-        * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11244", #quantity, "Lokalisation der Entnahmestelle")
+        * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11244", #quantity, "Länge der Stanzzylinder")
         * insert observationExtract
         * insert observationExtract_laboratory_InCategory
         * insert observationExtractSectionInCategory(22635-7 "Pathology report microscopic observation")
@@ -208,6 +210,7 @@ Usage: #definition
         * insert observationExtract
         * insert observationExtract_laboratory_InCategory
         * insert observationExtractSectionInCategory(22635-7 "Pathology report microscopic observation")
+        * code = $loinc#94734-1 "Prostate cancer grade group"
         * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10290"
         * enableWhen.operator = #!=
         * enableWhen.answerCoding = $sct#43771008
@@ -281,11 +284,12 @@ Usage: #definition
         * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
         * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
 // Intraduktales Karzinom
-      * item[+] //Code?
+      * item[+]
         * insert addItem("2.16.840.1.113883.3.1937.777.18.2.28", #open-choice, "Intraduktales Karzinom")
         * insert observationExtract
         * insert observationExtract_laboratory_InCategory
         * insert observationExtractSectionInCategory(22635-7 "Pathology report microscopic observation") 
+        * code = $sct#86616005 "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
         * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
         * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
         * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"

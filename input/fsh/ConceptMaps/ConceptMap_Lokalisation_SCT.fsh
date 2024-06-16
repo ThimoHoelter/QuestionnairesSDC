@@ -1,4 +1,4 @@
-Instance: CM-ProstataProbeEntnahmestelleSCT
+/*Instance: CM-ProstataProbeEntnahmestelleSCT
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://example.org/ConceptMap/cm-prostata-proben-entnahmestelle-sct"
@@ -86,3 +86,4 @@ Usage: #definition
 * group[=].element[=].target.code = #716917000
 * group[=].element[=].target.display = "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
 * group[=].element[=].target.equivalence = #equivalent
+*/

@@ -6,3 +6,5 @@ Alias: $gender = http://hl7.org/fhir/administrative-gender
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 Alias: $cs-prostata-proben-entnahmestelle-sct = http://example.org/ValueSet/cs-prostata-proben-entnahmestelle-sct
 Alias: $patho-sections = https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc
+Alias: $resourceType = http://hl7.org/fhir/resource-types
+Alias: $ICD10GM = http://hl7.org/fhir/sid/icd-10

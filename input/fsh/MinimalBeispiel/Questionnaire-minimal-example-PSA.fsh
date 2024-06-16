@@ -1,21 +1,23 @@
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 Instance: MinimalPSAExample
 InstanceOf: Questionnaire
-Usage: #example
+Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
-* meta.source = "https://art-decor.org/fhir/4.0/pathdv-"
-* language = #de-DE
-* url = "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien"
+* url = "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
-* name = "Eingabeformular_fur_Klinische_Angaben_bei_Stanzbiopsien"
-* title = "Eingabeformular für Klinische Angaben bei Stanzbiopsien"
+* name = "Definition_based_extraction_example"
+* title = "Example for definition-based extraction"
 * status = #draft
 * experimental = false
 * date = "2024-04-26T10:26:24Z"
+* subjectType = $resourceType#Observation
+* extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
+* extension[=].valueCode = $resourceType#Practitioner
 
 // Frage zur PSA-Serologie (Gleiche Bedinung)
 * item[+]
+  * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
 * item[=].linkId = "PSA-Serologie"
 * item[=].type = #decimal
 * item[=].text =  "Angaben zur PSA-Serologie"
@@ -33,14 +35,30 @@ Usage: #example
 * item[=].extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
   * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-//* item[+]
-/* item[=].linkId = "examplequestionairequestionid1"
-* item[=].type = #code
-* item[=].text =  "Angaben zur Diagnose"
-//* item[=].code = $sct#439401001 "Diagnosis (observable entity)"
-* item[=].enableBehavior = #all
-* answerOption[+].valueCoding = $ICD10GM#C73
-//* item[=].extension[+]
-//  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
-//  * valueCode = #Condition
+
+/*
+* item[+]
+  * insert addGrouperItem("definitionGrouper_Patient", #group, "http://hl7.org/fhir/Patient#Patient", #Patient)
+  * item[+]
+  * item[=].linkId = "PatientsFirstName"
+  * item[=].type = #string
+  * item[=].answerOption.valueString = "John"
+  * item[=].enableBehavior = #all
+  * item[=].text =  "First name of the patient"
+  * item[=].definition = "http://hl7.org/fhir/Patient#Patient.name.given"
+  * item[+]
+  * item[=].linkId = "PatientsFamilyname"
+  * item[=].type = #string
+  * item[=].answerOption.valueString = "Doe"
+  * item[=].enableBehavior = #all
+  * item[=].text =  "Last name of the patient"
+  * item[=].definition = "http://hl7.org/fhir/Patient#Patient.name.family"
 */
+RuleSet: addGrouperItem(linkId, type, definition, code)
+* linkId = {linkId}
+* type = {type}
+* definition = {definition}
+* enableBehavior = #all
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
+  * valueCode = {code}
