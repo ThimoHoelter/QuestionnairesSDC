@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "StanzbiopsienEinzelstanze",
+  "id": "Prostata-StanzbiopsienEinzelstanze",
   "meta": {
     "lastUpdated": "2024-05-08T10:31:16Z",
     "source": "https://art-decor.org/fhir/4.0/pathdv-",
@@ -11,7 +11,7 @@
       }
     ]
   },
-  "url": "https://art-decor.org/fhir/Questionnaire/Stanzbiopsien_Einzelstanze",
+  "url": "https://art-decor.org/fhir/Questionnaire/Prostata-Stanzbiopsien-Einzelstanze",
   "language": "de-DE",
   "identifier": [
     {
@@ -208,7 +208,7 @@
                 {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11244",
                   "type": "quantity",
-                  "text": "Lokalisation der Entnahmestelle",
+                  "text": "Länge der Stanzzylinder",
                   "enableBehavior": "all",
                   "extension": [
                     {
@@ -1069,6 +1069,13 @@
                       }
                     }
                   ],
+                  "code": [
+                    {
+                      "code": "94734-1",
+                      "system": "http://loinc.org",
+                      "display": "Prostate cancer grade group"
+                    }
+                  ],
                   "enableWhen": [
                     {
                       "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
@@ -1528,6 +1535,13 @@
                           }
                         ]
                       }
+                    }
+                  ],
+                  "code": [
+                    {
+                      "code": "86616005",
+                      "system": "http://snomed.info/sct",
+                      "display": "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
                     }
                   ],
                   "answerOption": [

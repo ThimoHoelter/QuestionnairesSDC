@@ -14,7 +14,7 @@ Usage: #definition
 * subjectType = $resourceType#Observation
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
-
+/*
 // Frage zur PSA-Serologie (Gleiche Bedinung)
 * item[+]
   * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
@@ -35,8 +35,8 @@ Usage: #definition
 * item[=].extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
   * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+*/
 
-/*
 * item[+]
   * insert addGrouperItem("definitionGrouper_Patient", #group, "http://hl7.org/fhir/Patient#Patient", #Patient)
   * item[+]
@@ -53,7 +53,7 @@ Usage: #definition
   * item[=].enableBehavior = #all
   * item[=].text =  "Last name of the patient"
   * item[=].definition = "http://hl7.org/fhir/Patient#Patient.name.family"
-*/
+
 RuleSet: addGrouperItem(linkId, type, definition, code)
 * linkId = {linkId}
 * type = {type}

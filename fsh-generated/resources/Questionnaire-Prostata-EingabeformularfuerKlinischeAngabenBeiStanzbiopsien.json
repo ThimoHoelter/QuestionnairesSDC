@@ -1,6 +1,6 @@
 {
   "resourceType": "Questionnaire",
-  "id": "EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+  "id": "Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "meta": {
     "lastUpdated": "2024-05-05T12:48:40Z",
     "source": "https://art-decor.org/fhir/4.0/pathdv-",
@@ -11,7 +11,7 @@
       }
     ]
   },
-  "url": "https://art-decor.org/fhir/Questionnaire/EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+  "url": "https://art-decor.org/fhir/Questionnaire/Prostata_EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
   "language": "de-DE",
   "identifier": [
     {

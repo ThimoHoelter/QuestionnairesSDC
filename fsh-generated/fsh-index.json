@@ -16,28 +16,36 @@
     "endLine": 3
   },
   {
-    "outputFile": "Questionnaire-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
-    "fshName": "EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
+    "outputFile": "Questionnaire-MinimalPSAExample.json",
+    "fshName": "MinimalPSAExample",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
+    "startLine": 2,
+    "endLine": 55
+  },
+  {
+    "outputFile": "Questionnaire-Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
+    "fshName": "Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
     "fshType": "Instance",
     "fshFile": "KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
     "endLine": 143
   },
   {
-    "outputFile": "Questionnaire-MinimalPSAExample.json",
-    "fshName": "MinimalPSAExample",
+    "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene.json",
+    "fshName": "Prostata-StanzbiopsieFallebene",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
-    "startLine": 2,
-    "endLine": 37
+    "fshFile": "Stanzbiopsien_Fallebene.fsh",
+    "startLine": 1,
+    "endLine": 361
   },
   {
-    "outputFile": "Questionnaire-StanzbiopsienEinzelstanze.json",
-    "fshName": "StanzbiopsienEinzelstanze",
+    "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze.json",
+    "fshName": "Prostata-StanzbiopsienEinzelstanze",
     "fshType": "Instance",
     "fshFile": "Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
-    "endLine": 326
+    "endLine": 328
   },
   {
     "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",
@@ -51,8 +59,8 @@
     "outputFile": "Specimen-Probe.json",
     "fshName": "Probe",
     "fshType": "Instance",
-    "fshFile": "Probe.fsh",
+    "fshFile": "MinimalBeispiel\\Probe.fsh",
     "startLine": 1,
-    "endLine": 4
+    "endLine": 2
   }
 ]

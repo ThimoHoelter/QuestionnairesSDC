@@ -1,11 +1,11 @@
-Instance: Prostata_Stanzbiopsien_Einzelstanze
+Instance: Prostata-StanzbiopsienEinzelstanze
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-08T10:31:16Z"
 * meta.source = "https://art-decor.org/fhir/4.0/pathdv-"
 * meta.tag = $FHIR-version#4.0.1
 * language = #de-DE
-* url = "https://art-decor.org/fhir/Questionnaire/Prostata_Stanzbiopsien_Einzelstanze"
+* url = "https://art-decor.org/fhir/Questionnaire/Prostata-Stanzbiopsien-Einzelstanze"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.11"
 * name = "Eingabe_Formular_fur_Stanzbiopsien_Einzelstanzen"
@@ -27,7 +27,7 @@ Usage: #definition
     * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10210", #group, "Stanzbiopsien")
     * code = $loinc#66117-3 "Prostate Pathology biopsy report"
 
-//Dritter Grouper
+//Dritter Grouper 
     * item[+]
       * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.11242", #group, "Verwendung für jeden einzelnen Stanzzylinder")
       * code[+] = $loinc#66117-3 "Prostate Pathology biopsy report"

@@ -1,4 +1,4 @@
-Instance: Prostata_EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
+Instance: Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
@@ -131,7 +131,7 @@ Usage: #definition
         * insert uunit(cm)
         * insert maxDecimalPlaces(3) //not supported in LHC
         * code = $loinc#44619-5 "Length of tissue core(s)"
-// Seitenangabe
+// Seitenangabe 
       * item[+]
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe")
         * insert observationExtract
