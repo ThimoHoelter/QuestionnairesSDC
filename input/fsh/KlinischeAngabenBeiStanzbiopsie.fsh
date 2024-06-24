@@ -151,7 +151,7 @@ RuleSet: maxDecimalPlaces(maxPlaces)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
   * valueCoding = $unitsofmeasure#{code}
-
+  
   RuleSet: itemControl(code)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"

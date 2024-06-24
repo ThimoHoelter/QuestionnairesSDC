@@ -12,9 +12,10 @@ Usage: #definition
 * item[+]
 * item[=].linkId = "PSA-Serologie"
 * item[=].answer[+].valueQuantity.value = 1.234
+* item[=].definition = "http://hl7.org/fhir/Observation#Observation.valueQuantity.value"
 
-/*
+
 * item[+]
-* item[=].linkId = "examplequestionairequestionid1"
-* item[=].answer[+].valueString = "Holter"
-*/
+* item[=].linkId = "Klinisches TNM"
+* item[=].answer[+].valueString = "T1N1M0"
+* item[=].definition = "http://hl7.org/fhir/DiagnosticReport#DiagnosticReport.conclusion"

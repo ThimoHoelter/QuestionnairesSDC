@@ -1,0 +1,106 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "MinimalPSAExample",
+    "meta": {
+      "lastUpdated": "2024-05-05T12:48:40Z"
+    },
+    "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample",
+    "identifier": [
+      {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+      }
+    ],
+    "name": "Definition_based_extraction_example",
+    "title": "Example for definition-based extraction",
+    "status": "draft",
+    "experimental": false,
+    "date": "2024-04-26T10:26:24Z",
+    "subjectType": [
+      "Patient"
+    ],
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+        "valueCode": "Practitioner"
+      }
+    ],
+    "item": [
+      {
+        "linkId": "definitionGrouperObservation",
+        "type": "group",
+        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+        "enableBehavior": "all",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+            "valueCode": "Observation"
+          }
+        ],
+        "item": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                "valueCoding": {
+                  "code": "ng/mL",
+                  "system": "http://unitsofmeasure.org"
+                }
+              }
+            ],
+            "linkId": "PSA-Serologie",
+            "type": "decimal",
+            "enableBehavior": "all",
+            "text": "PSA-Serologie",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+            "code": [
+              {
+                "code": "2857-1",
+                "system": "http://loinc.org",
+                "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+              }
+            ],
+            "initial": [
+              {
+                "valueDecimal": 1.23
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "linkId": "definitionGrouperDiagnosticReport",
+        "type": "group",
+        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
+        "enableBehavior": "all",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+            "valueCode": "DiagnosticReport"
+          }
+        ],
+        "item": [
+          {
+            "linkId": "Klinisches TNM",
+            "type": "string",
+            "enableBehavior": "all",
+            "text": "Klinisches TNM",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion",
+            "code": [
+              {
+                "code": "75620-5",
+                "system": "http://loinc.org",
+                "display": "TNM clinical staging before treatment panel Cancer"
+              }
+            ],
+            "initial": [
+              {
+                "valueString": "pT1N1M0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

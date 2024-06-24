@@ -18,7 +18,17 @@
             "value": 1.234
           }
         }
-      ]
+      ],
+      "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value"
+    },
+    {
+      "linkId": "Klinisches TNM",
+      "answer": [
+        {
+          "valueString": "T1N1M0"
+        }
+      ],
+      "definition": "http://hl7.org/fhir/DiagnosticReport#DiagnosticReport.conclusion"
     }
   ]
 }

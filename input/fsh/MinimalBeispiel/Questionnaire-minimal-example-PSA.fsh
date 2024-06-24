@@ -11,7 +11,7 @@ Usage: #definition
 * status = #draft
 * experimental = false
 * date = "2024-04-26T10:26:24Z"
-* subjectType = $resourceType#Observation
+* subjectType = $resourceType#Patient
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
 /*
@@ -38,23 +38,30 @@ Usage: #definition
 */
 
 * item[+]
-  * insert addGrouperItem("definitionGrouper_Patient", #group, "http://hl7.org/fhir/Patient#Patient", #Patient)
+  * insert addExtractionContextCodeItem("definitionGrouperObservation", #group, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
   * item[+]
-  * item[=].linkId = "PatientsFirstName"
-  * item[=].type = #string
-  * item[=].answerOption.valueString = "John"
+    * insert uunit(ng/mL)
+  * item[=].linkId = "PSA-Serologie"
+  * item[=].type = #decimal
   * item[=].enableBehavior = #all
-  * item[=].text =  "First name of the patient"
-  * item[=].definition = "http://hl7.org/fhir/Patient#Patient.name.given"
-  * item[+]
-  * item[=].linkId = "PatientsFamilyname"
-  * item[=].type = #string
-  * item[=].answerOption.valueString = "Doe"
-  * item[=].enableBehavior = #all
-  * item[=].text =  "Last name of the patient"
-  * item[=].definition = "http://hl7.org/fhir/Patient#Patient.name.family"
+  * item[=].text =  "PSA-Serologie"
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value"
+  * item[=].code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+  * item[=].initial.valueDecimal = 1.23
 
-RuleSet: addGrouperItem(linkId, type, definition, code)
+* item[+]
+  * insert addExtractionContextCodeItem("definitionGrouperDiagnosticReport", #group, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport", #DiagnosticReport)
+  * item[+]
+  * item[=].linkId = "Klinisches TNM"
+  * item[=].type = #string
+  * item[=].enableBehavior = #all
+  * item[=].text =  "Klinisches TNM"
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
+  * item[=].code = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
+  * item[=].initial.valueString = "pT1N1M0"
+  
+
+RuleSet: addExtractionContextCodeItem(linkId, type, definition, code)
 * linkId = {linkId}
 * type = {type}
 * definition = {definition}
@@ -62,3 +69,12 @@ RuleSet: addGrouperItem(linkId, type, definition, code)
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueCode = {code}
+
+RuleSet: addExtractionContextExpressionItem(linkId, type, definition, expression)
+* linkId = {linkId}
+* type = {type}
+* definition = {definition}
+* enableBehavior = #all
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
+  * valueExpression = {expression}

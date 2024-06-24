@@ -1,11 +1,11 @@
 [
   {
-    "outputFile": "Observation-ObservationExample.json",
-    "fshName": "ObservationExample",
+    "outputFile": "DiagnosticReport-DiagnosticReportExample.json",
+    "fshName": "DiagnosticReportExample",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\ObservationExample.fsh",
+    "fshFile": "MinimalBeispiel\\DiagnosticReportExample.fsh",
     "startLine": 1,
-    "endLine": 5
+    "endLine": 4
   },
   {
     "outputFile": "Patient-PatientBeispiel.json",
@@ -13,7 +13,7 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\PatientExample.fsh",
     "startLine": 1,
-    "endLine": 3
+    "endLine": 2
   },
   {
     "outputFile": "Questionnaire-MinimalPSAExample.json",
@@ -21,7 +21,7 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
     "startLine": 2,
-    "endLine": 55
+    "endLine": 61
   },
   {
     "outputFile": "Questionnaire-Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
@@ -53,14 +53,6 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\QuestionnaireResponse-minimal-example-PSA.fsh",
     "startLine": 1,
-    "endLine": 14
-  },
-  {
-    "outputFile": "Specimen-Probe.json",
-    "fshName": "Probe",
-    "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Probe.fsh",
-    "startLine": 1,
-    "endLine": 2
+    "endLine": 21
   }
 ]
