@@ -38,28 +38,59 @@ Usage: #definition
 */
 
 * item[+]
-  * insert addExtractionContextCodeItem("definitionGrouperObservation", #group, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
+  * insert addExtractionContextCodeItem("Observation_PSA-Serologie", #group , "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
   * item[+]
-    * insert uunit(ng/mL)
-  * item[=].linkId = "PSA-Serologie"
+    * insert hiddenItem(true)
+  * item[=].linkId = "PSA-Serologie_Code"
+  * item[=].type = #choice
+  * item[=].initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code"
+  * item[+]
+  * item[=].linkId = "PSA-Serologie_Value"
   * item[=].type = #decimal
   * item[=].enableBehavior = #all
   * item[=].text =  "PSA-Serologie"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value"
   * item[=].code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
   * item[=].initial.valueDecimal = 1.23
+  * item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" //Maßeinheit für den Renderer
+  * item[=].extension[=].valueCoding = $unitsofmeasure#ng/mL "ng/mL"
+  * item[+]
+    * insert hiddenItem(true)
+  * item[=].linkId = "PSA-Serologie_Unit_Display"
+  * item[=].type = #text
+  * item[=].initial.valueString = "ng/mL"
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit"
+  * item[+]
+    * insert hiddenItem(true)
+  * item[=].linkId = "PSA-Serologie_Unit_Code"
+  * item[=].type = #text
+  * item[=].initial.valueString = "ng/mL"
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code"
+  * item[+]
+    * insert hiddenItem(true)
+  * item[=].linkId = "PSA-Serologie_Unit_System"
+  * item[=].type = #url
+  * item[=].initial.valueUri = $unitsofmeasure
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system"
+
+
 
 * item[+]
   * insert addExtractionContextCodeItem("definitionGrouperDiagnosticReport", #group, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport", #DiagnosticReport)
   * item[+]
-  * item[=].linkId = "Klinisches TNM"
+    * insert hiddenItem(true)
+  * item[=].linkId = "KlinischesTNM_Code"
+  * item[=].type = #choice
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.code.coding"
+  * item[=].initial.valueCoding = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
+  * item[+]
+  * item[=].linkId = "KlinischesTNM_Value"
   * item[=].type = #string
   * item[=].enableBehavior = #all
   * item[=].text =  "Klinisches TNM"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
-  * item[=].code = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
   * item[=].initial.valueString = "pT1N1M0"
-  
 
 RuleSet: addExtractionContextCodeItem(linkId, type, definition, code)
 * linkId = {linkId}
@@ -77,4 +108,6 @@ RuleSet: addExtractionContextExpressionItem(linkId, type, definition, expression
 * enableBehavior = #all
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
-  * valueExpression = {expression}
+  * valueExpression
+    * language = #text/fhirpath
+    * expression = {expression}

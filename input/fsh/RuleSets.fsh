@@ -141,6 +141,11 @@ RuleSet: supportLink(link)
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-supportLink"
   * valueUri = {link}
 
+RuleSet: hiddenItem(code)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * valueBoolean = {code}
+
 RuleSet: variable(name, expression)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/variable"

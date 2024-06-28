@@ -27,7 +27,7 @@
   ],
   "item": [
     {
-      "linkId": "definitionGrouperObservation",
+      "linkId": "Observation_PSA-Serologie",
       "type": "group",
       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
       "enableBehavior": "all",
@@ -41,14 +41,25 @@
         {
           "extension": [
             {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Code",
+          "type": "choice",
+          "initial": [
+            {
               "valueCoding": {
-                "code": "ng/mL",
-                "system": "http://unitsofmeasure.org"
+                "code": "2857-1",
+                "system": "http://loinc.org",
+                "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
               }
             }
           ],
-          "linkId": "PSA-Serologie",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code"
+        },
+        {
+          "linkId": "PSA-Serologie_Value",
           "type": "decimal",
           "enableBehavior": "all",
           "text": "PSA-Serologie",
@@ -64,7 +75,65 @@
             {
               "valueDecimal": 1.23
             }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "ng/mL",
+                "system": "http://unitsofmeasure.org",
+                "display": "ng/mL"
+              }
+            }
           ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_Display",
+          "type": "text",
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ],
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_Code",
+          "type": "text",
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ],
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_System",
+          "type": "url",
+          "initial": [
+            {
+              "valueUri": "http://unitsofmeasure.org"
+            }
+          ],
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system"
         }
       ]
     },
@@ -81,18 +150,31 @@
       ],
       "item": [
         {
-          "linkId": "Klinisches TNM",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "KlinischesTNM_Code",
+          "type": "choice",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.code.coding",
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "75620-5",
+                "system": "http://loinc.org",
+                "display": "TNM clinical staging before treatment panel Cancer"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "KlinischesTNM_Value",
           "type": "string",
           "enableBehavior": "all",
           "text": "Klinisches TNM",
           "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion",
-          "code": [
-            {
-              "code": "75620-5",
-              "system": "http://loinc.org",
-              "display": "TNM clinical staging before treatment panel Cancer"
-            }
-          ],
           "initial": [
             {
               "valueString": "pT1N1M0"
