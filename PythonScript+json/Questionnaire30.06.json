@@ -1,0 +1,225 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "MinimalPSAExample",
+    "meta": {
+      "lastUpdated": "2024-05-05T12:48:40Z"
+    },
+    "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample",
+    "identifier": [
+      {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+      }
+    ],
+    "name": "Definition_based_extraction_example",
+    "title": "Example for definition-based extraction",
+    "status": "draft",
+    "experimental": false,
+    "date": "2024-04-26T10:26:24Z",
+    "subjectType": [
+      "Patient"
+    ],
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+        "valueCode": "Practitioner"
+      }
+    ],
+    "item": [
+      {
+        "linkId": "Observation_additional-Grouper",
+        "type": "group",
+        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation",
+        "enableBehavior": "all",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+            "valueCode": "Observation"
+          }
+        ]
+      },
+      {
+        "linkId": "Observation_PSA-Serologie",
+        "type": "group",
+        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+        "enableBehavior": "all",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+            "valueCode": "Observation"
+          }
+        ],
+        "item": [
+          {
+            "initial": [
+              {
+                "valueCoding": {
+                  "code": "77599-9",
+                  "system": "http://loinc.org",
+                  "display": "Additional documentation"
+                }
+              }
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "PSA-Serologie_Category_SectionType",
+            "type": "choice",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+            "enableBehavior": "all"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "PSA-Serologie_Code",
+            "type": "choice",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code",
+            "enableBehavior": "all",
+            "initial": [
+              {
+                "valueCoding": {
+                  "code": "2857-1",
+                  "system": "http://loinc.org",
+                  "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "PSA-Serologie_Value",
+            "type": "decimal",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+            "enableBehavior": "all",
+            "text": "PSA-Serologie",
+            "code": [
+              {
+                "code": "2857-1",
+                "system": "http://loinc.org",
+                "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+              }
+            ],
+            "initial": [
+              {
+                "valueDecimal": 1.23
+              }
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                "valueCoding": {
+                  "code": "ng/mL",
+                  "system": "http://unitsofmeasure.org",
+                  "display": "ng/mL"
+                }
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "PSA-Serologie_Unit_Display",
+            "type": "text",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+            "enableBehavior": "all",
+            "initial": [
+              {
+                "valueString": "ng/mL"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "PSA-Serologie_Unit_Code",
+            "type": "text",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+            "enableBehavior": "all",
+            "initial": [
+              {
+                "valueString": "ng/mL"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "PSA-Serologie_Unit_System",
+            "type": "url",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+            "enableBehavior": "all",
+            "initial": [
+              {
+                "valueUri": "http://unitsofmeasure.org"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "linkId": "definitionGrouperDiagnosticReport",
+        "type": "group",
+        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
+        "enableBehavior": "all",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+            "valueCode": "DiagnosticReport"
+          }
+        ],
+        "item": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                "valueBoolean": true
+              }
+            ],
+            "linkId": "KlinischesTNM_Code",
+            "type": "choice",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.code.coding",
+            "initial": [
+              {
+                "valueCoding": {
+                  "code": "75620-5",
+                  "system": "http://loinc.org",
+                  "display": "TNM clinical staging before treatment panel Cancer"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "KlinischesTNM_Value",
+            "type": "string",
+            "enableBehavior": "all",
+            "text": "Klinisches TNM",
+            "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion",
+            "initial": [
+              {
+                "valueString": "pT1N1M0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-# URL deines HAPI FHIR Servers
+# URL des HAPI FHIR Servers
 hapi_fhir_server_url = "http://localhost:8080/fhir"
 headers = {
     "Content-Type": "application/fhir+json"
@@ -164,43 +164,43 @@ def update_extracted_resources(extracted_resources, patient_id, practitioner_id,
     return extracted_resources
 
 def update_additional_specified_grouper(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Additional_Specified_Grouper
+    
     pass
 
 def update_attached_image(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Attached_Image
+
     pass
 
 def update_composition(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Composition
+
     pass
 
 def update_diagnostic_conclusion_grouper(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Diagnostic_Conclusion_Grouper
+
     pass
 
 def update_finding(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Finding
+
     pass
 
 def update_history_of_present_illness(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_History_Of_Present_Illness
+
     pass
 
 def update_intraoperative_grouper(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Intraoperative_Grouper
+
     pass
 
 def update_macroscopic_grouper(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Macroscopic_Grouper
+
     pass
 
 def update_microscopic_grouper(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Microscopic_Grouper
+
     pass
 
 def update_problem_list_item(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Problem_List_Item
+
     pass
 
 def update_report(resource, patient_id, practitioner_id, serviceRequest_id):
@@ -234,14 +234,15 @@ def update_report(resource, patient_id, practitioner_id, serviceRequest_id):
     return resource
 
 def update_service_request(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Service_Request
+
     pass
 
 def update_specimen(resource):
-    # Implementieren Sie hier die spezifischen Änderungen für MII_PR_Patho_Specimen
+
     pass
 
 def post_extracted_resources(extracted_resources):
+    resource_ids = []
     for entry in extracted_resources.get('entry', []):
         resource = entry.get('resource')
         if resource:
@@ -253,7 +254,9 @@ def post_extracted_resources(extracted_resources):
             response = requests.post(url, headers=headers, json=resource)
             if response.status_code in [200, 201]:
                 ressourceID = response.headers['Location'].split('/')[-3] # RessourceID extrahieren
+                resource_ids.append(ressourceID)
                 print(f"{resource_type} erfolgreich gepostet. ID = {ressourceID}")
+                return resource_ids
             else:
                 print(f"Fehler beim Posten der {resource_type}: {response.status_code} - {response.text}")
                 
@@ -349,7 +352,8 @@ def main():
         # Schritt 5: Anpassung der extrahierten Ressourcen
         updated_resources = update_extracted_resources(extracted_resources, patient_id, practitioner_id, serviceRequest_id)
         print(f"Updated resources: {json.dumps(updated_resources, indent=2)}")
-        post_extracted_resources(updated_resources)
+        resource_ids = post_extracted_resources(updated_resources)
+        
     else:
         print("Fehler beim Extrahieren der Ressourcen aus dem QuestionnaireResponse. Abbruch.")
         

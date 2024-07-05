@@ -15,7 +15,7 @@ Usage: #definition
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
 /*
-// Frage zur PSA-Serologie (Gleiche Bedinung)
+// Observation-based extraction 
 * item[+]
   * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
 * item[=].linkId = "PSA-Serologie"
@@ -36,48 +36,35 @@ Usage: #definition
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
   * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 */
-
+// Definition-based extraction
+* item[+] // Erstellung des Observations-Grouper
+  * insert addExtractionContextGrouperNew("Observation_additional-Grouper", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation", #Observation) 
+* item[+] // Erstellung der PathoFindings
+  * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
+  * item[+] // Ab hier wird das Finding befüllt
+    * initial.valueCoding = $loinc#77599-9 "Additional documentation"
+    * insert addExtractionHiddenItem("PSA-Serologie_Category_SectionType", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category")
+  * item[+]
+    * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code")
+    * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+  * item[+] //Einziges Item welches im Formular angezeigt wird
+    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value") 
+    * text =  "PSA-Serologie"
+    * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma" // noch notwendig?
+    * initial.valueDecimal = 1.23
+    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" //Maßeinheit für den Renderer
+    * extension[=].valueCoding = $unitsofmeasure#ng/mL "ng/mL"
+  * item[+] // Maßeinheit (Displayname, System und Code werden ins Finding übertragen)
+    * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
+    * initial.valueString = "ng/mL"
+  * item[+]
+    * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code")
+    * initial.valueString = "ng/mL"
+  * item[+]
+    * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
+    * initial.valueUri = $unitsofmeasure
 * item[+]
-  * insert addExtractionContextCodeItem("Observation_PSA-Serologie", #group , "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
-  * item[+]
-    * insert hiddenItem(true)
-  * item[=].linkId = "PSA-Serologie_Code"
-  * item[=].type = #choice
-  * item[=].initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
-  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code"
-  * item[+]
-  * item[=].linkId = "PSA-Serologie_Value"
-  * item[=].type = #decimal
-  * item[=].enableBehavior = #all
-  * item[=].text =  "PSA-Serologie"
-  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value"
-  * item[=].code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
-  * item[=].initial.valueDecimal = 1.23
-  * item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" //Maßeinheit für den Renderer
-  * item[=].extension[=].valueCoding = $unitsofmeasure#ng/mL "ng/mL"
-  * item[+]
-    * insert hiddenItem(true)
-  * item[=].linkId = "PSA-Serologie_Unit_Display"
-  * item[=].type = #text
-  * item[=].initial.valueString = "ng/mL"
-  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit"
-  * item[+]
-    * insert hiddenItem(true)
-  * item[=].linkId = "PSA-Serologie_Unit_Code"
-  * item[=].type = #text
-  * item[=].initial.valueString = "ng/mL"
-  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code"
-  * item[+]
-    * insert hiddenItem(true)
-  * item[=].linkId = "PSA-Serologie_Unit_System"
-  * item[=].type = #url
-  * item[=].initial.valueUri = $unitsofmeasure
-  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system"
-
-
-
-* item[+]
-  * insert addExtractionContextCodeItem("definitionGrouperDiagnosticReport", #group, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport", #DiagnosticReport)
+  * insert addExtractionContextGrouperNew("definitionGrouperDiagnosticReport", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport", #DiagnosticReport)
   * item[+]
     * insert hiddenItem(true)
   * item[=].linkId = "KlinischesTNM_Code"
@@ -92,22 +79,41 @@ Usage: #definition
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
   * item[=].initial.valueString = "pT1N1M0"
 
-RuleSet: addExtractionContextCodeItem(linkId, type, definition, code)
+
+// Bei notwendiger Generierung einer neuen Ressource mit einem oder mehreren zu übertragenden Items
+RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
 * linkId = {linkId}
-* type = {type}
+* type = #group
 * definition = {definition}
 * enableBehavior = #all
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueCode = {code}
 
-RuleSet: addExtractionContextExpressionItem(linkId, type, definition, expression)
+// Update-Grouper für bestehende Ressourcen
+RuleSet: addExtractionContextGrouperUpdate(linkId, definition)
 * linkId = {linkId}
-* type = {type}
+* type = #group
 * definition = {definition}
 * enableBehavior = #all
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueExpression
     * language = #text/fhirpath
-    * expression = {expression}
+
+
+// Item aus Eingabeformular
+RuleSet: addExtractionItem(linkId, type, definition) 
+* linkId = {linkId}
+* type = {type}
+* definition = {definition}
+* enableBehavior = #all
+
+// Item zur Übertragung "versteckter" Daten
+RuleSet: addExtractionHiddenItem(linkId, type, definition)
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = {type}
+* definition = {definition}
+* enableBehavior = #all
+

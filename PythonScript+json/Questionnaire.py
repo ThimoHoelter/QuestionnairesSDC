@@ -144,11 +144,23 @@ def check_resources_on_server(hapi_fhir_server_url, resource_type):
         return False
     
 
-def update_extracted_resources(extracted_resources, patient_id, practitioner_id, serviceRequest_id):
+def update_extracted_resources(extracted_resources, patient_id, practitioner_id, serviceRequest_id, encounter_id, questionnaire_response_id):
     # Dictionary mit spezifischen Änderungen für jedes Profil
     profile_updates = {
-        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report": lambda resource: update_report(resource, patient_id, practitioner_id, serviceRequest_id), #specimenID und ObservationGrouper fehlen
-        # hier weiter StructureDefinitions einfügen
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report": lambda resource: update_report(resource, patient_id, practitioner_id, serviceRequest_id, encounter_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper": lambda resource: update_additional_specified_grouper(resource, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-attached-image": update_attached_image,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-composition": update_composition,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-diagnostic-conclusion-grouper": lambda resource: update_diagnostic_conclusion_grouper(resource, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding": lambda resource: update_finding(resource, questionnaire_response_id, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness": lambda resource: update_history_of_present_illness(resource, patient_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-active-problems-list": lambda resource: update_active_problems_list(resource, patient_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-intraoperative-grouper": lambda resource: update_intraoperative_grouper(resource, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper": lambda resource: update_macroscopic_grouper(resource, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper": lambda resource: update_microscopic_grouper(resource, serviceRequest_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item": lambda resource: update_problem_list_item(resource, patient_id),
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-service-request": update_service_request,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen": lambda resource: update_specimen(resource, patient_id)
     }
 
     for entry in extracted_resources.get('entry', []):
@@ -163,85 +175,132 @@ def update_extracted_resources(extracted_resources, patient_id, practitioner_id,
 
     return extracted_resources
 
-def update_additional_specified_grouper(resource):
-    
-    pass
+# Update-Funktionen
+
+def update_additional_specified_grouper(resource, serviceRequest_id):
+    resource['status'] = 'final'
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
 
 def update_attached_image(resource):
-
-    pass
+    resource['type'] = {
+        'coding': [{
+            'system': 'http://terminology.hl7.org/CodeSystem/media-type',
+            'code': 'image',
+        }]
+    }
+    resource['status'] = 'completed'
 
 def update_composition(resource):
+    resource['status'] = 'final'
 
-    pass
-
-def update_diagnostic_conclusion_grouper(resource):
-
-    pass
-
-def update_finding(resource):
-
-    pass
-
-def update_history_of_present_illness(resource):
-
-    pass
-
-def update_intraoperative_grouper(resource):
-
-    pass
-
-def update_macroscopic_grouper(resource):
-
-    pass
-
-def update_microscopic_grouper(resource):
-
-    pass
-
-def update_problem_list_item(resource):
-
-    pass
-
-def update_report(resource, patient_id, practitioner_id, serviceRequest_id):
-    resource['identifier'] = [{
-        'value': '123456',
-        'system': 'https://pathologie.klinikum-karlsruhe.de/fhir/fn/befundbericht'
-    }]
-    
-    # Setze DiagnosticReport.basedOn (Referenz auf vorher erstellten ServiceRequest)
+def update_diagnostic_conclusion_grouper(resource, serviceRequest_id):
+    resource['status'] = 'final'
     resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
-    
-    # Setze DiagnosticReport.status
-    resource['status'] = 'partial'
-    
-    # Setze DiagnosticReport.code.coding
+
+def update_finding(resource, questionnaire_response_id, serviceRequest_id):
+    resource['status'] = 'final'
+    resource['hasMember'] = [{'reference': f'QuestionnaireResponse/{questionnaire_response_id}'}]
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+
+def update_history_of_present_illness(resource, patient_id):
+    resource['status'] = 'current'
+    resource['mode'] = 'snapshot'
     resource['code'] = {
         'coding': [{
             'system': 'http://loinc.org',
-            'code': '60568-3',
-            'display': 'Pathology report'
+            'code': '8684-3',
         }]
     }
-    
-    # Setze DiagnosticReport.performer (Referenz auf vorher erstellten Practitioner)
-    resource['performer'] = [{'reference': f'Practitioner/{practitioner_id}'}]
-    
-    # Setze DiagnosticReport.subject (Referenz auf vorher erstellten Patienten)
     resource['subject'] = {'reference': f'Patient/{patient_id}'}
-    
-    # Rückgabe der aktualisierten Resource
+
+def update_active_problems_list(resource, patient_id):
+    resource['status'] = 'current'
+    resource['mode'] = 'snapshot'
+    resource['code'] = {
+        'coding': [{
+            'system': 'http://loinc.org',
+            'code': '11450-4',
+        }]
+    }
+    resource['subject'] = {'reference': f'Patient/{patient_id}'}
+
+def update_intraoperative_grouper(resource, serviceRequest_id):
+    resource['status'] = 'final'
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+
+def update_macroscopic_grouper(resource, serviceRequest_id):
+    resource['status'] = 'final'
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+
+def update_microscopic_grouper(resource, serviceRequest_id):
+    resource['status'] = 'final'
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+
+def update_problem_list_item(resource, patient_id):
+    resource['category'] = {
+        'coding': [{
+            'system': 'http://terminology.hl7.org/CodeSystem/condition-category',
+            'code': 'problem-list-item',
+        }]
+    }
+    resource['status'] = 'current'
+    resource['subject'] = {'reference': f'Patient/{patient_id}'}
+
+def update_report(resource, patient_id, practitioner_id, serviceRequest_id, encounter_id):
+    resource['identifier'] = [{
+        'value': 'E18-321654',
+        'system': 'https://pathologie.klinikum-karlsruhe.de/fhir/fn/befundbericht'
+    }]
+    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+    resource['encounter'] = [{'reference': f'Encounter/{encounter_id}'}]
+    resource['status'] = 'final'
+    if 'code' in resource:
+        if 'coding' in resource['code']:
+            resource['code']['coding'].append({
+                'system': 'http://loinc.org',
+                'code': '60568-3',
+                'display': 'Pathology report'
+            })
+        else:
+            resource['code'] = {
+                'coding': [{
+                    'system': 'http://loinc.org',
+                    'code': '60568-3',
+                    'display': 'Pathology report'
+                }]
+            }
+    resource['performer'] = [{'reference': f'Practitioner/{practitioner_id}'}]
+    resource['subject'] = {'reference': f'Patient/{patient_id}'}
     return resource
 
 def update_service_request(resource):
+    resource['status'] = 'completed'
 
-    pass
+def update_specimen(resource, patient_id):
+    resource['status'] = 'available'
+    resource['type'] = {
+        'coding': [{
+            'system': 'http://snomed.info/sct',
+            'code': '309134005',
+            'display': 'Prostate tru-cut biopsy specimen (specimen)'
+        }]
+    }
+    resource['subject'] = {'reference': f'Patient/{patient_id}'}
+    resource['collection'] = {
+        'collectedDateTime': '2024-06-29T17:01:32Z',
+        'method': {
+            'coding': [{
+                'system': 'http://snomed.info/sct',
+                'code': '40013009',
+                'display': 'Core needle biopsy of prostate (procedure)'
+            }]
+        }
+    }
+    return resource
 
-def update_specimen(resource):
-
-    pass
-
-def post_extracted_resources(extracted_resources):
+def post_updated_resources(extracted_resources):
+    posted_resources = []
+    posted_ids = []
     for entry in extracted_resources.get('entry', []):
         resource = entry.get('resource')
         if resource:
@@ -252,16 +311,164 @@ def post_extracted_resources(extracted_resources):
             url = f"{hapi_fhir_server_url}/{resource_type}"
             response = requests.post(url, headers=headers, json=resource)
             if response.status_code in [200, 201]:
-                ressourceID = response.headers['Location'].split('/')[-3] # RessourceID extrahieren
-                print(f"{resource_type} erfolgreich gepostet. ID = {ressourceID}")
+                resource_id = response.headers['Location'].split('/')[-3]  # RessourceID extrahieren
+                posted_ids.append(resource_id)
+                # Hole die gepostete Resource vom Server, um die komplette Resource zu bekommen
+                get_url = f"{hapi_fhir_server_url}/{resource_type}/{resource_id}"
+                get_response = requests.get(get_url, headers=headers)
+                
+                if get_response.status_code == 200:
+                    posted_resource = get_response.json()
+                    posted_resources.append(posted_resource)
+                    print(f"{resource_type} erfolgreich gepostet und abgerufen. ID = {resource_id}")
+                else:
+                    print(f"Fehler beim Abrufen der {resource_type} mit ID {resource_id}: {get_response.status_code} - {get_response.text}")
+                
             else:
                 print(f"Fehler beim Posten der {resource_type}: {response.status_code} - {response.text}")
-                
+    return posted_resources, posted_ids
+
+def update_posted_resources(posted_resources):
+    # Dictionary mit spezifischen Änderungen für jedes Profil
+    profile_updates = {
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report": update_posted_report,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper": update_posted_additional_specified_grouper,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-attached-image": update_posted_attached_image,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-composition": update_posted_composition,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-diagnostic-conclusion-grouper": update_posted_diagnostic_conclusion_grouper,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding": update_posted_finding,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness": update_posted_history_of_present_illness,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-active-problems-list": update_posted_active_problems_list,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-intraoperative-grouper": update_posted_intraoperative_grouper,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper": update_posted_macroscopic_grouper,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper": update_posted_microscopic_grouper,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item": update_posted_problem_list_item,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-service-request": update_posted_service_request,
+        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen": update_posted_specimen
+    }
+
+    # Dictionaries zur Speicherung der Grouper und Findings
+    groupers = {
+        "mii-pr-patho-additional-specified-grouper": [],
+        "mii-pr-patho-intraoperative-grouper": [],
+        "mii-pr-patho-macroscopic-grouper": [],
+        "mii-pr-patho-microscopic-grouper": [],
+        "mii-pr-patho-diagnostic-conclusion-grouper": []
+    }
+    findings = []
+
+    for resource in posted_resources:
+        profiles = resource.get('meta', {}).get('profile', [])
+        for profile in profiles:
+            if profile in profile_updates:
+                profile_updates[profile](resource)
+                # Speichere die Grouper und Findings
+                if profile.startswith("https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-") and profile.endswith("-grouper"):
+                    groupers[profile.split('/')[-1]].append(resource)
+                elif profile == "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding":
+                    findings.append(resource)
+
+    # Verknüpfe die Findings mit den entsprechenden Groupers
+    category_to_grouper = {
+        "83321-0": "mii-pr-patho-intraoperative-grouper",
+        "22634-0": "mii-pr-patho-macroscopic-grouper",
+        "22635-7": "mii-pr-patho-microscopic-grouper",
+        "22637-3": "mii-pr-patho-diagnostic-conclusion-grouper",
+        "77599-9": "mii-pr-patho-additional-specified-grouper"
+    }
+
+    for finding in findings:
+        if 'category' in finding and 'coding' in finding['category'][0]:
+            category_code = finding['category'][0]['coding'][0]['code']
+            grouper_key = category_to_grouper.get(category_code)
+            if grouper_key and groupers[grouper_key]:
+                # Füge die Reference des Findings zum ersten passenden Grouper hinzu
+                grouper = groupers[grouper_key][0]
+                if 'hasMember' not in grouper:
+                    grouper['hasMember'] = []
+                grouper['hasMember'].append({"reference": f"Observation/{finding['id']}"})
+
+    return posted_resources
+
+# Update-Funktionen
+
+def update_posted_additional_specified_grouper(resource):
+    
+    pass
+
+def update_posted_attached_image(resource):
+
+    pass
+
+def update_posted_composition(resource):
+
+    pass
+
+def update_posted_diagnostic_conclusion_grouper(resource):
+
+    pass
+
+def update_posted_active_problems_list(resource):
+
+    pass
+
+def update_posted_finding(resource):
+
+    pass
+
+def update_posted_history_of_present_illness(resource):
+
+    pass
+
+def update_posted_intraoperative_grouper(resource):
+
+    pass
+
+def update_posted_macroscopic_grouper(resource):
+
+    pass
+
+def update_posted_microscopic_grouper(resource):
+
+    pass
+
+def update_posted_problem_list_item(resource):
+
+    pass
+
+def update_posted_report(resource):
+
+    pass
+
+def update_posted_service_request(resource):
+
+    pass
+
+def update_posted_specimen(resource):
+
+    pass
+
+def put_finalized_resources(finalized_resources, posted_ids):
+    if len(finalized_resources) != len(posted_ids):
+        raise ValueError("Die Anzahl der Ressourcen stimmt nicht mit der Anzahl der IDs überein.")
+    
+    for resource, resource_id in zip(finalized_resources, posted_ids):
+        resource_type = resource.get('resourceType')
+        if not resource_type:
+            print("No resourceType found for resource.")
+            continue
+        
+        url = f"{hapi_fhir_server_url}/{resource_type}/{resource_id}"
+        response = requests.put(url, headers=headers, json=resource)
+        
+        if response.status_code == 200:
+            print(f"{resource_type} erfolgreich aktualisiert. ID = {resource_id}")
+        else:
+            print(f"Fehler beim Aktualisieren der {resource_type} mit ID {resource_id}: {response.status_code} - {response.text}")
 
 def main():
-    hapi_fhir_server_url = "http://localhost:8080/fhir"
     directory = "./MII-Patho"
-    questionnaire_file_path = 'QuestionnairePathoRes.json'
+    questionnaire_file_path = 'Questionnaire05.07.json'
     serviceRequest_file_path = 'ExampleServiceRequest.json'
 
     # Schritt 0.1: Überprüfen, ob StructureDefinitions & ValueSets bereits auf dem Server sind
@@ -345,11 +552,13 @@ def main():
     extracted_resources = extract_questionnaire_response(questionnaire_response_id)
     if extracted_resources:
         print(f"Extracted resources: {json.dumps(extracted_resources, indent=2)}")
-
         # Schritt 5: Anpassung der extrahierten Ressourcen
-        updated_resources = update_extracted_resources(extracted_resources, patient_id, practitioner_id, serviceRequest_id)
+        updated_resources = update_extracted_resources( extracted_resources, patient_id, practitioner_id, serviceRequest_id, encounter_id, questionnaire_response_id)
         print(f"Updated resources: {json.dumps(updated_resources, indent=2)}")
-        post_extracted_resources(updated_resources)
+        posted_resources, posted_ids = post_updated_resources(updated_resources)
+        finalized_resources = update_posted_resources(posted_resources)
+        print(f"Finalisierte Ressourcen: {json.dumps(finalized_resources, indent=2)}")
+        put_finalized_resources(finalized_resources, posted_ids)
     else:
         print("Fehler beim Extrahieren der Ressourcen aus dem QuestionnaireResponse. Abbruch.")
         

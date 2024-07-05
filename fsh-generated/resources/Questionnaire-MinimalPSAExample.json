@@ -27,6 +27,18 @@
   ],
   "item": [
     {
+      "linkId": "Observation_additional-Grouper",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation",
+      "enableBehavior": "all",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ]
+    },
+    {
       "linkId": "Observation_PSA-Serologie",
       "type": "group",
       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
@@ -39,6 +51,27 @@
       ],
       "item": [
         {
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "77599-9",
+                "system": "http://loinc.org",
+                "display": "Additional documentation"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Category_SectionType",
+          "type": "choice",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+          "enableBehavior": "all"
+        },
+        {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
@@ -47,6 +80,8 @@
           ],
           "linkId": "PSA-Serologie_Code",
           "type": "choice",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code",
+          "enableBehavior": "all",
           "initial": [
             {
               "valueCoding": {
@@ -55,15 +90,14 @@
                 "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
               }
             }
-          ],
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code"
+          ]
         },
         {
           "linkId": "PSA-Serologie_Value",
           "type": "decimal",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
           "enableBehavior": "all",
           "text": "PSA-Serologie",
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
           "code": [
             {
               "code": "2857-1",
@@ -96,12 +130,13 @@
           ],
           "linkId": "PSA-Serologie_Unit_Display",
           "type": "text",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+          "enableBehavior": "all",
           "initial": [
             {
               "valueString": "ng/mL"
             }
-          ],
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit"
+          ]
         },
         {
           "extension": [
@@ -112,12 +147,13 @@
           ],
           "linkId": "PSA-Serologie_Unit_Code",
           "type": "text",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+          "enableBehavior": "all",
           "initial": [
             {
               "valueString": "ng/mL"
             }
-          ],
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code"
+          ]
         },
         {
           "extension": [
@@ -128,12 +164,13 @@
           ],
           "linkId": "PSA-Serologie_Unit_System",
           "type": "url",
+          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+          "enableBehavior": "all",
           "initial": [
             {
               "valueUri": "http://unitsofmeasure.org"
             }
-          ],
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system"
+          ]
         }
       ]
     },
