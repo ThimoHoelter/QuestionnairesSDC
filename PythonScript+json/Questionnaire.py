@@ -251,7 +251,7 @@ def update_report(resource, patient_id, practitioner_id, serviceRequest_id, enco
         'value': 'E18-321654',
         'system': 'https://pathologie.klinikum-karlsruhe.de/fhir/fn/befundbericht'
     }]
-    resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
+    # resource['basedOn'] = [{'reference': f'ServiceRequest/{serviceRequest_id}'}]
     resource['encounter'] = [{'reference': f'Encounter/{encounter_id}'}]
     resource['status'] = 'final'
     if 'code' in resource:
@@ -468,7 +468,7 @@ def put_finalized_resources(finalized_resources, posted_ids):
 
 def main():
     directory = "./MII-Patho"
-    questionnaire_file_path = 'Questionnaire05.07.json'
+    questionnaire_file_path = 'Questionnaire25.07.json'
     serviceRequest_file_path = 'ExampleServiceRequest.json'
 
     # Schritt 0.1: Überprüfen, ob StructureDefinitions & ValueSets bereits auf dem Server sind
@@ -481,18 +481,8 @@ def main():
     else:
         print("StructureDefinitions und ValueSets sind bereits auf dem Server vorhanden. Schritt wird übersprungen.")
 
-    # Schritt 1: Questionnaire hochladen und ID extrahieren
-    with open(questionnaire_file_path, 'r') as file:
-        questionnaire = json.load(file)
-    questionnaire_location = upload_questionnaire(questionnaire)
-    if questionnaire_location:
-        # Extrahiere die ID aus der Location-URL
-        questionnaire_id = questionnaire_location.split('/')[-3]
-    else:
-        print("Fehler beim Hochladen des Questionnaires. Abbruch.")
-        return
 
-    # Schritt 2: Leeren Patienten/Encounter/Practitioner erstellen und ID extrahieren
+    # Schritt 1: Leeren Patienten/Encounter/Practitioner erstellen und ID extrahieren
     patient_location = create_empty_patient()
     if patient_location:
         # Extrahiere die ID aus der Location-URL
@@ -516,8 +506,7 @@ def main():
     else:
         print("Fehler beim Erstellen des Practitioner. Abbruch.")
         return
-
-    # Schritt 2.5: ServiceRequest Example auslesen, hochladen und ID extrahieren
+    # Schritt 2: ServiceRequest Example auslesen, hochladen und ID extrahieren
     with open(serviceRequest_file_path, 'r') as file:
         serviceRequest = json.load(file)
     # Referenzen auf die erstellten Ressourcen in ServiceRequest einbetten
@@ -532,7 +521,16 @@ def main():
     else:
         print("Fehler beim Hochladen des ServiceRequest. Abbruch.")
         return
-
+    # Schritt 2.5: Questionnaire hochladen und ID extrahieren
+    with open(questionnaire_file_path, 'r') as file:
+        questionnaire = json.load(file)
+    questionnaire_location = upload_questionnaire(questionnaire)
+    if questionnaire_location:
+        # Extrahiere die ID aus der Location-URL
+        questionnaire_id = questionnaire_location.split('/')[-3]
+    else:
+        print("Fehler beim Hochladen des Questionnaires. Abbruch.")
+        return
     # Schritt 3: Questionnaire mit Beispielantworten ausfüllen
     questionnaire_response = populate_questionnaire(questionnaire_id, patient_id)
     if questionnaire_response:

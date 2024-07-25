@@ -78,8 +78,19 @@ Usage: #definition
   * item[=].text =  "Klinisches TNM"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
   * item[=].initial.valueString = "pT1N1M0"
-
-
+  * item[+]
+  * item[=].linkId = "ReferenceToServiceRequest"
+  * item[=].type = #reference
+  * item[=].enableBehavior = #all
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.basedOn"
+  * item[=].initial.valueReference = Reference(http://localhost:8080/fhir/ServiceRequest?identifier=E18-321654)
+  * item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * item[=].extension[=].valueBoolean = true
+  /** item[+].linkId = "ReferenceToAdditionalGrouper"
+  * item[=].type = #reference
+  * item[=].enableBehavior = #all
+  * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.result"
+  * item[=].initial.valueReference = Reference(http://localhost:8080/fhir/Observation?category=77599-9)*/
 // Bei notwendiger Generierung einer neuen Ressource mit einem oder mehreren zu übertragenden Items
 RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
 * linkId = {linkId}
@@ -116,4 +127,4 @@ RuleSet: addExtractionHiddenItem(linkId, type, definition)
 * type = {type}
 * definition = {definition}
 * enableBehavior = #all
-
+//* initial.value...
