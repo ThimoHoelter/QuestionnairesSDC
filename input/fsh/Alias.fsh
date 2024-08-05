@@ -8,3 +8,5 @@ Alias: $cs-prostata-proben-entnahmestelle-sct = http://example.org/ValueSet/cs-p
 Alias: $patho-sections = https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc
 Alias: $resourceType = http://hl7.org/fhir/resource-types
 Alias: $ICD10GM = http://hl7.org/fhir/sid/icd-10
+Alias: $Condition-Category = http://terminology.hl7.org/CodeSystem/condition-category
+Alias: $Observation-Status = http://hl7.org/fhir/ValueSet/observation-status

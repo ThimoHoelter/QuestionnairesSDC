@@ -101,7 +101,6 @@ Usage: #definition
         * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
         * insert itemControl(radio-button)
         * code = $loinc#94738-2 "Biopsy site"
-        //* answerValueSet = "http://example.org/fhir/ValueSet/vs-prostata-proben-entnahmestelle-sct"
         * answerOption[+].valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716934008 "Structure of apical part of peripheral zone of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716909008 "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
@@ -142,42 +141,3 @@ Usage: #definition
         * answerOption[+].valueCoding = $sct#24028007 "Right (qualifier value)"
         * answerOption[+].valueCoding = $sct#7771000 "Left (qualifier value)"
     
-RuleSet: maxDecimalPlaces(maxPlaces)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
-  * valueInteger = {maxPlaces}
-
-  RuleSet: uunit(code)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-  * valueCoding = $unitsofmeasure#{code}
-  
-  RuleSet: itemControl(code)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
-  * valueCodeableConcept = http://hl7.org/fhir/questionnaire-item-control#{code}
-
-RuleSet: addItem(linkId, type, text)
-* linkId = {linkId}
-* type = {type}
-* text = {text}
-* enableBehavior = #all
-
-RuleSet: addRItem(linkId, type, text)
-* insert addItem({linkId}, {type}, {text})
-* required = true
-
-RuleSet: observationExtract
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract"
-  * valueBoolean = true
-
-RuleSet: observationExtract_laboratory_InCategory
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
-  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#{laboratory}
-
-RuleSet: observationExtractSectionInCategory(code)
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
-  * valueCodeableConcept = $patho-sections#{code}

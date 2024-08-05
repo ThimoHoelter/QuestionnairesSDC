@@ -539,6 +539,7 @@ def main():
             # Extrahiere die ID des QuestionnaireResponse
             questionnaire_response_id = questionnaire_response_location.split('/')[-3]
             print(f"Übergebene QR_ID: {questionnaire_response_id}")
+            print(f"QR: {json.dumps(questionnaire_response, indent=2)}")
         else:
             print("Fehler beim Hochladen des QuestionnaireResponse. Abbruch.")
             return

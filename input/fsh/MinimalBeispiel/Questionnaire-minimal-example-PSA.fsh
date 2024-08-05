@@ -78,7 +78,9 @@ Usage: #definition
   * item[=].text =  "Klinisches TNM"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
   * item[=].initial.valueString = "pT1N1M0"
-  * item[+]
+
+  
+ /* * item[+] //Ohne initialExpression
   * item[=].linkId = "ReferenceToServiceRequest"
   * item[=].type = #reference
   * item[=].enableBehavior = #all
@@ -91,40 +93,4 @@ Usage: #definition
   * item[=].enableBehavior = #all
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.result"
   * item[=].initial.valueReference = Reference(http://localhost:8080/fhir/Observation?category=77599-9)*/
-// Bei notwendiger Generierung einer neuen Ressource mit einem oder mehreren zu übertragenden Items
-RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
-* linkId = {linkId}
-* type = #group
-* definition = {definition}
-* enableBehavior = #all
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
-  * valueCode = {code}
 
-// Update-Grouper für bestehende Ressourcen
-RuleSet: addExtractionContextGrouperUpdate(linkId, definition)
-* linkId = {linkId}
-* type = #group
-* definition = {definition}
-* enableBehavior = #all
-* extension[+]
-  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
-  * valueExpression
-    * language = #text/fhirpath
-
-
-// Item aus Eingabeformular
-RuleSet: addExtractionItem(linkId, type, definition) 
-* linkId = {linkId}
-* type = {type}
-* definition = {definition}
-* enableBehavior = #all
-
-// Item zur Übertragung "versteckter" Daten
-RuleSet: addExtractionHiddenItem(linkId, type, definition)
-* insert hiddenItem(true)
-* linkId = {linkId}
-* type = {type}
-* definition = {definition}
-* enableBehavior = #all
-//* initial.value...
