@@ -1,4 +1,4 @@
-Instance: Prostata-StanzbiopsienEinzelstanze
+Instance: Prostata-StanzbiopsienEinzelstanze-Def-Extr
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-08T10:31:16Z"
@@ -38,7 +38,7 @@ Usage: #definition
         * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.29", #string, "Proben-ID")
         * insert addExtractionItem("d7599448-400b-4ce4-a085-8d5efe78aee9", #string, "Proben-ID -nummer", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.value")
         * code = $sct#372274003 "Sample identification number (observable entity)"
-        
+
 // Lokalisation der Entnahmestelle
       * item[+]
         * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11243", #open-choice, "Lokalisation der Entnahmestelle")

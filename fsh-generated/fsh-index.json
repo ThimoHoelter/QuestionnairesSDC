@@ -21,29 +21,53 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
     "startLine": 2,
-    "endLine": 88
+    "endLine": 80
+  },
+  {
+    "outputFile": "Questionnaire-Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr.json",
+    "fshName": "Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr",
+    "fshType": "Instance",
+    "fshFile": "Definition-based\\KlinischeAngabenBeiStanzbiopsie.fsh",
+    "startLine": 1,
+    "endLine": 161
   },
   {
     "outputFile": "Questionnaire-Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
     "fshName": "Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
     "fshType": "Instance",
-    "fshFile": "KlinischeAngabenBeiStanzbiopsie.fsh",
+    "fshFile": "Observation-based\\KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
-    "endLine": 143
+    "endLine": 142
+  },
+  {
+    "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene-Def-Extr.json",
+    "fshName": "Prostata-StanzbiopsieFallebene-Def-Extr",
+    "fshType": "Instance",
+    "fshFile": "Definition-based\\Stanzbiopsien_Fallebene.fsh",
+    "startLine": 1,
+    "endLine": 361
   },
   {
     "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene.json",
     "fshName": "Prostata-StanzbiopsieFallebene",
     "fshType": "Instance",
-    "fshFile": "Stanzbiopsien_Fallebene.fsh",
+    "fshFile": "Observation-based\\Stanzbiopsien_Fallebene.fsh",
     "startLine": 1,
     "endLine": 361
+  },
+  {
+    "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze-Def-Extr.json",
+    "fshName": "Prostata-StanzbiopsienEinzelstanze-Def-Extr",
+    "fshType": "Instance",
+    "fshFile": "Definition-based\\Stanzbiopsien_Einzelstanze.fsh",
+    "startLine": 1,
+    "endLine": 328
   },
   {
     "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze.json",
     "fshName": "Prostata-StanzbiopsienEinzelstanze",
     "fshType": "Instance",
-    "fshFile": "Stanzbiopsien_Einzelstanze.fsh",
+    "fshFile": "Observation-based\\Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
     "endLine": 328
   },
@@ -54,5 +78,13 @@
     "fshFile": "MinimalBeispiel\\QuestionnaireResponse-minimal-example-PSA.fsh",
     "startLine": 1,
     "endLine": 21
+  },
+  {
+    "outputFile": "Specimen-SpecimenBeispiel.json",
+    "fshName": "SpecimenBeispiel",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\specimen.fsh",
+    "startLine": 1,
+    "endLine": 4
   }
 ]

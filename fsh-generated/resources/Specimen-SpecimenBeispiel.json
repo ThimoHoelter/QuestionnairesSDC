@@ -1,0 +1,16 @@
+{
+  "resourceType": "Specimen",
+  "id": "SpecimenBeispiel",
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "A123B"
+    }
+  ]
+}

@@ -27,28 +27,36 @@
   ],
   "item": [
     {
-      "linkId": "Observation_additional-Grouper",
-      "type": "group",
-      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation",
-      "enableBehavior": "all",
       "extension": [
         {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
-          "valueCode": "Observation"
-        }
-      ]
-    },
-    {
-      "linkId": "Observation_PSA-Serologie",
-      "type": "group",
-      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
-      "enableBehavior": "all",
-      "extension": [
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
           "valueCode": "Observation"
         }
       ],
+      "linkId": "Observation_additional-Grouper",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation",
+      "enableBehavior": "all"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "linkId": "Observation_PSA-Serologie",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+      "enableBehavior": "all",
       "item": [
         {
           "initial": [
@@ -94,10 +102,10 @@
         },
         {
           "linkId": "PSA-Serologie_Value",
+          "text": "PSA-Serologie",
           "type": "decimal",
           "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
           "enableBehavior": "all",
-          "text": "PSA-Serologie",
           "code": [
             {
               "code": "2857-1",
@@ -175,16 +183,20 @@
       ]
     },
     {
-      "linkId": "definitionGrouperDiagnosticReport",
-      "type": "group",
-      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
-      "enableBehavior": "all",
       "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
           "valueCode": "DiagnosticReport"
         }
       ],
+      "linkId": "definitionGrouperDiagnosticReport",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
+      "enableBehavior": "all",
       "item": [
         {
           "extension": [
@@ -215,25 +227,6 @@
           "initial": [
             {
               "valueString": "pT1N1M0"
-            }
-          ]
-        },
-        {
-          "linkId": "ReferenceToServiceRequest",
-          "type": "reference",
-          "enableBehavior": "all",
-          "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.basedOn",
-          "initial": [
-            {
-              "valueReference": {
-                "reference": "http://localhost:8080/fhir/ServiceRequest?identifier=E18-321654"
-              }
-            }
-          ],
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-              "valueBoolean": true
             }
           ]
         }

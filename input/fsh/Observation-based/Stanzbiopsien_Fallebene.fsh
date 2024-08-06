@@ -360,8 +360,3 @@ Usage: #example
             * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
             * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
 
-RuleSet: addAnyBItem(linkId, type, text)
-* linkId = {linkId}
-* type = {type}
-* text = {text}
-* enableBehavior = #any

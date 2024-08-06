@@ -48,7 +48,7 @@ Usage: #definition
     * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code")
     * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
   * item[+] //Einziges Item welches im Formular angezeigt wird
-    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value") 
+    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "The question", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value") 
     * text =  "PSA-Serologie"
     * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma" // noch notwendig?
     * initial.valueDecimal = 1.23
@@ -78,6 +78,8 @@ Usage: #definition
   * item[=].text =  "Klinisches TNM"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
   * item[=].initial.valueString = "pT1N1M0"
+* item[+]
+  
 
   
  /* * item[+] //Ohne initialExpression

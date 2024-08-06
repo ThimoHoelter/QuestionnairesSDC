@@ -1,4 +1,4 @@
-Instance: Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien
+Instance: Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
@@ -42,7 +42,7 @@ Usage: #definition
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10110", #text, "Anamnestische Angaben", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
       * item[+]
-        * insert addExtractionHiddenItem(Anamnese_Code, #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")
+        * insert addExtractionHiddenItem("Anamnese_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")
         //* code[+] = $loinc#11450-4 "Problem list - Reported" - .code 0..1
         * initial.valueCoding = $loinc#10164-2 "History of Present illness Narrative"
       * item[+]
@@ -59,7 +59,7 @@ Usage: #definition
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10120", #text, "Vorbefunde", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
       * item[+]
-        * insert addExtractionHiddenItem(Vorbefunde_Code, #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
+        * insert addExtractionHiddenItem("Vorbefunde_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
         * initial.valueCoding = $loinc#28636-9 "Initial evaluation note"
         //* code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
       * item[+]
@@ -68,7 +68,7 @@ Usage: #definition
 
 // Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
-      * insert addExtractionContextGrouperNew(Observation_PSA-Serologie, "http://hl7.org/fhir/Observation#Observation", #Observation)
+      * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "http://hl7.org/fhir/Observation#Observation", #Observation)
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
       * enableWhen.operator = #=
       * enableWhen.answerBoolean = false
@@ -89,15 +89,15 @@ Usage: #definition
         * initial.valueUri = $unitsofmeasure
       * item[+] // .status 1..1
         * insert addExtractionHiddenItem("PSA-Serologie_Status", #choice, "http://hl7.org/fhir/Observation#Observation.status")
-        * initial.valueCoding = $Observation-Status#final
+        * initial.valueCoding = #final
 
 // Frage zu TNM
     * item[+]
-      * insert addExtractionContextGrouperNew(ProblemListItem_TNM, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition", #Condition)
+      * insert addExtractionContextGrouperNew("ProblemListItem_TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition", #Condition)
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10140", #text, "Klinisches TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
       * item[+]
-        * insert addExtractionHiddenItem(TNM_Code, #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
+        * insert addExtractionHiddenItem("TNM_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
         * initial.valueCoding = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
         //* code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
       * item[+]
@@ -120,7 +120,7 @@ Usage: #definition
         * required = true
       * item[+] // Identifier.type = "PLAC" -  vom Einsender
         * insert addExtractionHiddenItem("ProbenID_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.type")  
-        * initial.valueCoding = http://hl7.org/fhir/ValueSet/identifier-type#PLAC
+        * initial.valueCoding = #PLAC
 // Entnahmestelle
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10070", #open-choice, "Lokalisation der Entnahmestelle", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding")
