@@ -78,8 +78,8 @@ Usage: #definition
   * item[=].text =  "Klinisches TNM"
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.conclusion"
   * item[=].initial.valueString = "pT1N1M0"
-* item[+]
-  
+//* item[+]
+//  * insert addExtractionContextGrouperUpdate("specimen_update", https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen, expression)
 
   
  /* * item[+] //Ohne initialExpression
@@ -90,7 +90,8 @@ Usage: #definition
   * item[=].initial.valueReference = Reference(http://localhost:8080/fhir/ServiceRequest?identifier=E18-321654)
   * item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
   * item[=].extension[=].valueBoolean = true
-  /** item[+].linkId = "ReferenceToAdditionalGrouper"
+  * item[+]
+  * item[=].linkId = "ReferenceToAdditionalGrouper"
   * item[=].type = #reference
   * item[=].enableBehavior = #all
   * item[=].definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport.result"

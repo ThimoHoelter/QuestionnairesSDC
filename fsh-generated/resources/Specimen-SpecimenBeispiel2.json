@@ -1,6 +1,6 @@
 {
   "resourceType": "Specimen",
-  "id": "SpecimenBeispiel",
+  "id": "SpecimenBeispiel2",
   "identifier": [
     {
       "type": {
@@ -10,7 +10,10 @@
           }
         ]
       },
-      "value": "A123B"
+      "value": "A123C"
     }
-  ]
+  ],
+  "subject": {
+    "reference": "Patient/28"
+  }
 }

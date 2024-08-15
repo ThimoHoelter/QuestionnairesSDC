@@ -159,4 +159,21 @@ Usage: #definition
         * code = $loinc#20228-3 "Anatomic part Laterality"
         * answerOption[+].valueCoding = $sct#24028007 "Right (qualifier value)"
         * answerOption[+].valueCoding = $sct#7771000 "Left (qualifier value)"
-    
+
+// Notwendige (1..1) Felder innerhalb jeder Probe
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.type")
+        * initial.valueCoding = $sct#309134005 "Prostate tru-cut biopsy specimen (specimen)"
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_status", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.status")
+        * initial.valueCoding = #available
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_accIdent", #string, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
+        * initial.valueString = "Fallnummer-123456"
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_Collected_dateTime", #DateTime, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
+        * initial.valueDateTime = "2024-01-01"
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_Collected_dateTime", #string, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
+        * initial.valueString = "dummyIdentifier"
+

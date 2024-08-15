@@ -1,5 +1,5 @@
-Instance: SpecimenBeispiel1
+Instance: SpecimenBeispiel2
 InstanceOf: Specimen
 * identifier.type = #PLAC
-* identifier.value = "A123B"
+* identifier.value = "A123C"
 * subject.reference = "Patient/28"

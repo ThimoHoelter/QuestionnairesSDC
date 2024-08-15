@@ -55,7 +55,6 @@ RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
   * valueCode = {code}
 
 RuleSet: addExtractionContextTextGrouperNew(linkId, text, definition, code)
-* insert hiddenItem(true)
 * linkId = {linkId}
 * type = #group
 * definition = {definition}
@@ -66,7 +65,7 @@ RuleSet: addExtractionContextTextGrouperNew(linkId, text, definition, code)
   * valueCode = {code}
 
 // Update-Grouper für bestehende Ressourcen
-RuleSet: addExtractionContextGrouperUpdate(linkId, definition)
+RuleSet: addExtractionContextGrouperUpdate(linkId, definition, expression)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #group
@@ -76,6 +75,7 @@ RuleSet: addExtractionContextGrouperUpdate(linkId, definition)
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueExpression
     * language = #text/fhirpath
+    * expression = {expression}
 
 // Item aus Eingabeformular
 RuleSet: addExtractionItem(linkId, type, text, definition) 
@@ -93,3 +93,41 @@ RuleSet: addExtractionHiddenItem(linkId, type, definition)
 * definition = {definition}
 * enableBehavior = #all
 //* initial.value...
+
+// PathoFinding Voraussetzung Observation.category  
+RuleSet: addPathoFindingLaboratoryCode(linkId)
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = #choice
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding"
+* enableBehavior = #all
+* initial.valueCoding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+
+RuleSet: addPathoFindingSectionCode(linkId, code)
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = #choice
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding"
+* enableBehavior = #all
+* initial.valueCoding = $patho-sections#{code}
+
+// PathoFinding.status 
+RuleSet: addPathoFindingStatusCode(linkId, code)
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = #choice
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status"
+* enableBehavior = #all
+* initial.valueCoding = $Observation-Status#{code}
+
+// Population
+RuleSet: addPrePopListItem(linkId, type, text, definition, expression)
+* linkId = {linkId}
+* type = {type}
+* text = {text}
+* definition = {definition}
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-candidateExpression"
+  * valueExpression
+    * language = #text/fhirpath
+    * expression = {expression}

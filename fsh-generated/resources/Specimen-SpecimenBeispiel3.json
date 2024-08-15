@@ -1,0 +1,19 @@
+{
+  "resourceType": "Specimen",
+  "id": "SpecimenBeispiel3",
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "PLAC"
+          }
+        ]
+      },
+      "value": "A123D"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/28"
+  }
+}

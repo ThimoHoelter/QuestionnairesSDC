@@ -24,12 +24,20 @@
     "endLine": 80
   },
   {
+    "outputFile": "Questionnaire-MinimalPSAExample2.json",
+    "fshName": "MinimalPSAExample2",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\Mini-example2.fsh",
+    "startLine": 2,
+    "endLine": 69
+  },
+  {
     "outputFile": "Questionnaire-Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr.json",
     "fshName": "Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr",
     "fshType": "Instance",
     "fshFile": "Definition-based\\KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
-    "endLine": 161
+    "endLine": 178
   },
   {
     "outputFile": "Questionnaire-Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
@@ -61,7 +69,7 @@
     "fshType": "Instance",
     "fshFile": "Definition-based\\Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
-    "endLine": 328
+    "endLine": 468
   },
   {
     "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze.json",
@@ -80,11 +88,27 @@
     "endLine": 21
   },
   {
-    "outputFile": "Specimen-SpecimenBeispiel.json",
-    "fshName": "SpecimenBeispiel",
+    "outputFile": "Specimen-SpecimenBeispiel1.json",
+    "fshName": "SpecimenBeispiel1",
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\specimen.fsh",
     "startLine": 1,
-    "endLine": 4
+    "endLine": 5
+  },
+  {
+    "outputFile": "Specimen-SpecimenBeispiel2.json",
+    "fshName": "SpecimenBeispiel2",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\specimen2.fsh",
+    "startLine": 1,
+    "endLine": 5
+  },
+  {
+    "outputFile": "Specimen-SpecimenBeispiel3.json",
+    "fshName": "SpecimenBeispiel3",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\specimen3.fsh",
+    "startLine": 1,
+    "endLine": 5
   }
 ]
