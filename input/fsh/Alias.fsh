@@ -10,3 +10,4 @@ Alias: $resourceType = http://hl7.org/fhir/resource-types
 Alias: $ICD10GM = http://hl7.org/fhir/sid/icd-10
 Alias: $Condition-Category = http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $Observation-Status = http://hl7.org/fhir/observation-status
+Alias: $ICDO-3 = urn:oid:2.16.840.1.113883.6.43.1

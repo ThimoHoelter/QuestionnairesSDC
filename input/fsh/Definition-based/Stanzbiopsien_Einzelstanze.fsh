@@ -319,7 +319,7 @@ Usage: #definition
 
   // Perineurale Infiltration
       * item[+]
-        * insert addExtractionContextGrouperNew("PathoFinding_PeriInfiltration", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
+        * insert addExtractionContextGrouperNew("PathoFinding_PerineuraleInfiltration", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10380", #open-choice, "Perineurale Infiltration", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
           * code = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
@@ -327,14 +327,14 @@ Usage: #definition
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
-          * insert addExtractionHiddenItem("PathoFinding_PeriInfiltration_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
+          * insert addExtractionHiddenItem("PathoFinding_PerineuraleInfiltration_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
           * initial.valueCoding = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
         * item[+]
-          * insert addPathoFindingLaboratoryCode("PathoFinding_PeriInfiltration_category_laboratory")
+          * insert addPathoFindingLaboratoryCode("PathoFinding_PerineuraleInfiltration_category_laboratory")
         * item[+]
-          * insert addPathoFindingSectionCode("PathoFinding_PeriInfiltration_category_section", #22635-7)
+          * insert addPathoFindingSectionCode("PathoFinding_PerineuraleInfiltration_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_PeriInfiltration_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_PerineuraleInfiltration_status", #final)
   // Tumornachweis in Samenblasen          
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_TumornachweisinSamenblase", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
