@@ -1865,7 +1865,7 @@
                       "valueCode": "Observation"
                     }
                   ],
-                  "linkId": "PathoFinding_PeriInfiltration",
+                  "linkId": "PathoFinding_PerineuraleInfiltration",
                   "type": "group",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
                   "enableBehavior": "all",
@@ -1914,7 +1914,7 @@
                           "valueBoolean": true
                         }
                       ],
-                      "linkId": "PathoFinding_PeriInfiltration_code",
+                      "linkId": "PathoFinding_PerineuraleInfiltration_code",
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
                       "enableBehavior": "all",
@@ -1935,7 +1935,7 @@
                           "valueBoolean": true
                         }
                       ],
-                      "linkId": "PathoFinding_PeriInfiltration_category_laboratory",
+                      "linkId": "PathoFinding_PerineuraleInfiltration_category_laboratory",
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
                       "enableBehavior": "all",
@@ -1955,7 +1955,7 @@
                           "valueBoolean": true
                         }
                       ],
-                      "linkId": "PathoFinding_PeriInfiltration_category_section",
+                      "linkId": "PathoFinding_PerineuraleInfiltration_category_section",
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
                       "enableBehavior": "all",
@@ -1975,7 +1975,7 @@
                           "valueBoolean": true
                         }
                       ],
-                      "linkId": "PathoFinding_PeriInfiltration_status",
+                      "linkId": "PathoFinding_PerineuraleInfiltration_status",
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
                       "enableBehavior": "all",

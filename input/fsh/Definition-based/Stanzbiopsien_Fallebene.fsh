@@ -164,6 +164,8 @@ Usage: #example
           * item[+]
             * insert addPathoFindingStatusCode("PathoFinding_PrimaerGleasonF_status", #final)
   // Sekundäres Gleason Muster (Epstein 2005)
+        
+        
         * item[+]
           * insert addExtractionContextGrouperNew("PathoFinding_SekundaerGleasonF", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
           * item[+]
@@ -335,8 +337,8 @@ Usage: #example
           * item[+]
             * insert addExtractionContextGrouperNew("PathoFinding_VerhaeltnisPositiveStanzenF", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
-              * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10320", #string, "Verhältnis positiver zu allen Stanzen")
               * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10320", #string, "Verhältnis positiver zu allen Stanzen", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString")
+              * required = true
               * code[+] = $loinc#44651-8 "Tissue cores.positive.carcinoma in Tissue core"
               * code[+] = $sct#372303007 "Ratio of blocks with prostate tumor to total number of blocks obtained (observable entity)"
             * item[+]
@@ -352,8 +354,8 @@ Usage: #example
           * item[+]
             * insert addExtractionContextGrouperNew("PathoFinding_ProzentTumoranteilF", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
-              * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.2.11142", #quantity, "Prozentualer Tumoranteil Gesamt")
               * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11142", #quantity, "Prozentualer Tumoranteil Gesamt", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity")
+              * required = true
               * code = $loinc#44651-8 "Tissue cores.positive.carcinoma in Tissue core"
               * initial.valueQuantity.unit = "%"
               * initial.valueQuantity.system = $unitsofmeasure
@@ -371,7 +373,6 @@ Usage: #example
           * item[+]
             * insert addExtractionContextGrouperNew("PathoFinding_TumorGesamtLaenge", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
-              * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11204", #quantity, "Tumorbefall Gesamt in Länge in mm")
               * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11204", #quantity, "Tumorbefall Gesamt in Länge in mm", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity")
               * code = $loinc#44618-7 "Total linear mm of carcinoma"
               * initial.valueQuantity.unit = "mm"
