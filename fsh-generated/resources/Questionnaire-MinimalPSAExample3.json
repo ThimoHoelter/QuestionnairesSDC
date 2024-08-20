@@ -1,0 +1,126 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "MinimalPSAExample3",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z"
+  },
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample2",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patient mit Informationen"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+      "valueCode": "Practitioner"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+    }
+  ],
+  "name": "Definition_based_extraction_example",
+  "title": "Example for definition-based extraction",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-04-26T10:26:24Z",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "linkId": "Observation_PSA-SerologieEinzeln",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/Observation#Observation",
+      "enableBehavior": "all",
+      "item": [
+        {
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+          "text": "Angaben zur PSA-Serologie",
+          "type": "decimal",
+          "definition": "http://hl7.org/fhir/Observation.valueQuantity.value",
+          "enableBehavior": "all"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_Display",
+          "type": "text",
+          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit",
+          "enableBehavior": "all",
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_Code",
+          "type": "text",
+          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.code",
+          "enableBehavior": "all",
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "PSA-Serologie_Unit_System",
+          "type": "url",
+          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.system",
+          "enableBehavior": "all",
+          "initial": [
+            {
+              "valueUri": "http://unitsofmeasure.org"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

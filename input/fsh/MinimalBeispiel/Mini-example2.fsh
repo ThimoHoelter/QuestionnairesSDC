@@ -1,4 +1,3 @@
-Alias: $unitsofmeasure = http://unitsofmeasure.org
 Instance: MinimalPSAExample2
 InstanceOf: Questionnaire
 Usage: #definition

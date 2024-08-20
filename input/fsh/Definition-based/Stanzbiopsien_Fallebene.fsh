@@ -106,7 +106,7 @@ Usage: #example
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_MorphTextF", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
-          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11248", #text, "Morphologie Freitext", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString)
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11248", #text, "Morphologie Freitext", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString")
           * code = $loinc#33731-1 "Histology type in Cancer specimen Narrative"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_MorphTextF_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
@@ -124,10 +124,10 @@ Usage: #example
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11109", #choice, "ICD-O-Version", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
           * code = $sct#397005006 "WHO tumor classification (observable entity)"
-          * answerOption[0].valueCoding = urn:oid:1.2.276.0.76.3.1.131.1.5.153#31 "ICD-O3; 1. Auflage 2003"
-          * answerOption[+].valueCoding = urn:oid:1.2.276.0.76.3.1.131.1.5.153#32 "ICD-O3; 2. Auflage 2013"
-          * answerOption[+].valueCoding = urn:oid:1.2.276.0.76.3.1.131.1.5.153#33 "ICD-O-3 2. Auflage 2019"
-          * answerOption[+].valueCoding = urn:oid:1.2.276.0.76.3.1.131.1.5.153#bb "Neue Codes aus den WHO-Klassifikationen (BlueBooks)"
+          * answerOption[0].valueCoding = $ICDO-3_Auflagen#31 "ICD-O3; 1. Auflage 2003"
+          * answerOption[+].valueCoding = $ICDO-3_Auflagen#32 "ICD-O3; 2. Auflage 2013"
+          * answerOption[+].valueCoding = $ICDO-3_Auflagen#33 "ICD-O-3 2. Auflage 2019"
+          * answerOption[+].valueCoding = $ICDO-3_Auflagen#bb "Neue Codes aus den WHO-Klassifikationen (BlueBooks)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_ICD-O-Version_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
           * initial.valueCoding = $sct#397005006 "WHO tumor classification (observable entity)"

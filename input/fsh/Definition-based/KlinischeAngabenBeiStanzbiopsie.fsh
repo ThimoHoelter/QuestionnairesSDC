@@ -153,7 +153,7 @@ Usage: #definition
         * code = $loinc#44619-5 "Length of tissue core(s)"
 // Seitenangabe 
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen..collection.bodySite.extension[lateralityQualifier].coding")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension[lateralityQualifier].coding")
         * insert itemControl(radio-button)
         * required = true
         * code = $loinc#20228-3 "Anatomic part Laterality"

@@ -28,8 +28,16 @@
     "fshName": "MinimalPSAExample2",
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel\\Mini-example2.fsh",
-    "startLine": 2,
-    "endLine": 69
+    "startLine": 1,
+    "endLine": 68
+  },
+  {
+    "outputFile": "Questionnaire-MinimalPSAExample3.json",
+    "fshName": "MinimalPSAExample3",
+    "fshType": "Instance",
+    "fshFile": "MinimalBeispiel\\Mini-example3.fsh",
+    "startLine": 1,
+    "endLine": 38
   },
   {
     "outputFile": "Questionnaire-Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr.json",

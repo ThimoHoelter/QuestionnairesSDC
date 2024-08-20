@@ -280,7 +280,7 @@
                       "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10250",
                       "text": "Histologischer Typ ICD-O-3",
                       "type": "open-choice",
-                      "definition": "Observation.valueCodeableConcept.coding",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
                       "code": [
                         {
