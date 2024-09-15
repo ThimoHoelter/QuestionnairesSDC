@@ -197,5 +197,3 @@ RuleSet: regEx(expression)
 RuleSet: qritem (id, text)
 * linkId = {id}
 * text = {text}
-
-

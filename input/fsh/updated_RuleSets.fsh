@@ -99,15 +99,23 @@ RuleSet: addPathoFindingLaboratoryCode(linkId)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
 * enableBehavior = #all
 * initial.valueCoding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-RuleSet: addPathoFindingSectionCode(linkId, code)
+RuleSet: addPathoListItemCategoryCode(linkId)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
+* enableBehavior = #all
+* initial.valueCoding = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+
+RuleSet: addPathoFindingSectionCode(linkId, code) 
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = #choice
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
 * enableBehavior = #all
 * initial.valueCoding = $patho-sections#{code}
 
@@ -121,11 +129,10 @@ RuleSet: addPathoFindingStatusCode(linkId, code)
 * initial.valueCoding = $Observation-Status#{code}
 
 // Population
-RuleSet: addPrePopListItem(linkId, type, text, definition, expression)
+RuleSet: addPrePopListItem(linkId, type, text, expression)
 * linkId = {linkId}
 * type = {type}
 * text = {text}
-* definition = {definition}
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-candidateExpression"
   * valueExpression

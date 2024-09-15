@@ -18,6 +18,9 @@ Usage: #definition
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
 * subjectType = $resourceType#Patient
+// Variablen für Probenvorausfüllung & FindingExtraction
+* insert variable("probe", [["%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.29')"]])
+* insert variable("bodySite", [["%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.4.11243').answer.value"]])
 // Erster Grouper
 * item[+]
   * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.4.10000", #group, "Prostatakarzinome")
@@ -33,44 +36,73 @@ Usage: #definition
       * code[+] = $sct#441817003:116686009=309134005 "Evaluation of biopsy specimen:Has specimen=Prostate tru-cut biopsy sample"
       * repeats = true
       // Hier mit: code = $loinc#66117-3 "Prostate Pathology biopsy report" DR generieren?
+
 //-----------------------------------------------------------------------------------------------------------------------------------
 // Proben ID
-      * item[+]
-        * insert addExtractionContextGrouperNew("PathoFinding_Macro", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
-
-        * item[+] //Prepopulation!
-          * insert addPrePopListItem("2.16.840.1.113883.3.1937.777.18.2.29", #reference, "Proben-ID -nummer", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.specimen", "Specimen?subject={{%patient.id}}")
-          * code = $sct#372274003 "Sample identification number (observable entity)"
+      * item[+] //Prepopulation!
+        * insert addRItem("2.16.840.1.113883.3.1937.777.18.2.29", #string, "Proben-ID -nummer") //Platzhalter
+        //* insert addPrePopListItem("2.16.840.1.113883.3.1937.777.18.2.29", #reference, "Proben-ID -nummer", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.specimen", "Specimen?subject={{%patient.id}}") //ServiceRequest mit einbeziehen in Abfrage!!
+        * initial.valueString = "ABC"
+        * code = $sct#372274003 "Sample identification number (observable entity)"
+        // Muss an ALLE Findings in diesem Formular übergeben werden (Referenz zur jeweiligen Probe über Observation.specimen!)
 
   // Lokalisation der Entnahmestelle
-        * item[+]
-          * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11243", #open-choice, "Lokalisation der Entnahmestelle")
-          * code = $loinc#94738-2 "Biopsy site [Anatomy]"
-          * answerOption[+].valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716934008 "Structure of apical part of peripheral zone of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716909008 "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716892006 "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716911004 "Structure of middle regional part of transition zone of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716918005 "Structure of lateral middle regional part of peripheral zone of left half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716935009 "Structure of apical part of peripheral zone"
-          * answerOption[+].valueCoding = $sct#716910003 "Structure of middle regional part of anterior fibromuscular stroma of left half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716893001 "Structure of basal part of anterior fibromuscular stroma of left half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716912006 "Structure of middle regional part of transition zone of left half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716902004 "Structure of basal part of peripheral zone of right half prostate (body structure)"
-          * answerOption[+].valueCoding = $sct#716903009 "Structure of basal part of peripheral zone of left half prostate (body structure)"
+      * item[+]
+        * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11243", #open-choice, "Lokalisation der Entnahmestelle")
+        * initial.valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+        * code = $loinc#94738-2 "Biopsy site [Anatomy]"
+        * answerOption[+].valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716934008 "Structure of apical part of peripheral zone of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716909008 "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716892006 "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716911004 "Structure of middle regional part of transition zone of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716918005 "Structure of lateral middle regional part of peripheral zone of left half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716935009 "Structure of apical part of peripheral zone"
+        * answerOption[+].valueCoding = $sct#716910003 "Structure of middle regional part of anterior fibromuscular stroma of left half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716893001 "Structure of basal part of anterior fibromuscular stroma of left half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716912006 "Structure of middle regional part of transition zone of left half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716902004 "Structure of basal part of peripheral zone of right half prostate (body structure)"
+        * answerOption[+].valueCoding = $sct#716903009 "Structure of basal part of peripheral zone of left half prostate (body structure)"
+  
   // Länge der Stanzzylinder
+      * item[+]
+        * insert addExtractionContextGrouperNew("PathoFinding_Macro_Stanzenlaenge", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+] //Prepoplulation von Klinische Informationen?
-          * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11244", #quantity, "Länge der Stanzzylinder")
-
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11244", #decimal, "Länge der Stanzzylinder", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+          * initial.valueDecimal = 0.15
           * insert uunit(cm)
           * insert maxDecimalPlaces(3) //not supported in LHC
           * code = $loinc#44619-5 "Length of tissue core(s)"
-
-  // Anzahl der Stanzzylinder im Einsendegefäß
         * item[+]
-          * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10240", #integer, "Anzahl der Stanzzylinder im Einsendungsgefäß")
-
+          * insert addExtractionHiddenItem("PathoFinding_Stanzenlaenge_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
+          * initial.valueCoding = $loinc#44619-5 "Length of tissue core(s)"
+        * item[+] // Maßeinheit (Displayname, System und Code werden in das Finding übertragen)
+          * insert addExtractionHiddenItem("Stanzlaenge_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
+          * initial.valueString = "cm"
+        * item[+]
+          * insert addExtractionHiddenItem("Stanzlaenge_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code")
+          * initial.valueString = "cm"
+        * item[+]
+          * insert addExtractionHiddenItem("Stanzlaenge_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
+          * initial.valueUri = $unitsofmeasure
+        //Funktioniert aktuell noch nicht
+       /* * item[+]
+          * insert addExtractionHiddenItem("Stanzlaenge_ProbenID", #string, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.specimen.reference")
+          * insert initialExpression([["%probe.id.first()"]], "Referenz mit Hilfe der ProbenID")
+        * item[+]
+          * insert addExtractionHiddenItem("Stanzlaenge_Entnahmestelle", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.bodySite.coding")
+          * insert initialExpression([["%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.4.11243').answer.value"]], "Übertragung des Codes zur Entnahmestelle")
+*/
+  // Anzahl der Stanzzylinder im Einsendegefäß
+      * item[+]
+        * insert addExtractionContextGrouperNew("PathoFinding_Macro_AnzahlZylinder", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
+        * item[+]
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10240", #integer, "Anzahl der Stanzzylinder im Einsendungsgefäß", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+          * initial.valueInteger = 1
           * code = $loinc#44652-6 "Total number of cores Tissue Core"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_AnzahlZylinder_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
+          * initial.valueCoding = $loinc#44652-6 "Total number of cores Tissue Core"
 //-----------------------------------------------------------------------------------------------------------------------------------------
 // Micro-Grouper
   // Erstellung und Befüllung PathoFindings
@@ -79,6 +111,7 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_HistoTyp", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10250", #open-choice, "Histologischer Typ ICD-O-3", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding") 
+          * initial.valueCoding = $ICDO-3#8140/3 "Azinäres Adenokarzinom"
           * code = $loinc#59847-4 "Histology and Behavior ICD-O-3 Cancer"
           * answerOption[+].valueCoding = $sct#110396000 "No evidence of malignant neoplasm (finding)"
           * answerOption[+].valueCoding = $ICDO-3#8140/3 "Azinäres Adenokarzinom"
@@ -141,13 +174,14 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_HistoTyp_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_HistoTyp_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_HistoTyp_status", final)
   
   // Morphologie Freitext      
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_MorphText", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10260", #text, "Morphologie Freitext", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString")
+          * initial.valueString = "Unregelmäßige, infiltrative Drüsenstrukturen, typisch für das azinäre Adenokarzinom."
           * code = $loinc#33731-1 "Histology type in Cancer specimen Narrative"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_MorphText_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -157,7 +191,7 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_MorphText_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_MorphText_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_MorphText_status", final)
 
 
   // Primäres Gleason Muster (Epstein 2005)
@@ -165,6 +199,7 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_PrimaerGleason", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10260", #choice, "Primäres Gleason Muster - Epstein 2005", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#369772003 "Gleason Pattern 3 (finding)"
           * code = $loinc#44641-9 "Gleason pattern.primary in Prostate tumor"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10250"
           * enableWhen.operator = #!=
@@ -183,7 +218,7 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_PrimaerGleason_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_PrimaerGleason_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_PrimaerGleason_status", final)
 
 
   // Sekundäres Gleason Muster (Epstein 2005)
@@ -191,6 +226,7 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_SekundaerGleason", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11246", #choice, "Sekundäres Gleason Muster - Epstein 2005", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#369773008 "Gleason Pattern 4 (finding)"
           * code = $loinc#44642-7 "Gleason pattern.secondary in Prostate tumor"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10250"
           * enableWhen.operator = #!=
@@ -209,13 +245,15 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_SekundaerGleason_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_SekundaerGleason_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_SekundaerGleason_status", final)
 
-  // Prozentualer Anteil Gleasonmuster 4/5 (Funktion muss angepasst werden! Darf nur erscheinen wenn Primär+Sekundär >= 7 ist. Siehe Templates)
+  // Prozentualer Anteil Gleasonmuster 4/5
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_ProzentGleason", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)    
         * item[+]
-          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11144", #quantity, "Prozentualer Anteil Gleasonmuster 4/5", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity")
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11144", #decimal, "Prozentualer Anteil Gleasonmuster 4/5", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+          * insert uunit(%)
+          * initial.valueDecimal = 75
           * code = $loinc#94735-8 "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
           * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.10290"
           * enableWhen[=].operator = #=
@@ -229,9 +267,15 @@ Usage: #definition
           * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.11246"
           * enableWhen[=].operator = #=
           * enableWhen[=].answerCoding = $sct#369774002 "Muster 5"
-          * initial.valueQuantity.unit = "%"
-          * initial.valueQuantity.system = $unitsofmeasure
-          * initial.valueQuantity.code = #%
+        * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
+          * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
+          * initial.valueString = "%"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code")
+          * initial.valueString = "%"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
+          * initial.valueUri = $unitsofmeasure
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
           * initial.valueCoding = $loinc#94735-8 "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
@@ -240,13 +284,14 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_ProzentGleason_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_ProzentGleason_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_ProzentGleason_status", final)
       
   // Gradinggruppe nach ISUP 2014/WHO 2016 (ReadOnly? Automatische Berechnung der Gruppe möglich!)
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_GleasonGrading", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11200", #choice, "Gradinggruppe nach ISUP 2014/WHO 2016", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#860745005 "Gleason grade group 4 (finding)"
           * code = $loinc#94734-1 "Prostate cancer grade group"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10290"
           * enableWhen.operator = #!=
@@ -264,32 +309,41 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_GleasonGrading_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_GleasonGrading_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_GleasonGrading_status", final)
 
   // Verhältnis positiver zu allen Stanzen (Plausibilitätskontrolle z.B. XX/XX)
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_VerhaeltnisPositiverStanzen", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.30", #string, "Verhältnis positiver zu allen Stanzen", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString")
+          * initial.valueString = "1/2"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_VerhaeltnisPositiverStanzen_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
-          * initial.valueCoding = $loinc#94734-1 "Prostate cancer grade group"
+          * initial.valueCoding = $sct#372303007 "Ratio of blocks with prostate tumor to total number of blocks obtained (observable entity)"
         * item[+]
           * insert addPathoFindingLaboratoryCode("PathoFinding_VerhaeltnisPositiverStanzen_category_laboratory")
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_VerhaeltnisPositiverStanzen_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_VerhaeltnisPositiverStanzen_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_VerhaeltnisPositiverStanzen_status", final)
   
-  // Prozentualer Tumoranteil ("%" hinzufügen?)
+  // Prozentualer Tumoranteil
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_Tumoranteil", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
-          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10330", #quantity, "Prozentualer Tumoranteil", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity")
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10330", #decimal, "Prozentualer Tumoranteil", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+          * insert uunit(%)
           * code = $sct#385396009 "Percentage of prostatic tissue, obtained by needle biopsy, involved by carcinoma (observable entity)"
-          * initial.valueQuantity.unit = "%"
-          * initial.valueQuantity.system = $unitsofmeasure
-          * initial.valueQuantity.code = #%
+          * initial.valueDecimal = 25
+        * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
+          * insert addExtractionHiddenItem("PathoFinding_Tumoranteil_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
+          * initial.valueString = "%"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_Tumoranteil_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code")
+          * initial.valueString = "%"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_Tumoranteil_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
+          * initial.valueUri = $unitsofmeasure
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_Tumoranteil_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
           * initial.valueCoding = $sct#385396009 "Percentage of prostatic tissue, obtained by needle biopsy, involved by carcinoma (observable entity)"
@@ -298,24 +352,33 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_Tumoranteil_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_Tumoranteil_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_Tumoranteil_status", final)
 
   // Tumorbefall für befallene Stanze in Länge in mm (mm Einheit fehlt!)
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_TumorbefallinLaenge", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
-          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10340", #quantity, "Tumorbefall für befallene Stanze in Länge in mm", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity")
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10340", #decimal, "Tumorbefall für befallene Stanze in Länge in mm", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
           * code = $loinc#44618-7 "Total linear mm of carcinoma"
+          * initial.valueDecimal = 5.2
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_TumorbefallinLaenge_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
           * initial.valueCoding = $loinc#44618-7 "Total linear mm of carcinoma"
+        * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
+          * insert addExtractionHiddenItem("PathoFinding_TumorbefallinLaenge_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
+          * initial.valueString = "mm"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_TumorbefallinLaenge_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code")
+          * initial.valueString = "mm"
+        * item[+]
+          * insert addExtractionHiddenItem("PathoFinding_TumorbefallinLaenge_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
+          * initial.valueUri = $unitsofmeasure
         * item[+]
           * insert addPathoFindingLaboratoryCode("PathoFinding_TumorbefallinLaenge_category_laboratory")
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_TumorbefallinLaenge_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_TumorbefallinLaenge_status", #final)
-
+          * insert addPathoFindingStatusCode("PathoFinding_TumorbefallinLaenge_status", final)
 
   // Perineurale Infiltration
       * item[+]
@@ -323,6 +386,7 @@ Usage: #definition
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10380", #open-choice, "Perineurale Infiltration", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
           * code = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
+          * initial.valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
@@ -334,12 +398,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_PerineuraleInfiltration_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_PerineuraleInfiltration_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_PerineuraleInfiltration_status", final)
   // Tumornachweis in Samenblasen          
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_TumornachweisinSamenblase", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10370", #open-choice, "Tumornachweis in Samenblasen", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")  
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#44626-0 "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
@@ -352,12 +417,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_TumornachweisinSamenblase_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_TumornachweisinSamenblase_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_TumornachweisinSamenblase_status", final)
   // Lymphovaskuläre Invasion
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_LymphovaskuläreInvasion", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11206", #open-choice, "Lymphovaskuläre Invasion", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#33761-8 "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
@@ -370,12 +436,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_LymphovaskuläreInvasion_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_LymphovaskuläreInvasion_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_LymphovaskuläreInvasion_status", final)
   // Tumornachweis in periprostatischem Binde- und Fettgewebe
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_TumornachweisInFettgewebe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10360", #open-choice, "Tumornachweis in periprostatischem Binde- und Fettgewebe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#44625-2 "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
@@ -388,12 +455,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_TumornachweisInFettgewebe_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_TumornachweisInFettgewebe_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_TumornachweisInFettgewebe_status", final)
   // Intraduktales Karzinom
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_IntraduktalesKarzinom", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.28", #open-choice, "Intraduktales Karzinom", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $sct#86616005 "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
@@ -406,12 +474,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_IntraduktalesKarzinom_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_IntraduktalesKarzinom_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_IntraduktalesKarzinom_status", final)
   // ASAP
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_ASAP", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11112", #open-choice, "ASAP", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#373067005 "No (qualifier value)"
           * code = $sct#16294321000119104 "Atypical small acinar proliferation of prostate (disorder)"
           * answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
           * answerOption[+].valueCoding = $sct#373066001 "Yes (qualifier value)"
@@ -424,12 +493,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_ASAP_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_ASAP_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_ASAP_status", final)
   // Begleitende High-grade-PIN
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_HighGradePIN", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10390", #open-choice, "Begleitende High-grade-PIN", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code[+] = $loinc#94666-5 "High grade prostatic intraepithelial neoplasia"
           * code[+] = $sct#446711009 "High grade prostatic intraepithelial neoplasia (disorder)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
@@ -443,12 +513,13 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_HighGradePIN_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_HighGradePIN_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_HighGradePIN_status", final)
   // Granulomatöse Prostatitis
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_GranulomatoeseProstatitis", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10410", #open-choice, "Granulomatöse Prostatitis", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
+          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code[+] = $loinc#94665-7 "Granulomatous prostatitis"
           * code[+] = $sct#61500009 "Granulomatous prostatitis (disorder)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
@@ -462,7 +533,7 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingSectionCode("PathoFinding_GranulomatoeseProstatitis_category_section", #22635-7)
         * item[+]
-          * insert addPathoFindingStatusCode("PathoFinding_GranulomatoeseProstatitis_status", #final)
+          * insert addPathoFindingStatusCode("PathoFinding_GranulomatoeseProstatitis_status", final)
 
-//Variablen für Probenvorausfüllung
-* insert variable("ProbenID", [["%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.29').answer.value"]])
+
+

@@ -1,0 +1,3402 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "Prostata-StanzbiopsienEinzelstanze-Def-Extr",
+    "meta": {
+      "lastUpdated": "2024-05-08T10:31:16Z",
+      "source": "https://art-decor.org/fhir/4.0/pathdv-",
+      "tag": [
+        {
+          "code": "4.0.1",
+          "system": "http://hl7.org/fhir/FHIR-version"
+        }
+      ]
+    },
+    "url": "https://art-decor.org/fhir/Questionnaire/Prostata-Stanzbiopsien-Einzelstanze",
+    "language": "de-DE",
+    "identifier": [
+      {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.11"
+      }
+    ],
+    "name": "Eingabe_Formular_fur_Stanzbiopsien_Einzelstanzen",
+    "title": "Eingabe-Formular für Stanzbiopsien-Einzelstanzen",
+    "status": "draft",
+    "experimental": false,
+    "date": "2024-05-07T15:05:24Z",
+    "description": "Modell für \"intelligentes\" Formular",
+    "effectivePeriod": {
+      "start": "2024-05-07T15:05:24Z"
+    },
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+        "valueCode": "Practitioner"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/variable",
+        "valueExpression": {
+          "name": "probenID",
+          "language": "text/fhirpath",
+          "expression": "%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.29').answer.value"
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/variable",
+        "valueExpression": {
+          "name": "bodySite",
+          "language": "text/fhirpath",
+          "expression": "%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.4.11243').answer.value"
+        }
+      }
+    ],
+    "subjectType": [
+      "Patient"
+    ],
+    "item": [
+      {
+        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10000",
+        "type": "group",
+        "text": "Prostatakarzinome",
+        "enableBehavior": "all",
+        "required": true,
+        "item": [
+          {
+            "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10210",
+            "type": "group",
+            "text": "Stanzbiopsien",
+            "enableBehavior": "all",
+            "required": true,
+            "code": [
+              {
+                "code": "66117-3",
+                "system": "http://loinc.org",
+                "display": "Prostate Pathology biopsy report"
+              }
+            ],
+            "item": [
+              {
+                "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11242",
+                "type": "group",
+                "text": "Einzelproben-Ebene",
+                "enableBehavior": "all",
+                "required": true,
+                "code": [
+                  {
+                    "code": "441817003:116686009=309134005",
+                    "system": "http://snomed.info/sct",
+                    "display": "Evaluation of biopsy specimen:Has specimen=Prostate tru-cut biopsy sample"
+                  }
+                ],
+                "repeats": true,
+                "item": [
+                  {
+                    "linkId": "2.16.840.1.113883.3.1937.777.18.2.29",
+                    "type": "string",
+                    "text": "Proben-ID -nummer",
+                    "enableBehavior": "all",
+                    "required": true,
+                    "initial": [
+                      {
+                        "valueString": "ABC"
+                      }
+                    ],
+                    "code": [
+                      {
+                        "code": "372274003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Sample identification number (observable entity)"
+                      }
+                    ]
+                  },
+                  {
+                    "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11243",
+                    "type": "open-choice",
+                    "text": "Lokalisation der Entnahmestelle",
+                    "enableBehavior": "all",
+                    "initial": [
+                      {
+                        "valueCoding": {
+                          "code": "716917000",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+                        }
+                      }
+                    ],
+                    "code": [
+                      {
+                        "code": "94738-2",
+                        "system": "http://loinc.org",
+                        "display": "Biopsy site [Anatomy]"
+                      }
+                    ],
+                    "answerOption": [
+                      {
+                        "valueCoding": {
+                          "code": "716917000",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716934008",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of apical part of peripheral zone of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716909008",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716892006",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716911004",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of middle regional part of transition zone of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716918005",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of lateral middle regional part of peripheral zone of left half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716935009",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of apical part of peripheral zone"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716910003",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of middle regional part of anterior fibromuscular stroma of left half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716893001",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of basal part of anterior fibromuscular stroma of left half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716912006",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of middle regional part of transition zone of left half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716902004",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of basal part of peripheral zone of right half prostate (body structure)"
+                        }
+                      },
+                      {
+                        "valueCoding": {
+                          "code": "716903009",
+                          "system": "http://snomed.info/sct",
+                          "display": "Structure of basal part of peripheral zone of left half prostate (body structure)"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_Macro_Stanzenlaenge",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11244",
+                        "text": "Länge der Stanzzylinder",
+                        "type": "decimal",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueDecimal": 0.15
+                          }
+                        ],
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                            "valueCoding": {
+                              "code": "cm",
+                              "system": "http://unitsofmeasure.org"
+                            }
+                          },
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                            "valueInteger": 3
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44619-5",
+                            "system": "http://loinc.org",
+                            "display": "Length of tissue core(s)"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Stanzenlaenge_Code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44619-5",
+                              "system": "http://loinc.org",
+                              "display": "Length of tissue core(s)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "Stanzlaenge_Unit_Display",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "cm"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "Stanzlaenge_Unit_Code",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "cm"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "Stanzlaenge_Unit_System",
+                        "type": "url",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueUri": "http://unitsofmeasure.org"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                            "valueBoolean": true,
+                            "valueExpression": {
+                              "language": "text/fhirpath",
+                              "expression": "%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.29').answer.value",
+                              "description": "Referenz mit Hilfe der ProbenID"
+                            }
+                          }
+                        ],
+                        "linkId": "Stanzlaenge_ProbenID",
+                        "type": "String",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.specimen.reference",
+                        "enableBehavior": "all"
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                            "valueBoolean": true,
+                            "valueExpression": {
+                              "language": "text/fhirpath",
+                              "expression": "%resource.repeat(item).where(linkId='2.16.840.1.113883.3.1937.777.18.2.4.11243').answer.value",
+                              "description": "Übertragung des Codes zur Entnahmestelle"
+                            }
+                          }
+                        ],
+                        "linkId": "Stanzlaenge_Entnahmestelle",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.bodySite.coding",
+                        "enableBehavior": "all"
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_Macro_AnzahlZylinder",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10240",
+                        "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
+                        "type": "integer",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueInteger": 1
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44652-6",
+                            "system": "http://loinc.org",
+                            "display": "Total number of cores Tissue Core"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_AnzahlZylinder_Code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44652-6",
+                              "system": "http://loinc.org",
+                              "display": "Total number of cores Tissue Core"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_HistoTyp",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10250",
+                        "text": "Histologischer Typ ICD-O-3",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Azinäres Adenokarzinom"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "59847-4",
+                            "system": "http://loinc.org",
+                            "display": "Histology and Behavior ICD-O-3 Cancer"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "110396000",
+                              "system": "http://snomed.info/sct",
+                              "display": "No evidence of malignant neoplasm (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Azinäres Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Atrophe Variante eines Adenokarzinoms"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Pseudohyperplastische Variante eines Adenokarzinoms"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Mikrozystische Variante eines Adenokarzinoms"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Foamy Gland Variante eines Adenokarzinoms"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8480/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Muzinöses Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8490/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Siegelringzelliges Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8140/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Pleomorphe riesenzellige Variante eines Adenokarzinoms"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8290/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Onkozytisches Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8082/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Lympoepitheliomartiges Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8572/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Karzinom mit spindelzelliger Differenzierung"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8148/2",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Prostatische intraepitheliale Neoplasie (PIN), high grade"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8500/2",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Intraduktales Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8500/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Duktales Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8201/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Kribriformes Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8260/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Papilläres Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8230/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Solides Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8120/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Urothelkarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8070/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Plattenepithelkarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8560/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Adenosquamöses Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8147/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Basalzelladenom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8147/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Basalzellkarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8574/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Neuroendokrin differenziertes Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8240/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Karzinoidtumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8041/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Kleinzelliges Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8013/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Großzelliges neuroendokrines Karzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8680/1",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Paragangliom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9500/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Neuroblastom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8935/1",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Stromatumor mit unklarem malignen Potential"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8935/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Stromasarkom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8890/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Leiomyosarkom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8900/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Rhabdomyosarkom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9220/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Chondrosarkom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9120/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Angiosarkom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8830/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Malignes fibröses Histiozytom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9540/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Maligner peripherer Nervenscheidentumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9120/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Hämangiom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9220/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Chondrom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8890/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Leiomyom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9580/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Granularzelltumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9150/1",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Hämangioperizytom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8815/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Solitärer fibröser Tumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8440/0",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Zystadenom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8960/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Nephroblastom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8963/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Rhabdoidtumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9071/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Dottersacktumor"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9061/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Seminom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9081/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Embryonales Karzinom und Teratom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "9100/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Chorionkarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8310/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Klarzelliges Adenokarzinom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8720/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "Malignes Melanom"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "8000/3",
+                              "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                              "display": "sonstige"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HistoTyp_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "59847-4",
+                              "system": "http://loinc.org",
+                              "display": "Histology and Behavior ICD-O-3 Cancer"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HistoTyp_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HistoTyp_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HistoTyp_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_MorphText",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10260",
+                        "text": "Morphologie Freitext",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "Unregelmäßige, infiltrative Drüsenstrukturen, typisch für das azinäre Adenokarzinom."
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "33731-1",
+                            "system": "http://loinc.org",
+                            "display": "Histology type in Cancer specimen Narrative"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_MorphText_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "33731-1",
+                              "system": "http://loinc.org",
+                              "display": "Histology type in Cancer specimen Narrative"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_MorphText_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_MorphText_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_MorphText_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_PrimaerGleason",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10260",
+                        "text": "Primäres Gleason Muster - Epstein 2005",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "369772003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 3 (finding)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44641-9",
+                            "system": "http://loinc.org",
+                            "display": "Gleason pattern.primary in Prostate tumor"
+                          }
+                        ],
+                        "enableWhen": [
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.10250",
+                            "operator": "!=",
+                            "answerCoding": {
+                              "code": "110396000",
+                              "system": "http://snomed.info/sct"
+                            }
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "369770006",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 1 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369771005",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 2 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369772003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 3 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369773008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 4 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369774002",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 5 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "43771008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Morphology not applicable (finding)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PrimaerGleason_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44641-9",
+                              "system": "http://loinc.org",
+                              "display": "Gleason pattern.primary in Prostate tumor"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PrimaerGleason_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PrimaerGleason_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PrimaerGleason_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_SekundaerGleason",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                        "text": "Sekundäres Gleason Muster - Epstein 2005",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "369773008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 4 (finding)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44642-7",
+                            "system": "http://loinc.org",
+                            "display": "Gleason pattern.secondary in Prostate tumor"
+                          }
+                        ],
+                        "enableWhen": [
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.10250",
+                            "operator": "!=",
+                            "answerCoding": {
+                              "code": "110396000",
+                              "system": "http://snomed.info/sct"
+                            }
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "369770006",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 1 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369771005",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 2 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369772003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 3 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369773008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 4 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "369774002",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason Pattern 5 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "43771008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Morphology not applicable (finding)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_SekundaerGleason_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44642-7",
+                              "system": "http://loinc.org",
+                              "display": "Gleason pattern.secondary in Prostate tumor"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_SekundaerGleason_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_SekundaerGleason_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_SekundaerGleason_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_ProzentGleason",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11144",
+                        "text": "Prozentualer Anteil Gleasonmuster 4/5",
+                        "type": "decimal",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueDecimal": 75
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "94735-8",
+                            "system": "http://loinc.org",
+                            "display": "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
+                          }
+                        ],
+                        "enableWhen": [
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                            "operator": "=",
+                            "answerCoding": {
+                              "code": "369773008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Muster 4"
+                            }
+                          },
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                            "operator": "=",
+                            "answerCoding": {
+                              "code": "369773008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Muster 4"
+                            }
+                          },
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                            "operator": "=",
+                            "answerCoding": {
+                              "code": "369774002",
+                              "system": "http://snomed.info/sct",
+                              "display": "Muster 5"
+                            }
+                          },
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                            "operator": "=",
+                            "answerCoding": {
+                              "code": "369774002",
+                              "system": "http://snomed.info/sct",
+                              "display": "Muster 5"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_Unit_Display",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "%"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_Unit_Code",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "%"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_Unit_System",
+                        "type": "url",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueUri": "http://unitsofmeasure.org"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "94735-8",
+                              "system": "http://loinc.org",
+                              "display": "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ProzentGleason_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_GleasonGrading",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+                        "text": "Gradinggruppe nach ISUP 2014/WHO 2016",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "860745005",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 4 (finding)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "94734-1",
+                            "system": "http://loinc.org",
+                            "display": "Prostate cancer grade group"
+                          }
+                        ],
+                        "enableWhen": [
+                          {
+                            "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                            "operator": "!=",
+                            "answerCoding": {
+                              "code": "43771008",
+                              "system": "http://snomed.info/sct"
+                            }
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "860742008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 1 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "860743003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 2 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "860744009",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 3 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "860745005",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 4 (finding)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "860746006",
+                              "system": "http://snomed.info/sct",
+                              "display": "Gleason grade group 5 (finding)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GleasonGrading_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "94734-1",
+                              "system": "http://loinc.org",
+                              "display": "Prostate cancer grade group"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GleasonGrading_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GleasonGrading_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GleasonGrading_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_VerhaeltnisPositiverStanzen",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.30",
+                        "text": "Verhältnis positiver zu allen Stanzen",
+                        "type": "string",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueString",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "1/2"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_VerhaeltnisPositiverStanzen_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "372303007",
+                              "system": "http://snomed.info/sct",
+                              "display": "Ratio of blocks with prostate tumor to total number of blocks obtained (observable entity)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_VerhaeltnisPositiverStanzen_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_VerhaeltnisPositiverStanzen_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_VerhaeltnisPositiverStanzen_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_Tumoranteil",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10330",
+                        "text": "Prozentualer Tumoranteil",
+                        "type": "decimal",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+                        "enableBehavior": "all",
+                        "code": [
+                          {
+                            "code": "385396009",
+                            "system": "http://snomed.info/sct",
+                            "display": "Percentage of prostatic tissue, obtained by needle biopsy, involved by carcinoma (observable entity)"
+                          }
+                        ],
+                        "initial": [
+                          {
+                            "valueDecimal": 25
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_Unit_Display",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "%"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_Unit_Code",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "%"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_Unit_System",
+                        "type": "url",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueUri": "http://unitsofmeasure.org"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "385396009",
+                              "system": "http://snomed.info/sct",
+                              "display": "Percentage of prostatic tissue, obtained by needle biopsy, involved by carcinoma (observable entity)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_Tumoranteil_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_TumorbefallinLaenge",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10340",
+                        "text": "Tumorbefall für befallene Stanze in Länge in mm",
+                        "type": "decimal",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
+                        "enableBehavior": "all",
+                        "code": [
+                          {
+                            "code": "44618-7",
+                            "system": "http://loinc.org",
+                            "display": "Total linear mm of carcinoma"
+                          }
+                        ],
+                        "initial": [
+                          {
+                            "valueDecimal": 5.2
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44618-7",
+                              "system": "http://loinc.org",
+                              "display": "Total linear mm of carcinoma"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_Unit_Display",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "mm"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_Unit_Code",
+                        "type": "text",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.code",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueString": "mm"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_Unit_System",
+                        "type": "url",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueUri": "http://unitsofmeasure.org"
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumorbefallinLaenge_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_PerineuraleInfiltration",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10380",
+                        "text": "Perineurale Infiltration",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "code": [
+                          {
+                            "code": "92837-4",
+                            "system": "http://loinc.org",
+                            "display": "Perineural invasion [Presence] in Cancer specimen"
+                          }
+                        ],
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PerineuraleInfiltration_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "92837-4",
+                              "system": "http://loinc.org",
+                              "display": "Perineural invasion [Presence] in Cancer specimen"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PerineuraleInfiltration_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PerineuraleInfiltration_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_PerineuraleInfiltration_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_TumornachweisinSamenblase",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10370",
+                        "text": "Tumornachweis in Samenblasen",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44626-0",
+                            "system": "http://loinc.org",
+                            "display": "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisinSamenblase_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44626-0",
+                              "system": "http://loinc.org",
+                              "display": "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisinSamenblase_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisinSamenblase_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisinSamenblase_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_LymphovaskuläreInvasion",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11206",
+                        "text": "Lymphovaskuläre Invasion",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "33761-8",
+                            "system": "http://loinc.org",
+                            "display": "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_LymphovaskuläreInvasion_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "33761-8",
+                              "system": "http://loinc.org",
+                              "display": "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_LymphovaskuläreInvasion_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_LymphovaskuläreInvasion_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_LymphovaskuläreInvasion_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_TumornachweisInFettgewebe",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10360",
+                        "text": "Tumornachweis in periprostatischem Binde- und Fettgewebe",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "44625-2",
+                            "system": "http://loinc.org",
+                            "display": "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisInFettgewebe_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "44625-2",
+                              "system": "http://loinc.org",
+                              "display": "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisInFettgewebe_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisInFettgewebe_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_TumornachweisInFettgewebe_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_IntraduktalesKarzinom",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.28",
+                        "text": "Intraduktales Karzinom",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "86616005",
+                            "system": "http://snomed.info/sct",
+                            "display": "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_IntraduktalesKarzinom_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "86616005",
+                              "system": "http://snomed.info/sct",
+                              "display": "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_IntraduktalesKarzinom_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_IntraduktalesKarzinom_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_IntraduktalesKarzinom_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_ASAP",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11112",
+                        "text": "ASAP",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "373067005",
+                              "system": "http://snomed.info/sct",
+                              "display": "No (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "16294321000119104",
+                            "system": "http://snomed.info/sct",
+                            "display": "Atypical small acinar proliferation of prostate (disorder)"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "373067005",
+                              "system": "http://snomed.info/sct",
+                              "display": "No (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "373066001",
+                              "system": "http://snomed.info/sct",
+                              "display": "Yes (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "373068000",
+                              "system": "http://snomed.info/sct",
+                              "display": "Undetermined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ASAP_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "16294321000119104",
+                              "system": "http://snomed.info/sct",
+                              "display": "Atypical small acinar proliferation of prostate (disorder)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ASAP_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ASAP_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_ASAP_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_HighGradePIN",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10390",
+                        "text": "Begleitende High-grade-PIN",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "94666-5",
+                            "system": "http://loinc.org",
+                            "display": "High grade prostatic intraepithelial neoplasia"
+                          },
+                          {
+                            "code": "446711009",
+                            "system": "http://snomed.info/sct",
+                            "display": "High grade prostatic intraepithelial neoplasia (disorder)"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HighGradePIN_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "94666-5",
+                              "system": "http://loinc.org",
+                              "display": "High grade prostatic intraepithelial neoplasia"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HighGradePIN_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HighGradePIN_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_HighGradePIN_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                        "valueBoolean": true
+                      },
+                      {
+                        "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+                        "valueCode": "Observation"
+                      }
+                    ],
+                    "linkId": "PathoFinding_GranulomatoeseProstatitis",
+                    "type": "group",
+                    "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+                    "enableBehavior": "all",
+                    "item": [
+                      {
+                        "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10410",
+                        "text": "Granulomatöse Prostatitis",
+                        "type": "open-choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          }
+                        ],
+                        "code": [
+                          {
+                            "code": "94665-7",
+                            "system": "http://loinc.org",
+                            "display": "Granulomatous prostatitis"
+                          },
+                          {
+                            "code": "61500009",
+                            "system": "http://snomed.info/sct",
+                            "display": "Granulomatous prostatitis (disorder)"
+                          }
+                        ],
+                        "answerOption": [
+                          {
+                            "valueCoding": {
+                              "code": "52101004",
+                              "system": "http://snomed.info/sct",
+                              "display": "Present (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "47492008",
+                              "system": "http://snomed.info/sct",
+                              "display": "Not seen (qualifier value)"
+                            }
+                          },
+                          {
+                            "valueCoding": {
+                              "code": "1156316003",
+                              "system": "http://snomed.info/sct",
+                              "display": "Cannot be determined (qualifier value)"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GranulomatoeseProstatitis_code",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "94665-7",
+                              "system": "http://loinc.org",
+                              "display": "Granulomatous prostatitis"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GranulomatoeseProstatitis_category_laboratory",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:laboratory.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "laboratory",
+                              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GranulomatoeseProstatitis_category_section",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#22635-7",
+                              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                            "valueBoolean": true
+                          }
+                        ],
+                        "linkId": "PathoFinding_GranulomatoeseProstatitis_status",
+                        "type": "choice",
+                        "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status",
+                        "enableBehavior": "all",
+                        "initial": [
+                          {
+                            "valueCoding": {
+                              "code": "#final",
+                              "system": "http://hl7.org/fhir/observation-status"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

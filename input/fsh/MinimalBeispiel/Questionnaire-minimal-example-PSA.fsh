@@ -81,7 +81,6 @@ Usage: #definition
 //* item[+]
 //  * insert addExtractionContextGrouperUpdate("specimen_update", https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen, expression)
 
-  
  /* * item[+] //Ohne initialExpression
   * item[=].linkId = "ReferenceToServiceRequest"
   * item[=].type = #reference

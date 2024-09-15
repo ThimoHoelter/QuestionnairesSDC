@@ -15,6 +15,8 @@ Usage: #definition
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
 
+// Fazit: CandidateExpression funktioniert nicht auf dem HAPI
+
 * item[+]
 * item[=].linkId = "specimen-identification"
 * item[=].text = "Proben-ID:"

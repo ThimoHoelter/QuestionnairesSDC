@@ -14,19 +14,23 @@ Usage: #definition
 * subjectType = $resourceType#Patient
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
-/*
+
+// Funktioniert nicht
 * item[+]
-  * insert addExtractionContextGrouperNew("Observation_PSA-SerologieInitial", "http://hl7.org/fhir/Observation#Observation", #Observation)
+  * insert addExtractionContextGrouperNew("Observation_PSA-SerologieInitialQuantity", "http://hl7.org/fhir/Observation#Observation", #Observation)
   * item[+]
-    * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation.valueQuantity.value")
+    * insert addExtractionItem("SerologieInitialQuantity", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation#Observation.valueQuantity.value")
+    * initial.valueQuantity.value = 1.23
     * initial.valueQuantity.unit = "%"
     * initial.valueQuantity.system = $unitsofmeasure
     * initial.valueQuantity.code = #%
-*/
+
+// Funktioniert
 * item[+]
   * insert addExtractionContextGrouperNew("Observation_PSA-SerologieEinzeln", "http://hl7.org/fhir/Observation#Observation", #Observation)
   * item[+]
-    * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation.valueQuantity.value")
+    * insert addExtractionItem("SerologieEinzeln", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation#Observation.valueQuantity.value")
+    * initial.valueDecimal = 1.234
   * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit")
     * initial.valueString = "ng/mL"
@@ -36,10 +40,11 @@ Usage: #definition
   * item[+]
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/Observation#Observation.valueQuantity.system")
     * initial.valueUri = $unitsofmeasure
-/*
+
+// Überträgt Wert aber keine Einheit = Funktioniert nicht
 * item[+]
   * insert addExtractionContextGrouperNew("Observation_PSA-SerologieUUNIT", "http://hl7.org/fhir/Observation#Observation", #Observation)
   * item[+]
-    * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation.valueQuantity.value")
+    * insert addExtractionItem("SerologieUUNIT", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation#Observation.valueQuantity.value")
     * insert uunit(cm)
-    */
+    * initial.valueDecimal = 1.23

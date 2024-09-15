@@ -468,7 +468,7 @@ def put_finalized_resources(finalized_resources, posted_ids):
 
 def main():
     directory = "./MII-Patho"
-    questionnaire_file_path = 'Questionnaire25.07.json'
+    questionnaire_file_path = 'QuestionnaireKlinischeAng.json'
     serviceRequest_file_path = 'ExampleServiceRequest.json'
 
     # Schritt 0.1: Überprüfen, ob StructureDefinitions & ValueSets bereits auf dem Server sind

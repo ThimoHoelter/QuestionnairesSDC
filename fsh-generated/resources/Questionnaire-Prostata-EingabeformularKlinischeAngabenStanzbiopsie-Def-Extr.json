@@ -97,7 +97,7 @@
               ],
               "linkId": "ProblemListItem_Anamnese",
               "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
               "enableBehavior": "all",
               "enableWhen": [
                 {
@@ -112,8 +112,13 @@
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10110",
                   "text": "Anamnestische Angaben",
                   "type": "text",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown",
-                  "enableBehavior": "all"
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "Azinäres Adenokarzinom"
+                    }
+                  ]
                 },
                 {
                   "extension": [
@@ -124,7 +129,7 @@
                   ],
                   "linkId": "Anamnese_Code",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -145,7 +150,7 @@
                   ],
                   "linkId": "Anamnese_Category",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -171,7 +176,7 @@
               ],
               "linkId": "ProblemListItem_Vorbefunde",
               "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
               "enableBehavior": "all",
               "enableWhen": [
                 {
@@ -186,8 +191,13 @@
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10120",
                   "text": "Vorbefunde",
                   "type": "text",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown",
-                  "enableBehavior": "all"
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "Befund/123 / Gleason-Score 6 (3+3)"
+                    }
+                  ]
                 },
                 {
                   "extension": [
@@ -198,7 +208,7 @@
                   ],
                   "linkId": "Vorbefunde_Code",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -219,7 +229,7 @@
                   ],
                   "linkId": "Vorbefunde_Category",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -259,12 +269,24 @@
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
                   "text": "Angaben zur PSA-Serologie",
                   "type": "decimal",
-                  "definition": "http://hl7.org/fhir/Observation.valueQuantity.value",
+                  "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueDecimal": 4.25
+                    }
+                  ],
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                       "valueInteger": 3
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "ng/mL",
+                        "system": "http://unitsofmeasure.org"
+                      }
                     }
                   ]
                 },
@@ -277,7 +299,7 @@
                   ],
                   "linkId": "PSA-Serologie_Code",
                   "type": "choice",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.code",
+                  "definition": "http://hl7.org/fhir/Observation#Observation.code.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -374,15 +396,20 @@
               ],
               "linkId": "ProblemListItem_TNM",
               "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
               "enableBehavior": "all",
               "item": [
                 {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10140",
                   "text": "Klinisches TNM",
                   "type": "text",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown",
-                  "enableBehavior": "all"
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "T1N0M0"
+                    }
+                  ]
                 },
                 {
                   "extension": [
@@ -393,7 +420,7 @@
                   ],
                   "linkId": "TNM_Code",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -414,7 +441,7 @@
                   ],
                   "linkId": "TNM_Category",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -456,6 +483,11 @@
                   "type": "string",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.value",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "ABC"
+                    }
+                  ],
                   "code": [
                     {
                       "code": "372274003",
@@ -474,7 +506,7 @@
                   ],
                   "linkId": "ProbenID_type",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.type",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.type.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -490,6 +522,15 @@
                   "type": "open-choice",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueCoding": {
+                        "code": "716917000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+                      }
+                    }
+                  ],
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -601,9 +642,14 @@
                 {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10050",
                   "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
-                  "type": "integer",
+                  "type": "decimal",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.container.specimenQuantity.value",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueDecimal": 1
+                    }
+                  ],
                   "code": [
                     {
                       "code": "44652-6",
@@ -618,7 +664,19 @@
                   "type": "decimal",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.value",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueDecimal": 0.15
+                    }
+                  ],
                   "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+                      "valueCoding": {
+                        "code": "cm",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    },
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
                       "valueInteger": 3
@@ -634,11 +692,71 @@
                   ]
                 },
                 {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "Stanzlaenge_Unit_Display",
+                  "type": "text",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.unit",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "cm"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "Stanzlaenge_Unit_Code",
+                  "type": "text",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.code",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueString": "cm"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "Stanzlaenge_Unit_System",
+                  "type": "url",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.system",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueUri": "http://unitsofmeasure.org"
+                    }
+                  ]
+                },
+                {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10080",
                   "text": "Seitenangabe",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension[lateralityQualifier].coding",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension:lateralityQualifier.valueCodeableConcept.coding",
                   "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueCoding": {
+                        "code": "24028007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Right (qualifier value)"
+                      }
+                    }
+                  ],
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -686,7 +804,7 @@
                   ],
                   "linkId": "Proben_type",
                   "type": "choice",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.type",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.type.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -742,29 +860,12 @@
                     }
                   ],
                   "linkId": "Proben_Collected_dateTime",
-                  "type": "DateTime",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value",
+                  "type": "dateTime",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.collectedDateTime",
                   "enableBehavior": "all",
                   "initial": [
                     {
                       "valueDateTime": "2024-01-01"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    }
-                  ],
-                  "linkId": "Proben_Collected_dateTime",
-                  "type": "string",
-                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value",
-                  "enableBehavior": "all",
-                  "initial": [
-                    {
-                      "valueString": "dummyIdentifier"
                     }
                   ]
                 }

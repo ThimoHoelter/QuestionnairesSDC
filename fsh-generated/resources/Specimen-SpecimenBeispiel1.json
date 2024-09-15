@@ -10,10 +10,10 @@
           }
         ]
       },
-      "value": "A123B"
+      "value": "ABC"
     }
   ],
   "subject": {
-    "reference": "Patient/28"
+    "reference": "Patient/2"
   }
 }

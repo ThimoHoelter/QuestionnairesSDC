@@ -34,36 +34,38 @@ Usage: #definition
 
 // Frage zu Anamnestische Angaben (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
-      * insert addExtractionContextGrouperNew("ProblemListItem_Anamnese", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition", #Condition)
+      * insert addExtractionContextGrouperNew("ProblemListItem_Anamnese", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition", #Condition)
         * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
         * enableWhen.operator = #=
         * enableWhen.answerBoolean = false
         * repeats = true
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10110", #text, "Anamnestische Angaben", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10110", #text, "Anamnestische Angaben", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text")
+        * initial.valueString = "Azinäres Adenokarzinom"
       * item[+]
-        * insert addExtractionHiddenItem("Anamnese_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")
+        * insert addExtractionHiddenItem("Anamnese_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding")
         //* code[+] = $loinc#11450-4 "Problem list - Reported" - .code 0..1
         * initial.valueCoding = $loinc#10164-2 "History of Present illness Narrative"
       * item[+]
-        * insert addExtractionHiddenItem("Anamnese_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category")
+        * insert addExtractionHiddenItem("Anamnese_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding")
         * initial.valueCoding = $Condition-Category#problem-list-item
 
 // Frage zu Vorbefunden (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
-      * insert addExtractionContextGrouperNew("ProblemListItem_Vorbefunde", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition", #Condition)    
+      * insert addExtractionContextGrouperNew("ProblemListItem_Vorbefunde", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition", #Condition)    
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
       * enableWhen.operator = #=
       * enableWhen.answerBoolean = false
       * repeats = true
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10120", #text, "Vorbefunde", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10120", #text, "Vorbefunde", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text")
+        * initial.valueString = "Befund/123 / Gleason-Score 6 (3+3)"
       * item[+]
-        * insert addExtractionHiddenItem("Vorbefunde_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
+        * insert addExtractionHiddenItem("Vorbefunde_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding")  
         * initial.valueCoding = $loinc#28636-9 "Initial evaluation note"
         //* code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
       * item[+]
-        * insert addExtractionHiddenItem("Vorbefunde_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category")
+        * insert addExtractionHiddenItem("Vorbefunde_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding")
         * initial.valueCoding = $Condition-Category#problem-list-item
 
 // Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben auf false)
@@ -73,10 +75,12 @@ Usage: #definition
       * enableWhen.operator = #=
       * enableWhen.answerBoolean = false
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation.valueQuantity.value")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation#Observation.valueQuantity.value")
+        * initial.valueDecimal = 4.25
         * insert maxDecimalPlaces(3) // not supported in LHC
+        * insert uunit(ng/mL)
       * item[+]
-        * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "http://hl7.org/fhir/Observation#Observation.code")
+        * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "http://hl7.org/fhir/Observation#Observation.code.coding")
         * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
       * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
         * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit")
@@ -93,15 +97,16 @@ Usage: #definition
 
 // Frage zu TNM
     * item[+]
-      * insert addExtractionContextGrouperNew("ProblemListItem_TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition", #Condition)
+      * insert addExtractionContextGrouperNew("ProblemListItem_TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition", #Condition)
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10140", #text, "Klinisches TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.note.markdown")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10140", #text, "Klinisches TNM", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text")
+        * initial.valueString = "T1N0M0"
       * item[+]
-        * insert addExtractionHiddenItem("TNM_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.code")  
+        * insert addExtractionHiddenItem("TNM_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.code.coding")  
         * initial.valueCoding = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer"
         //* code[+] = $loinc#90013-4 "Clinical pathology Initial evaluation note"
       * item[+]
-        * insert addExtractionHiddenItem("TNM_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-history-of-present-illness#Condition.category")
+        * insert addExtractionHiddenItem("TNM_Category", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.category.coding")
         * initial.valueCoding = $Condition-Category#problem-list-item
 
 
@@ -116,14 +121,16 @@ Usage: #definition
 // ProbenID (meist drei Buchstaben)
       * item[+]
         * insert addExtractionItem("d7599448-400b-4ce4-a085-8d5efe78aee9", #string, "Proben-ID -nummer", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.value")
+        * initial.valueString = "ABC"
         * code = $sct#372274003 "Sample identification number (observable entity)"
         * required = true
       * item[+] // Identifier.type = "PLAC" -  vom Einsender
-        * insert addExtractionHiddenItem("ProbenID_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.type")  
+        * insert addExtractionHiddenItem("ProbenID_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.type.coding")  
         * initial.valueCoding = #PLAC
 // Entnahmestelle
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10070", #open-choice, "Lokalisation der Entnahmestelle", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding")
+        * initial.valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
         * insert itemControl(radio-button)
         * code = $loinc#94738-2 "Biopsy site" 
         * required = true
@@ -142,27 +149,40 @@ Usage: #definition
 
 // Anzahl der Stanzzylinder
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10050", #integer, "Anzahl der Stanzzylinder im Einsendungsgefäß", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.container.specimenQuantity.value")  
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10050", #decimal, "Anzahl der Stanzzylinder im Einsendungsgefäß", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.container.specimenQuantity.value")  
+        * initial.valueDecimal = 1
         * code = $loinc#44652-6 "Total number of cores Tissue Core"
 // Stanzenlänge in cm
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11208", #decimal, "Länge der/des Stanzzylinders in cm", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.value")
-        //* insert uunit(cm)
+        * initial.valueDecimal = 0.15
+        * insert uunit(cm)
         * insert maxDecimalPlaces(3)
         * required = true
         * code = $loinc#44619-5 "Length of tissue core(s)"
+      * item[+] // Maßeinheit (Displayname, System und Code werden in die Probe übertragen)
+        * insert addExtractionHiddenItem("Stanzlaenge_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.unit")
+        * initial.valueString = "cm"
+      * item[+]
+        * insert addExtractionHiddenItem("Stanzlaenge_Unit_Code", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.code")
+        * initial.valueString = "cm"
+      * item[+]
+        * insert addExtractionHiddenItem("Stanzlaenge_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.system")
+        * initial.valueUri = $unitsofmeasure
+        
 // Seitenangabe 
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension[lateralityQualifier].coding")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension:lateralityQualifier.valueCodeableConcept.coding")
+        * initial.valueCoding = $sct#24028007 "Right (qualifier value)"
         * insert itemControl(radio-button)
-        * required = true
+        * required = true 
         * code = $loinc#20228-3 "Anatomic part Laterality"
         * answerOption[+].valueCoding = $sct#24028007 "Right (qualifier value)"
         * answerOption[+].valueCoding = $sct#7771000 "Left (qualifier value)"
 
 // Notwendige (1..1) Felder innerhalb jeder Probe
       * item[+]
-        * insert addExtractionHiddenItem("Proben_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.type")
+        * insert addExtractionHiddenItem("Proben_type", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.type.coding")
         * initial.valueCoding = $sct#309134005 "Prostate tru-cut biopsy specimen (specimen)"
       * item[+]
         * insert addExtractionHiddenItem("Proben_status", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.status")
@@ -171,9 +191,6 @@ Usage: #definition
         * insert addExtractionHiddenItem("Proben_accIdent", #string, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
         * initial.valueString = "Fallnummer-123456"
       * item[+]
-        * insert addExtractionHiddenItem("Proben_Collected_dateTime", #DateTime, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
+        * insert addExtractionHiddenItem("Proben_Collected_dateTime", #dateTime, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.collectedDateTime")
         * initial.valueDateTime = "2024-01-01"
-      * item[+]
-        * insert addExtractionHiddenItem("Proben_Collected_dateTime", #string, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.accessionIdentifier.value")
-        * initial.valueString = "dummyIdentifier"
 
