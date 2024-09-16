@@ -115,7 +115,7 @@ RuleSet: addPathoFindingSectionCode(linkId, code)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding"
 * enableBehavior = #all
 * initial.valueCoding = $patho-sections#{code}
 

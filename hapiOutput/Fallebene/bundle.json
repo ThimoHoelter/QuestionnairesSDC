@@ -1,0 +1,1136 @@
+{
+    "resourceType": "Bundle",
+    "id": "extract-73",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_HistoICDO3",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "59847-4",
+                            "display": "Histology and Behavior ICD-O-3 Cancer"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.6.43.1",
+                            "code": "8140/3",
+                            "display": "Azinäres Adenokarzinom"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_HistoICDO3"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_MorphTextF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "33731-1",
+                            "display": "Histology type in Cancer specimen Narrative"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueString": "Unregelmäßige, infiltrative Drüsenstrukturen, typisch für das azinäre Adenokarzinom."
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_MorphTextF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_ICD-O-Version",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "397005006",
+                            "display": "WHO tumor classification (observable entity)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:1.2.276.0.76.3.1.131.1.5.153",
+                            "code": "33",
+                            "display": "ICD-O-3 2. Auflage 2019"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_ICD-O-Version"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_PrimaerGleasonF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44641-9",
+                            "display": "Gleason pattern.primary in Prostate tumor"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "369772003",
+                            "display": "Gleason Pattern 3 (finding)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_PrimaerGleasonF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_SekundaerGleasonF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44642-7",
+                            "display": "Gleason pattern.secondary in Prostate tumor"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "369772003",
+                            "display": "Gleason Pattern 3 (finding)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_SekundaerGleasonF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_GleasonScore",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "35266-6",
+                            "display": "Gleason score in Specimen Qualitative"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "84556003",
+                            "display": "Gleason grade 6 (staging scale)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_GleasonScore"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_ProzentGleasonF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "94735-8",
+                            "display": "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueQuantity": {
+                    "value": 77,
+                    "unit": "%",
+                    "code": "%"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_ProzentGleasonF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_GleasonGradingF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "94734-1",
+                            "display": "Prostate cancer grade group"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "860745005",
+                            "display": "Gleason grade group 4 (finding)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_GleasonGradingF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_HistoDiffGrad",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "21858-6",
+                            "display": "Grade Cancer"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.10010",
+                            "code": "4",
+                            "display": "Undifferenziert"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_HistoDiffGrad"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_AnzahlPosStanzenRechts",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "399727003:18720000=251597001",
+                            "display": "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of right lateral lobe of prostate (body structure)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_AnzahlPosStanzenRechts"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_AnzahlPosStanzenLinks",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "399727003:18720000=251695000",
+                            "display": "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of left lateral lobe of prostate (body structure)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_AnzahlPosStanzenLinks"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_VerhaeltnisPositiveStanzenF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "372303007",
+                            "display": "Ratio of blocks with prostate tumor to total number of blocks obtained (observable entity)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueString": "1/2"
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_VerhaeltnisPositiveStanzenF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_ProzentTumoranteilF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44651-8",
+                            "display": "Tissue cores.positive.carcinoma in Tissue core"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueQuantity": {
+                    "value": 80,
+                    "unit": "%",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "%"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_ProzentTumoranteilF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_TumorGesamtLaenge",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44618-7",
+                            "display": "Total linear mm of carcinoma"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueQuantity": {
+                    "value": 20,
+                    "unit": "mm",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mm"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_TumorGesamtLaenge"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_PerineuraleInfiltrationF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "92837-4",
+                            "display": "Perineural invasion [Presence] in Cancer specimen"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "52101004",
+                            "display": "Present (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_PerineuraleInfiltrationF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_TumornachweisinSamenblaseF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44626-0",
+                            "display": "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_TumornachweisinSamenblaseF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_LymphovaskuläreInvasionF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "33761-8",
+                            "display": "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_LymphovaskuläreInvasionF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_TumornachweisInFettgewebeF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "44625-2",
+                            "display": "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "52101004",
+                            "display": "Present (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_TumornachweisInFettgewebeF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_Tumorausbreitung",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "84902-6",
+                            "display": "Extraprostatic extension site [Anatomy] of Prostate tumor"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "LA25151-4",
+                            "display": "Apical"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_Tumorausbreitung"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_IntraduktalesKarzinomF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "86616005",
+                            "display": "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_IntraduktalesKarzinomF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_ASAPF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "16294321000119104",
+                            "display": "Atypical small acinar proliferation of prostate (disorder)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_ASAPF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_HighGradePINF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "94666-5",
+                            "display": "High grade prostatic intraepithelial neoplasia"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_HighGradePINF"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-73-PathoFinding_GranulomatoeseProstatitisF",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding"
+                    ]
+                },
+                "status": "final",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                                "code": "laboratory"
+                            },
+                            {
+                                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                                "code": "#22637-3"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "94666-5",
+                            "display": "High grade prostatic intraepithelial neoplasia"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "47492008",
+                            "display": "Not seen (qualifier value)"
+                        }
+                    ]
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-73-PathoFinding_GranulomatoeseProstatitisF"
+            }
+        }
+    ]
+}

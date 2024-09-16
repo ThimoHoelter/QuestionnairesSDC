@@ -1,0 +1,240 @@
+{
+    "resourceType": "Bundle",
+    "id": "extract-60",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "extract-60-ProblemListItem_Anamnese",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "10164-2",
+                            "display": "History of Present illness Narrative"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "note": [
+                    {
+                        "text": "Azinäres Adenokarzinom"
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Condition/extract-60-ProblemListItem_Anamnese"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "extract-60-ProblemListItem_Vorbefunde",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "28636-9",
+                            "display": "Initial evaluation note"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "note": [
+                    {
+                        "text": "Befund/123 / Gleason-Score 6 (3+3)"
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Condition/extract-60-ProblemListItem_Vorbefunde"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Observation",
+                "id": "extract-60-Observation_PSA-Serologie",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/Observation"
+                    ]
+                },
+                "status": "final",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "2857-1",
+                            "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "valueQuantity": {
+                    "value": 4.25,
+                    "unit": "ng/mL",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "ng/mL"
+                }
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Observation/extract-60-Observation_PSA-Serologie"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "extract-60-ProblemListItem_TNM",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "75620-5",
+                            "display": "TNM clinical staging before treatment panel Cancer"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "note": [
+                    {
+                        "text": "T1N0M0"
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Condition/extract-60-ProblemListItem_TNM"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "extract-60-2.16.840.1.113883.3.1937.777.18.2.4.10060",
+                "meta": {
+                    "profile": [
+                        "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "PLAC"
+                                }
+                            ]
+                        },
+                        "value": "ABC"
+                    }
+                ],
+                "accessionIdentifier": {
+                    "value": "Fallnummer-123456"
+                },
+                "status": "available",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "309134005",
+                            "display": "Prostate tru-cut biopsy specimen (specimen)"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "Patient/2"
+                },
+                "collection": {
+                    "collectedDateTime": "2024-01-01",
+                    "quantity": {
+                        "value": 0.15,
+                        "unit": "cm",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "cm"
+                    },
+                    "bodySite": {
+                        "coding": [
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "716917000",
+                                "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+                            },
+                            {
+                                "system": "http://snomed.info/sct",
+                                "code": "24028007",
+                                "display": "Right (qualifier value)"
+                            }
+                        ]
+                    }
+                },
+                "container": [
+                    {
+                        "specimenQuantity": {
+                            "value": 1
+                        }
+                    }
+                ]
+            },
+            "request": {
+                "method": "PUT",
+                "url": "Specimen/extract-60-2.16.840.1.113883.3.1937.777.18.2.4.10060"
+            }
+        }
+    ]
+}
