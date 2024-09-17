@@ -604,3 +604,4 @@ Usage: #example
               * insert addPathoFindingSectionCode("PathoFinding_GranulomatoeseProstatitisF_category_section", #22637-3)
             * item[+]
               * insert addPathoFindingStatusCode("PathoFinding_GranulomatoeseProstatitisF_status", final)
+ 

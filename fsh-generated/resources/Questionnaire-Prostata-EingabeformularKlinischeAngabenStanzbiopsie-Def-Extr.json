@@ -522,15 +522,6 @@
                   "type": "open-choice",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding",
                   "enableBehavior": "all",
-                  "initial": [
-                    {
-                      "valueCoding": {
-                        "code": "716917000",
-                        "system": "http://snomed.info/sct",
-                        "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-                      }
-                    }
-                  ],
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -558,7 +549,8 @@
                         "code": "716917000",
                         "system": "http://snomed.info/sct",
                         "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-                      }
+                      },
+                      "initialSelected": true
                     },
                     {
                       "valueCoding": {
@@ -748,15 +740,6 @@
                   "type": "choice",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension:lateralityQualifier.valueCodeableConcept.coding",
                   "enableBehavior": "all",
-                  "initial": [
-                    {
-                      "valueCoding": {
-                        "code": "24028007",
-                        "system": "http://snomed.info/sct",
-                        "display": "Right (qualifier value)"
-                      }
-                    }
-                  ],
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -784,7 +767,8 @@
                         "code": "24028007",
                         "system": "http://snomed.info/sct",
                         "display": "Right (qualifier value)"
-                      }
+                      },
+                      "initialSelected": true
                     },
                     {
                       "valueCoding": {

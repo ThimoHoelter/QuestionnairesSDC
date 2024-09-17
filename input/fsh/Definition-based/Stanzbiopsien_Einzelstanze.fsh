@@ -461,10 +461,10 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_IntraduktalesKarzinom", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.28", #open-choice, "Intraduktales Karzinom", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $sct#86616005 "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_IntraduktalesKarzinom_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")

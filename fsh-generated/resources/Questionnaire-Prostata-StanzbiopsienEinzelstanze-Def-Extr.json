@@ -114,15 +114,6 @@
                   "type": "open-choice",
                   "text": "Lokalisation der Entnahmestelle",
                   "enableBehavior": "all",
-                  "initial": [
-                    {
-                      "valueCoding": {
-                        "code": "716917000",
-                        "system": "http://snomed.info/sct",
-                        "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-                      }
-                    }
-                  ],
                   "code": [
                     {
                       "code": "94738-2",
@@ -136,7 +127,8 @@
                         "code": "716917000",
                         "system": "http://snomed.info/sct",
                         "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-                      }
+                      },
+                      "initialSelected": true
                     },
                     {
                       "valueCoding": {
@@ -419,15 +411,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "8140/3",
-                            "system": "urn:oid:2.16.840.1.113883.6.43.1",
-                            "display": "Azinäres Adenokarzinom"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "59847-4",
@@ -448,7 +431,8 @@
                             "code": "8140/3",
                             "system": "urn:oid:2.16.840.1.113883.6.43.1",
                             "display": "Azinäres Adenokarzinom"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -1027,20 +1011,11 @@
                   "enableBehavior": "all",
                   "item": [
                     {
-                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10260",
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
                       "text": "Primäres Gleason Muster - Epstein 2005",
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "369772003",
-                            "system": "http://snomed.info/sct",
-                            "display": "Gleason Pattern 3 (finding)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "44641-9",
@@ -1078,7 +1053,8 @@
                             "code": "369772003",
                             "system": "http://snomed.info/sct",
                             "display": "Gleason Pattern 3 (finding)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -1208,15 +1184,6 @@
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "369773008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Gleason Pattern 4 (finding)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "44642-7",
@@ -1261,7 +1228,8 @@
                             "code": "369773008",
                             "system": "http://snomed.info/sct",
                             "display": "Gleason Pattern 4 (finding)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -1600,15 +1568,6 @@
                       "type": "choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "860745005",
-                            "system": "http://snomed.info/sct",
-                            "display": "Gleason grade group 4 (finding)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "94734-1",
@@ -1653,7 +1612,8 @@
                             "code": "860745005",
                             "system": "http://snomed.info/sct",
                             "display": "Gleason grade group 4 (finding)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2234,22 +2194,14 @@
                           "display": "Perineural invasion [Presence] in Cancer specimen"
                         }
                       ],
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "52101004",
-                            "system": "http://snomed.info/sct",
-                            "display": "Present (qualifier value)"
-                          }
-                        }
-                      ],
                       "answerOption": [
                         {
                           "valueCoding": {
                             "code": "52101004",
                             "system": "http://snomed.info/sct",
                             "display": "Present (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2372,15 +2324,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "44626-0",
@@ -2401,7 +2344,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2517,15 +2461,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "33761-8",
@@ -2546,7 +2481,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2662,15 +2598,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "44625-2",
@@ -2691,7 +2618,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2807,15 +2735,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "86616005",
@@ -2836,7 +2755,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -2952,15 +2872,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "373067005",
-                            "system": "http://snomed.info/sct",
-                            "display": "No (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "16294321000119104",
@@ -2974,7 +2885,8 @@
                             "code": "373067005",
                             "system": "http://snomed.info/sct",
                             "display": "No (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -3097,15 +3009,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "94666-5",
@@ -3131,7 +3034,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
@@ -3247,15 +3151,6 @@
                       "type": "open-choice",
                       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding",
                       "enableBehavior": "all",
-                      "initial": [
-                        {
-                          "valueCoding": {
-                            "code": "47492008",
-                            "system": "http://snomed.info/sct",
-                            "display": "Not seen (qualifier value)"
-                          }
-                        }
-                      ],
                       "code": [
                         {
                           "code": "94665-7",
@@ -3281,7 +3176,8 @@
                             "code": "47492008",
                             "system": "http://snomed.info/sct",
                             "display": "Not seen (qualifier value)"
-                          }
+                          },
+                          "initialSelected": true
                         },
                         {
                           "valueCoding": {
