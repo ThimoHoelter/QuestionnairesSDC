@@ -49,9 +49,9 @@ Usage: #definition
   // Lokalisation der Entnahmestelle
       * item[+]
         * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.11243", #open-choice, "Lokalisation der Entnahmestelle")
-        * initial.valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
         * code = $loinc#94738-2 "Biopsy site [Anatomy]"
         * answerOption[+].valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+        * answerOption[=].initialSelected = true
         * answerOption[+].valueCoding = $sct#716934008 "Structure of apical part of peripheral zone of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716909008 "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716892006 "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
@@ -111,10 +111,10 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_HistoTyp", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10250", #open-choice, "Histologischer Typ ICD-O-3", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding") 
-          * initial.valueCoding = $ICDO-3#8140/3 "Azinäres Adenokarzinom"
           * code = $loinc#59847-4 "Histology and Behavior ICD-O-3 Cancer"
           * answerOption[+].valueCoding = $sct#110396000 "No evidence of malignant neoplasm (finding)"
           * answerOption[+].valueCoding = $ICDO-3#8140/3 "Azinäres Adenokarzinom"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $ICDO-3#8140/3 "Atrophe Variante eines Adenokarzinoms"
           * answerOption[+].valueCoding = $ICDO-3#8140/3 "Pseudohyperplastische Variante eines Adenokarzinoms"
           * answerOption[+].valueCoding = $ICDO-3#8140/3 "Mikrozystische Variante eines Adenokarzinoms"
@@ -197,9 +197,8 @@ Usage: #definition
   // Primäres Gleason Muster (Epstein 2005)
       * item[+]
         * insert addExtractionContextGrouperNew("PathoFinding_PrimaerGleason", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
-        * item[+]
-          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10260", #choice, "Primäres Gleason Muster - Epstein 2005", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#369772003 "Gleason Pattern 3 (finding)"
+        * item[+] 
+          * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10290", #choice, "Primäres Gleason Muster - Epstein 2005", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
           * code = $loinc#44641-9 "Gleason pattern.primary in Prostate tumor"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10250"
           * enableWhen.operator = #!=
@@ -207,6 +206,7 @@ Usage: #definition
           * answerOption[+].valueCoding = $sct#369770006 "Gleason Pattern 1 (finding)"
           * answerOption[+].valueCoding = $sct#369771005 "Gleason Pattern 2 (finding)"
           * answerOption[+].valueCoding = $sct#369772003 "Gleason Pattern 3 (finding)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#369773008 "Gleason Pattern 4 (finding)"
           * answerOption[+].valueCoding = $sct#369774002 "Gleason Pattern 5 (finding)"
           * answerOption[+].valueCoding = $sct#43771008 "Morphology not applicable (finding)"
@@ -226,7 +226,6 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_SekundaerGleason", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11246", #choice, "Sekundäres Gleason Muster - Epstein 2005", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#369773008 "Gleason Pattern 4 (finding)"
           * code = $loinc#44642-7 "Gleason pattern.secondary in Prostate tumor"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10250"
           * enableWhen.operator = #!=
@@ -235,6 +234,7 @@ Usage: #definition
           * answerOption[+].valueCoding = $sct#369771005 "Gleason Pattern 2 (finding)"
           * answerOption[+].valueCoding = $sct#369772003 "Gleason Pattern 3 (finding)"
           * answerOption[+].valueCoding = $sct#369773008 "Gleason Pattern 4 (finding)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#369774002 "Gleason Pattern 5 (finding)"
           * answerOption[+].valueCoding = $sct#43771008 "Morphology not applicable (finding)"
         * item[+]
@@ -291,7 +291,6 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_GleasonGrading", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11200", #choice, "Gradinggruppe nach ISUP 2014/WHO 2016", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#860745005 "Gleason grade group 4 (finding)"
           * code = $loinc#94734-1 "Prostate cancer grade group"
           * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.4.10290"
           * enableWhen.operator = #!=
@@ -300,6 +299,7 @@ Usage: #definition
           * answerOption[+].valueCoding = $sct#860743003 "Gleason grade group 2 (finding)"
           * answerOption[+].valueCoding = $sct#860744009 "Gleason grade group 3 (finding)"
           * answerOption[+].valueCoding = $sct#860745005 "Gleason grade group 4 (finding)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#860746006 "Gleason grade group 5 (finding)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_GleasonGrading_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -386,8 +386,8 @@ Usage: #definition
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10380", #open-choice, "Perineurale Infiltration", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
           * code = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
-          * initial.valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
@@ -404,10 +404,10 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_TumornachweisinSamenblase", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10370", #open-choice, "Tumornachweis in Samenblasen", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")  
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#44626-0 "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_TumornachweisinSamenblase_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -423,10 +423,10 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_LymphovaskuläreInvasion", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11206", #open-choice, "Lymphovaskuläre Invasion", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#33761-8 "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_LymphovaskuläreInvasion_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -442,10 +442,10 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_TumornachweisInFettgewebe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10360", #open-choice, "Tumornachweis in periprostatischem Binde- und Fettgewebe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code = $loinc#44625-2 "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_TumornachweisInFettgewebe_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -480,9 +480,9 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_ASAP", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11112", #open-choice, "ASAP", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#373067005 "No (qualifier value)"
           * code = $sct#16294321000119104 "Atypical small acinar proliferation of prostate (disorder)"
           * answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#373066001 "Yes (qualifier value)"
           * answerOption[+].valueCoding = $sct#373068000 "Undetermined (qualifier value)"
         * item[+]
@@ -499,11 +499,11 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_HighGradePIN", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10390", #open-choice, "Begleitende High-grade-PIN", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code[+] = $loinc#94666-5 "High grade prostatic intraepithelial neoplasia"
           * code[+] = $sct#446711009 "High grade prostatic intraepithelial neoplasia (disorder)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_HighGradePIN_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")
@@ -519,11 +519,11 @@ Usage: #definition
         * insert addExtractionContextGrouperNew("PathoFinding_GranulomatoeseProstatitis", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)  
         * item[+] 
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10410", #open-choice, "Granulomatöse Prostatitis", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * initial.valueCoding = $sct#47492008 "Not seen (qualifier value)"
           * code[+] = $loinc#94665-7 "Granulomatous prostatitis"
           * code[+] = $sct#61500009 "Granulomatous prostatitis (disorder)"
           * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
           * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+          * answerOption[=].initialSelected = true
           * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_GranulomatoeseProstatitis_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")

@@ -130,11 +130,11 @@ Usage: #definition
 // Entnahmestelle
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10070", #open-choice, "Lokalisation der Entnahmestelle", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding")
-        * initial.valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
         * insert itemControl(radio-button)
         * code = $loinc#94738-2 "Biopsy site" 
         * required = true
         * answerOption[+].valueCoding = $sct#716917000 "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
+        * answerOption[=].initialSelected = true
         * answerOption[+].valueCoding = $sct#716934008 "Structure of apical part of peripheral zone of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716909008 "Structure of middle regional part of anterior fibromuscular stroma of right half prostate (body structure)"
         * answerOption[+].valueCoding = $sct#716892006 "Structure of basal part of anterior fibromuscular stroma of right half prostate (body structure)"
@@ -173,11 +173,11 @@ Usage: #definition
 // Seitenangabe 
       * item[+]
         * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10080", #choice, "Seitenangabe", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension:lateralityQualifier.valueCodeableConcept.coding")
-        * initial.valueCoding = $sct#24028007 "Right (qualifier value)"
         * insert itemControl(radio-button)
         * required = true 
         * code = $loinc#20228-3 "Anatomic part Laterality"
         * answerOption[+].valueCoding = $sct#24028007 "Right (qualifier value)"
+        * answerOption[=].initialSelected = true
         * answerOption[+].valueCoding = $sct#7771000 "Left (qualifier value)"
 
 // Notwendige (1..1) Felder innerhalb jeder Probe
