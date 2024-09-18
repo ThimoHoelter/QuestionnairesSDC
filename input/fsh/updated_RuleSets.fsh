@@ -45,7 +45,6 @@ RuleSet: observationExtractSectionInCategory(code)
 //Definition based extraction
 // Bei notwendiger Generierung einer neuen Ressource mit einem oder mehreren zu übertragenden Items
 RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
-* insert hiddenItem(true)
 * linkId = {linkId}
 * type = #group
 * definition = {definition}
@@ -83,7 +82,6 @@ RuleSet: addExtractionItem(linkId, type, text, definition)
 * text = {text}
 * type = {type}
 * definition = {definition}
-* enableBehavior = #all
 
 // Item zur Übertragung "versteckter" Daten
 RuleSet: addExtractionHiddenItem(linkId, type, definition)

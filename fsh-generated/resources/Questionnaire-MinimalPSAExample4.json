@@ -174,20 +174,16 @@
       ]
     },
     {
+      "linkId": "PathoFinding_Macro",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
+      "enableBehavior": "all",
       "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-          "valueBoolean": true
-        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
           "valueCode": "Observation"
         }
       ],
-      "linkId": "PathoFinding_Macro",
-      "type": "group",
-      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
-      "enableBehavior": "all",
       "item": [
         {
           "extension": [

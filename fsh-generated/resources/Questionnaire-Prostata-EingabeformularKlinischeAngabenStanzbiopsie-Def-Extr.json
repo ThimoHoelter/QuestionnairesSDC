@@ -85,20 +85,16 @@
               ]
             },
             {
+              "linkId": "ProblemListItem_Anamnese",
+              "type": "group",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
+              "enableBehavior": "all",
               "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
                   "valueCode": "Condition"
                 }
               ],
-              "linkId": "ProblemListItem_Anamnese",
-              "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
-              "enableBehavior": "all",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
@@ -113,7 +109,6 @@
                   "text": "Anamnestische Angaben",
                   "type": "text",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueString": "Azinäres Adenokarzinom"
@@ -164,20 +159,16 @@
               ]
             },
             {
+              "linkId": "ProblemListItem_Vorbefunde",
+              "type": "group",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
+              "enableBehavior": "all",
               "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
                   "valueCode": "Condition"
                 }
               ],
-              "linkId": "ProblemListItem_Vorbefunde",
-              "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
-              "enableBehavior": "all",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
@@ -192,7 +183,6 @@
                   "text": "Vorbefunde",
                   "type": "text",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueString": "Befund/123 / Gleason-Score 6 (3+3)"
@@ -243,20 +233,16 @@
               ]
             },
             {
+              "linkId": "Observation_PSA-Serologie",
+              "type": "group",
+              "definition": "http://hl7.org/fhir/Observation#Observation",
+              "enableBehavior": "all",
               "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
                   "valueCode": "Observation"
                 }
               ],
-              "linkId": "Observation_PSA-Serologie",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/Observation#Observation",
-              "enableBehavior": "all",
               "enableWhen": [
                 {
                   "question": "2.16.840.1.113883.3.1937.777.18.2.27",
@@ -270,7 +256,6 @@
                   "text": "Angaben zur PSA-Serologie",
                   "type": "decimal",
                   "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueDecimal": 4.25
@@ -384,27 +369,22 @@
               ]
             },
             {
+              "linkId": "ProblemListItem_TNM",
+              "type": "group",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
+              "enableBehavior": "all",
               "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                },
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
                   "valueCode": "Condition"
                 }
               ],
-              "linkId": "ProblemListItem_TNM",
-              "type": "group",
-              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition",
-              "enableBehavior": "all",
               "item": [
                 {
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10140",
                   "text": "Klinisches TNM",
                   "type": "text",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item#Condition.note.text",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueString": "T1N0M0"
@@ -482,7 +462,6 @@
                   "text": "Proben-ID -nummer",
                   "type": "string",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.identifier.value",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueString": "ABC"
@@ -521,7 +500,6 @@
                   "text": "Lokalisation der Entnahmestelle",
                   "type": "open-choice",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.coding",
-                  "enableBehavior": "all",
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
@@ -636,7 +614,6 @@
                   "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
                   "type": "decimal",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.container.specimenQuantity.value",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueDecimal": 1
@@ -655,7 +632,6 @@
                   "text": "Länge der/des Stanzzylinders in cm",
                   "type": "decimal",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.quantity.value",
-                  "enableBehavior": "all",
                   "initial": [
                     {
                       "valueDecimal": 0.15
@@ -739,7 +715,6 @@
                   "text": "Seitenangabe",
                   "type": "choice",
                   "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite.extension:lateralityQualifier.valueCodeableConcept.coding",
-                  "enableBehavior": "all",
                   "extension": [
                     {
                       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",

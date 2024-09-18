@@ -27,36 +27,28 @@
   ],
   "item": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-          "valueBoolean": true
-        },
-        {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
-          "valueCode": "Observation"
-        }
-      ],
       "linkId": "Observation_additional-Grouper",
       "type": "group",
       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation",
-      "enableBehavior": "all"
-    },
-    {
+      "enableBehavior": "all",
       "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-          "valueBoolean": true
-        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
           "valueCode": "Observation"
         }
-      ],
+      ]
+    },
+    {
       "linkId": "Observation_PSA-Serologie",
       "type": "group",
       "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation",
       "enableBehavior": "all",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
       "item": [
         {
           "initial": [
@@ -105,7 +97,6 @@
           "text": "PSA-Serologie",
           "type": "decimal",
           "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value",
-          "enableBehavior": "all",
           "code": [
             {
               "code": "2857-1",
@@ -183,20 +174,16 @@
       ]
     },
     {
+      "linkId": "definitionGrouperDiagnosticReport",
+      "type": "group",
+      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
+      "enableBehavior": "all",
       "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-          "valueBoolean": true
-        },
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
           "valueCode": "DiagnosticReport"
         }
       ],
-      "linkId": "definitionGrouperDiagnosticReport",
-      "type": "group",
-      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report#DiagnosticReport",
-      "enableBehavior": "all",
       "item": [
         {
           "extension": [
