@@ -267,6 +267,7 @@ Usage: #definition
           * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.11246"
           * enableWhen[=].operator = #=
           * enableWhen[=].answerCoding = $sct#369774002 "Muster 5"
+          * enableBehavior = #all // Den Mustern müssen Werte zugeordnet werden, damit man den Gleason score innerhalb der enableWhen Function einbauen kann!
         * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
           * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
           * initial.valueString = "%"

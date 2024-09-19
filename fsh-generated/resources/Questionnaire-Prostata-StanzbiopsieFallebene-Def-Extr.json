@@ -1410,7 +1410,8 @@
                                 "display": "Gleason grade 10 (staging scale)"
                               }
                             }
-                          ]
+                          ],
+                          "enableBehavior": "any"
                         },
                         {
                           "extension": [

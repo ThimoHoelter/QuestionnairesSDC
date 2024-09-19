@@ -69,7 +69,7 @@
     "fshType": "Instance",
     "fshFile": "Definition-based\\Stanzbiopsien_Fallebene.fsh",
     "startLine": 1,
-    "endLine": 606
+    "endLine": 607
   },
   {
     "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene.json",
@@ -85,7 +85,7 @@
     "fshType": "Instance",
     "fshFile": "Definition-based\\Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
-    "endLine": 536
+    "endLine": 537
   },
   {
     "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze.json",

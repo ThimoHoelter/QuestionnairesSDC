@@ -1375,7 +1375,8 @@
                             "display": "Muster 5"
                           }
                         }
-                      ]
+                      ],
+                      "enableBehavior": "all"
                     },
                     {
                       "extension": [

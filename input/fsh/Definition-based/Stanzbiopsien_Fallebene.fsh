@@ -243,6 +243,7 @@ Usage: #example
             * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.10280"
             * enableWhen[=].operator = #=
             * enableWhen[=].answerCoding = $sct#24514009 "Gleason grade 10 (staging scale)"
+            * enableBehavior = #any 
           * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
             * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
             * initial.valueString = "%"
