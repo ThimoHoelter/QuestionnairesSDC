@@ -1,12 +1,12 @@
 {
     "resourceType": "Bundle",
-    "id": "extract-60",
+    "id": "extract-47",
     "type": "transaction",
     "entry": [
         {
             "resource": {
                 "resourceType": "Condition",
-                "id": "extract-60-ProblemListItem_Anamnese",
+                "id": "extract-47-ProblemListItem_Anamnese",
                 "meta": {
                     "profile": [
                         "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
@@ -32,7 +32,7 @@
                     ]
                 },
                 "subject": {
-                    "reference": "Patient/2"
+                    "reference": "Patient/30"
                 },
                 "note": [
                     {
@@ -42,13 +42,13 @@
             },
             "request": {
                 "method": "PUT",
-                "url": "Condition/extract-60-ProblemListItem_Anamnese"
+                "url": "Condition/extract-47-ProblemListItem_Anamnese"
             }
         },
         {
             "resource": {
                 "resourceType": "Condition",
-                "id": "extract-60-ProblemListItem_Vorbefunde",
+                "id": "extract-47-ProblemListItem_Vorbefunde",
                 "meta": {
                     "profile": [
                         "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
@@ -74,7 +74,7 @@
                     ]
                 },
                 "subject": {
-                    "reference": "Patient/2"
+                    "reference": "Patient/30"
                 },
                 "note": [
                     {
@@ -84,16 +84,16 @@
             },
             "request": {
                 "method": "PUT",
-                "url": "Condition/extract-60-ProblemListItem_Vorbefunde"
+                "url": "Condition/extract-47-ProblemListItem_Vorbefunde"
             }
         },
         {
             "resource": {
                 "resourceType": "Observation",
-                "id": "extract-60-Observation_PSA-Serologie",
+                "id": "extract-47-Observation_PSA-Serologie",
                 "meta": {
                     "profile": [
-                        "http://hl7.org/fhir/Observation"
+                        "http://hl7.org/fhir/StructureDefinition/Observation"
                     ]
                 },
                 "status": "final",
@@ -107,7 +107,7 @@
                     ]
                 },
                 "subject": {
-                    "reference": "Patient/2"
+                    "reference": "Patient/30"
                 },
                 "valueQuantity": {
                     "value": 4.25,
@@ -118,13 +118,13 @@
             },
             "request": {
                 "method": "PUT",
-                "url": "Observation/extract-60-Observation_PSA-Serologie"
+                "url": "Observation/extract-47-Observation_PSA-Serologie"
             }
         },
         {
             "resource": {
                 "resourceType": "Condition",
-                "id": "extract-60-ProblemListItem_TNM",
+                "id": "extract-47-ProblemListItem_TNM",
                 "meta": {
                     "profile": [
                         "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item"
@@ -150,7 +150,7 @@
                     ]
                 },
                 "subject": {
-                    "reference": "Patient/2"
+                    "reference": "Patient/30"
                 },
                 "note": [
                     {
@@ -160,13 +160,13 @@
             },
             "request": {
                 "method": "PUT",
-                "url": "Condition/extract-60-ProblemListItem_TNM"
+                "url": "Condition/extract-47-ProblemListItem_TNM"
             }
         },
         {
             "resource": {
                 "resourceType": "Specimen",
-                "id": "extract-60-2.16.840.1.113883.3.1937.777.18.2.4.10060",
+                "id": "extract-47-2.16.840.1.113883.3.1937.777.18.2.4.10060",
                 "meta": {
                     "profile": [
                         "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen"
@@ -198,7 +198,7 @@
                     ]
                 },
                 "subject": {
-                    "reference": "Patient/2"
+                    "reference": "Patient/30"
                 },
                 "collection": {
                     "collectedDateTime": "2024-01-01",
@@ -208,17 +208,12 @@
                         "system": "http://unitsofmeasure.org",
                         "code": "cm"
                     },
-                    "bodySite": {
+                    "method": {
                         "coding": [
                             {
                                 "system": "http://snomed.info/sct",
-                                "code": "716917000",
-                                "display": "Structure of lateral middle regional part of peripheral zone of right half prostate (body structure)"
-                            },
-                            {
-                                "system": "http://snomed.info/sct",
-                                "code": "24028007",
-                                "display": "Right (qualifier value)"
+                                "code": "40013009",
+                                "display": "Core needle biopsy of prostate (procedure)"
                             }
                         ]
                     }
@@ -233,7 +228,7 @@
             },
             "request": {
                 "method": "PUT",
-                "url": "Specimen/extract-60-2.16.840.1.113883.3.1937.777.18.2.4.10060"
+                "url": "Specimen/extract-47-2.16.840.1.113883.3.1937.777.18.2.4.10060"
             }
         }
     ]

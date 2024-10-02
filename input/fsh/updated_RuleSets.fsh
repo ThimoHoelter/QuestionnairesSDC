@@ -123,7 +123,7 @@ RuleSet: addPathoFindingSectionCode(linkId, code)
 * type = #choice
 * definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
 * enableBehavior = #all
-* initial.valueCoding = $patho-sections#{code}
+* initial.valueCoding = $loinc#{code}
 
 // PathoFinding.status 
 RuleSet: addPathoFindingStatusCode(linkId, code)
