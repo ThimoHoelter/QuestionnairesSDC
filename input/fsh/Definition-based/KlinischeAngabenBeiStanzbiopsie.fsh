@@ -70,29 +70,29 @@ Usage: #definition
 
 // Frage zur PSA-Serologie (Wird nur angezeigt wenn Klinische Angaben auf false)
     * item[+]
-      * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "http://hl7.org/fhir/Observation#Observation", #Observation)
+      * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
       * enableWhen.operator = #=
       * enableWhen.answerBoolean = false
       * item[+]
-        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/Observation#Observation.valueQuantity.value")
+        * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value")
         * initial.valueDecimal = 4.25
         * insert maxDecimalPlaces(3) // not supported in LHC
         * insert uunit(ng/mL)
       * item[+]
-        * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "http://hl7.org/fhir/Observation#Observation.code.coding")
+        * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding")
         * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
       * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
-        * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit")
+        * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit")
         * initial.valueString = "ng/mL"
       * item[+]
-        * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.code")
+        * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code")
         * initial.valueString = "ng/mL"
       * item[+]
-        * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/Observation#Observation.valueQuantity.system")
+        * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system")
         * initial.valueUri = $unitsofmeasure
       * item[+] // .status 1..1
-        * insert addExtractionHiddenItem("PSA-Serologie_Status", #choice, "http://hl7.org/fhir/Observation#Observation.status")
+        * insert addExtractionHiddenItem("PSA-Serologie_Status", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status")
         * initial.valueCoding = #final
 
 // Frage zu TNM
@@ -193,4 +193,7 @@ Usage: #definition
       * item[+]
         * insert addExtractionHiddenItem("Proben_Collected_dateTime", #dateTime, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.collectedDateTime")
         * initial.valueDateTime = "2024-01-01"
+      * item[+]
+        * insert addExtractionHiddenItem("Proben_Collection_method", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.method.coding")
+        * initial.valueCoding = $sct#40013009 "Core needle biopsy of prostate (procedure)"
 

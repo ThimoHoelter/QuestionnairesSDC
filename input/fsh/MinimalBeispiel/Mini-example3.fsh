@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #definition
 * insert launchContext(patient, #Patient, "Patient mit Informationen")
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
-* url = "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample2"
+* url = "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample3"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
 * name = "Definition_based_extraction_example"
@@ -33,7 +33,7 @@ Usage: #definition
     * initial.valueDecimal = 1.234
   * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit")
-    * initial.valueString = "ng/mL"
+    * initial.valueString = "ng/ml"
   * item[+]
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "http://hl7.org/fhir/Observation#Observation.valueQuantity.code")
     * initial.valueString = "ng/mL"

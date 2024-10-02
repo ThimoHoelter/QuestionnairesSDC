@@ -235,7 +235,7 @@
             {
               "linkId": "Observation_PSA-Serologie",
               "type": "group",
-              "definition": "http://hl7.org/fhir/Observation#Observation",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation",
               "enableBehavior": "all",
               "extension": [
                 {
@@ -255,7 +255,7 @@
                   "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
                   "text": "Angaben zur PSA-Serologie",
                   "type": "decimal",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value",
                   "initial": [
                     {
                       "valueDecimal": 4.25
@@ -284,7 +284,7 @@
                   ],
                   "linkId": "PSA-Serologie_Code",
                   "type": "choice",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.code.coding",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -305,7 +305,7 @@
                   ],
                   "linkId": "PSA-Serologie_Unit_Display",
                   "type": "text",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -322,7 +322,7 @@
                   ],
                   "linkId": "PSA-Serologie_Unit_Code",
                   "type": "text",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.code",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -339,7 +339,7 @@
                   ],
                   "linkId": "PSA-Serologie_Unit_System",
                   "type": "url",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.system",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -356,7 +356,7 @@
                   ],
                   "linkId": "PSA-Serologie_Status",
                   "type": "choice",
-                  "definition": "http://hl7.org/fhir/Observation#Observation.status",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status",
                   "enableBehavior": "all",
                   "initial": [
                     {
@@ -825,6 +825,27 @@
                   "initial": [
                     {
                       "valueDateTime": "2024-01-01"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "Proben_Collection_method",
+                  "type": "choice",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.method.coding",
+                  "enableBehavior": "all",
+                  "initial": [
+                    {
+                      "valueCoding": {
+                        "code": "40013009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Core needle biopsy of prostate (procedure)"
+                      }
                     }
                   ]
                 }

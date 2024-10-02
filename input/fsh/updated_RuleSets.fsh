@@ -24,6 +24,14 @@ RuleSet: addRItem(linkId, type, text)
 * insert addItem({linkId}, {type}, {text})
 * required = true
 
+RuleSet: AnswerExpressionItem(linkId, type, text, definition, description, expression)
+* insert addExtractionItem({linkId}, {type}, {text}, {definition})
+* extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
+  * valueExpression
+    * description = {description}
+    * language = #text/fhirpath
+    * expression = {expression}
 
 //Observation based extraction
 RuleSet: observationExtract
@@ -97,7 +105,7 @@ RuleSet: addPathoFindingLaboratoryCode(linkId)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
 * enableBehavior = #all
 * initial.valueCoding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
@@ -105,7 +113,7 @@ RuleSet: addPathoListItemCategoryCode(linkId)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
 * enableBehavior = #all
 * initial.valueCoding = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 
@@ -113,7 +121,7 @@ RuleSet: addPathoFindingSectionCode(linkId, code)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category:section-type.coding"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
 * enableBehavior = #all
 * initial.valueCoding = $patho-sections#{code}
 

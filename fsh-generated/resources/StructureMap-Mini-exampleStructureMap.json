@@ -1,0 +1,114 @@
+{
+  "resourceType": "StructureMap",
+  "id": "Mini-exampleStructureMap",
+  "url": "https://example.org/fhir/StructureMap/Mini-ExampleStructureMap",
+  "title": "Mini-exampleStructureMap",
+  "description": "StructureMap um eine extraction durchzuführen",
+  "name": "StructureMap for extraction",
+  "status": "draft",
+  "structure": [
+    {
+      "url": "http://example.org/fhir/QuestionnairesSDC/QuestionnaireResponse/MinimalPSAExample5",
+      "mode": "source",
+      "alias": "QuestionnaireResponse"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/Bundle",
+      "mode": "target",
+      "alias": "BasicBundle"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/Observation",
+      "mode": "target",
+      "alias": "BasicObservation"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding",
+      "mode": "target",
+      "alias": "PathoFinding"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen",
+      "mode": "target",
+      "alias": "PathoSpecimen"
+    },
+    {
+      "url": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-problem-list-item",
+      "mode": "target",
+      "alias": "PathoCondition"
+    }
+  ],
+  "group": [
+    {
+      "name": "Example",
+      "typeMode": "none",
+      "input": [
+        {
+          "name": "QR",
+          "type": "QuestionnaireResponse",
+          "mode": "source"
+        },
+        {
+          "name": "BObservation",
+          "type": "BasicObservation",
+          "mode": "target"
+        }
+      ],
+      "rule": [
+        {
+          "name": "extraction",
+          "source": [
+            {
+              "context": "QuestionnaireResponse"
+            }
+          ],
+          "target": [
+            {
+              "context": "BObservation",
+              "contextType": "type",
+              "element": "id",
+              "parameter": [
+                {
+                  "valueString": "123"
+                }
+              ],
+              "transform": "create"
+            },
+            {
+              "context": "BObservation",
+              "contextType": "type",
+              "element": "note.text",
+              "parameter": [
+                {
+                  "valueString": "456"
+                }
+              ],
+              "transform": "create"
+            }
+          ]
+        },
+        {
+          "name": "extraRule",
+          "source": [
+            {
+              "context": "QuestionnaireResponse"
+            }
+          ],
+          "target": [
+            {
+              "context": "BObservation",
+              "contextType": "type",
+              "element": "id",
+              "parameter": [
+                {
+                  "valueString": "789"
+                }
+              ],
+              "transform": "create"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

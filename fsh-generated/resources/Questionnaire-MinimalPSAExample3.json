@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2024-05-05T12:48:40Z"
   },
-  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample2",
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample3",
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
@@ -112,7 +112,7 @@
           "enableBehavior": "all",
           "initial": [
             {
-              "valueString": "ng/mL"
+              "valueString": "ng/ml"
             }
           ]
         },

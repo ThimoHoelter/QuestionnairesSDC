@@ -1,0 +1,46 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "MinimalPSAExample5",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z"
+  },
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample5",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "code": "patient",
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "Patient mit Informationen"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+      "valueCode": "Practitioner"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
+      "valueCanonical": "http://localhost:8080/fhir/StructureMap/"
+    }
+  ],
+  "name": "StructurMap_based_extraction_example",
+  "title": "Example for StructureMap-based extraction",
+  "status": "draft",
+  "experimental": false,
+  "date": "2024-04-26T10:26:24Z",
+  "subjectType": [
+    "Patient"
+  ]
+}

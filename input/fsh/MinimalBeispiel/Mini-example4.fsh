@@ -39,7 +39,6 @@ Usage: #definition
   * answerOption[+].valueCoding = $sct#716903009 "Structure of basal part of peripheral zone of left half prostate (body structure)"
 
 // Fazit: InitialExpression funktioniert nicht auf dem HAPI
-
 * item[+]
   * insert addExtractionContextGrouperNew("PathoFinding_Macro", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
   * item[+]

@@ -125,7 +125,7 @@ Usage: #example
         * insert addExtractionContextGrouperNew("PathoFinding_ICD-O-Version", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
         * item[+]
           * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.2.11109", #choice, "ICD-O-Version", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-          * code = $sct#397005006 "WHO tumor classification (observable entity)"
+          * code = $sct#397005006 "World Health Organization tumor classification (observable entity)"
           * answerOption[0].valueCoding = $ICDO-3_Auflagen#31 "ICD-O3; 1. Auflage 2003"
           * answerOption[+].valueCoding = $ICDO-3_Auflagen#32 "ICD-O3; 2. Auflage 2013"
           * answerOption[+].valueCoding = $ICDO-3_Auflagen#33 "ICD-O-3 2. Auflage 2019"
@@ -133,7 +133,7 @@ Usage: #example
           * answerOption[+].valueCoding = $ICDO-3_Auflagen#bb "Neue Codes aus den WHO-Klassifikationen (BlueBooks)"
         * item[+]
           * insert addExtractionHiddenItem("PathoFinding_ICD-O-Version_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
-          * initial.valueCoding = $sct#397005006 "WHO tumor classification (observable entity)"
+          * initial.valueCoding = $sct#397005006 "World Health Organization tumor classification (observable entity)"
         * item[+]
           * insert addPathoFindingLaboratoryCode("PathoFinding_ICD-O-Version_category_laboratory")
         * item[+]
@@ -201,18 +201,18 @@ Usage: #example
             * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10280", #open-choice, "Gleason Score ISUP 2014 - WHO 2016", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
             * required = true
             * code = $loinc#35266-6 "Gleason score in Specimen Qualitative"
-            * answerOption[0].valueCoding = $sct#49878003 "Gleason grade 2 (staging scale)"
-            * answerOption[+].valueCoding = $sct#46677009 "Gleason grade 3 (staging scale)"
-            * answerOption[+].valueCoding = $sct#18430005 "Gleason grade 4 (staging scale)"
-            * answerOption[+].valueCoding = $sct#74013009 "Gleason grade 5 (staging scale)"
-            * answerOption[+].valueCoding = $sct#84556003 "Gleason grade 6 (staging scale)"
+            * answerOption[0].valueCoding = $sct#49878003 "Gleason grade score 2 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#46677009 "Gleason grade score 3 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#18430005 "Gleason grade score 4 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#74013009 "Gleason grade score 5 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#84556003 "Gleason grade score 6 out of 10 (finding)"
             * answerOption[=].initialSelected = true
-            * answerOption[+].valueCoding = $sct#57403001 "Gleason grade 7 (staging scale)"
+            * answerOption[+].valueCoding = $sct#57403001 "Gleason grade score 7 out of 10 (finding)"
             * answerOption[+].valueCoding = urn:oid:2.16.840.1.113883.3.1937.777.18.5.14010#C_999005 "Gleason  grade (Score) 7a"
             * answerOption[+].valueCoding = urn:oid:2.16.840.1.113883.3.1937.777.18.5.14010#C_999006 "Gleason  grade (Score) 7b"
-            * answerOption[+].valueCoding = $sct#33013007 "Gleason grade 8 (staging scale)"
-            * answerOption[+].valueCoding = $sct#58925000 "Gleason grade 9 (staging scale)"
-            * answerOption[+].valueCoding = $sct#24514009 "Gleason grade 10 (staging scale)"
+            * answerOption[+].valueCoding = $sct#33013007 "Gleason grade score 8 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#58925000 "Gleason grade score 9 out of 10 (finding)"
+            * answerOption[+].valueCoding = $sct#24514009 "Gleason grade score 10 out of 10 (finding)"
           * item[+]
             * insert addExtractionHiddenItem("PathoFinding_GleasonScore_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
             * initial.valueCoding = $loinc#35266-6 "Gleason score in Specimen Qualitative"
@@ -233,16 +233,16 @@ Usage: #example
             * code = $loinc#94735-8 "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
             * enableWhen[0].question = "2.16.840.1.113883.3.1937.777.18.2.4.10280"
             * enableWhen[=].operator = #=
-            * enableWhen[=].answerCoding = $sct#57403001 "Gleason grade 7 (staging scale)"
+            * enableWhen[=].answerCoding = $sct#57403001 "Gleason grade score 7 out of 10 (finding)"
             * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.10280"
             * enableWhen[=].operator = #=
-            * enableWhen[=].answerCoding = $sct#33013007 "Gleason grade 8 (staging scale)"
+            * enableWhen[=].answerCoding = $sct#33013007 "Gleason grade score 8 out of 10 (finding)"
             * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.10280"
             * enableWhen[=].operator = #=
-            * enableWhen[=].answerCoding = $sct#58925000 "Gleason grade 9 (staging scale)"
+            * enableWhen[=].answerCoding = $sct#58925000 "Gleason grade score 9 out of 10 (finding)"
             * enableWhen[+].question = "2.16.840.1.113883.3.1937.777.18.2.4.10280"
             * enableWhen[=].operator = #=
-            * enableWhen[=].answerCoding = $sct#24514009 "Gleason grade 10 (staging scale)"
+            * enableWhen[=].answerCoding = $sct#24514009 "Gleason grade score 10 out of 10 (finding)"
             * enableBehavior = #any 
           * item[+] // Maßeinheit (Displayname, System und Code werden in die Observation übertragen)
             * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
@@ -253,15 +253,15 @@ Usage: #example
           * item[+]
             * insert addExtractionHiddenItem("PathoFinding_ProzentGleason_Unit_System", #url, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.system")
             * initial.valueUri = $unitsofmeasure
-            * item[+]
-              * insert addExtractionHiddenItem("PathoFinding_ProzentGleasonF_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
-              * initial.valueCoding = $loinc#94735-8 "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
-            * item[+]
-              * insert addPathoFindingLaboratoryCode("PathoFinding_ProzentGleasonF_category_laboratory")
-            * item[+]
-              * insert addPathoFindingSectionCode("PathoFinding_ProzentGleasonF_category_section", #22637-3)
-            * item[+]
-              * insert addPathoFindingStatusCode("PathoFinding_ProzentGleasonF_status", final)
+          * item[+]
+            * insert addExtractionHiddenItem("PathoFinding_ProzentGleasonF_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
+            * initial.valueCoding = $loinc#94735-8 "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
+          * item[+]
+            * insert addPathoFindingLaboratoryCode("PathoFinding_ProzentGleasonF_category_laboratory")
+          * item[+]
+            * insert addPathoFindingSectionCode("PathoFinding_ProzentGleasonF_category_section", #22637-3)
+          * item[+]
+            * insert addPathoFindingStatusCode("PathoFinding_ProzentGleasonF_status", final)
 
   // Gradinggruppe nach ISUP 2014/WHO 2016 
         * item[+]
@@ -324,12 +324,12 @@ Usage: #example
           * item[+]
             * insert addExtractionContextGrouperNew("PathoFinding_AnzahlPosStanzenRechts", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
-              * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10300", #integer, "Anzahl Positive Stanzen rechts", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
-              * initial.valueInteger = 1
-              * code = $sct#399727003:18720000=251597001 "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of right lateral lobe of prostate (body structure)"
+              * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10300", #decimal, "Anzahl Positive Stanzen rechts", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+              * initial.valueDecimal = 1
+              * code = $sct#399727003:18720000=251597001 "Number of tissue cores positive for carcinoma where In = Structure of right lateral lobe of prostate"
             * item[+]
               * insert addExtractionHiddenItem("PathoFinding_AnzahlPosStanzenRechts_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
-              * initial.valueCoding = $sct#399727003:18720000=251597001 "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of right lateral lobe of prostate (body structure)"
+              * initial.valueCoding = $sct#399727003:18720000=251597001 "Number of tissue cores positive for carcinoma where In = Structure of right lateral lobe of prostate"
             * item[+]
               * insert addPathoFindingLaboratoryCode("PathoFinding_AnzahlPosStanzenRechts_category_laboratory")
             * item[+]
@@ -340,12 +340,12 @@ Usage: #example
           * item[+]
             * insert addExtractionContextGrouperNew("PathoFinding_AnzahlPosStanzenLinks", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
-              * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10310", #integer, "Anzahl Positive Stanzen links", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
-              * initial.valueInteger = 0
-              * code = $sct#399727003:18720000=251695000 "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of left lateral lobe of prostate (body structure)"
+              * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10310", #decimal, "Anzahl Positive Stanzen links", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value")
+              * initial.valueDecimal = 0
+              * code = $sct#399727003:18720000=251695000 "Number of tissue cores positive for carcinoma where In = Structure of left lateral lobe of prostate"
             * item[+]
               * insert addExtractionHiddenItem("PathoFinding_AnzahlPosStanzenLinks_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
-              * initial.valueCoding = $sct#399727003:18720000=251695000 "Number of tissue cores positive for carcinoma (observable entity):In (attribute)=Structure of left lateral lobe of prostate (body structure)"
+              * initial.valueCoding = $sct#399727003:18720000=251695000 "Number of tissue cores positive for carcinoma where In = Structure of left lateral lobe of prostate"
             * item[+]
               * insert addPathoFindingLaboratoryCode("PathoFinding_AnzahlPosStanzenLinks_category_laboratory")
             * item[+]
@@ -532,14 +532,14 @@ Usage: #example
             * insert addExtractionContextGrouperNew("PathoFinding_IntraduktalesKarzinomF", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation", #Observation)
             * item[+]
               * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.11207", #open-choice, "Intraduktales Karzinom", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueCodeableConcept.coding")
-              * code = $sct#86616005 "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
+              * code = $sct#1162814007 "Non-infiltrating intraductal carcinoma (morphologic abnormality)"
               * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
               * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
               * answerOption[=].initialSelected = true
               * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
             * item[+]
               * insert addExtractionHiddenItem("PathoFinding_IntraduktalesKarzinomF_code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code.coding")  
-              * initial.valueCoding = $sct#86616005 "Intraductal carcinoma, noninfiltrating (morphologic abnormality)"
+              * initial.valueCoding = $sct#1162814007 "Non-infiltrating intraductal carcinoma (morphologic abnormality)"
             * item[+]
               * insert addPathoFindingLaboratoryCode("PathoFinding_IntraduktalesKarzinomF_category_laboratory")
             * item[+]
