@@ -65,7 +65,7 @@ Usage: #definition
       * insert observationExtract_laboratory_InCategory
       * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
       * insert uunit(ng/mL) 
-      * insert maxDecimalPlaces(3) // not supported in LHC
+      * insert maxDecimalPlaces(3)
       * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
       * enableWhen.question = "2.16.840.1.113883.3.1937.777.18.2.27"
       * enableWhen.operator = #=

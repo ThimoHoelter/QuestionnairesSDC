@@ -8,35 +8,23 @@ headers = {
     "Content-Type": "application/fhir+json"
 }
 
-def initialPOST(directory, hapi_fhir_server_url): # Alle StrucktureDefinitions & Valuesets vom Pathobefund
-    # Iterate over all files in the given directory
+def initialPOST(directory, hapi_fhir_server_url): # Post alle StructureDefinitions & Valuesets vom Pathobefund 
     for filename in os.listdir(directory):
         if filename.endswith('.json'):
-            # Construct the full path to the file
             file_path = os.path.join(directory, filename)
             with open(file_path, 'r') as f:
                 try:
-                    # Read the JSON data from the file
                     data = json.load(f)
-
-                    # Determine the resource type from the JSON data
                     resource_type = data.get('resourceType')
                     if not resource_type:
                         print(f'Skipping {filename}: No resourceType found.')
                         continue
-
-                    # Construct the endpoint URL for the resource type
                     endpoint_url = f'{hapi_fhir_server_url}/{resource_type}'
-
-                    # Send a POST request to the server
                     response = requests.post(endpoint_url, headers={'Content-Type': 'application/json'}, data=json.dumps(data))
-
-                    # Check the response status code
                     if response.status_code == 201:
                         print(f'Successfully posted {filename}.')
                     else:
                         print(f'Failed to post {filename}: {response.status_code} {response.text}')
-
                 except json.JSONDecodeError:
                     print(f'Failed to read {filename}: Invalid JSON.')
 
@@ -547,14 +535,14 @@ def main():
         print("Fehler beim Ausfüllen des Questionnaires. Abbruch.")
         return
 
-    # Schritt 4: Extract-Mapping des QuestionnaireResponses aufrufen
+    # Schritt 4: Extract des QuestionnaireResponses
     extracted_resources = extract_questionnaire_response(questionnaire_response_id)
     if extracted_resources:
         print(f"Extracted resources: {json.dumps(extracted_resources, indent=2)}")
         # Schritt 5: Anpassung der extrahierten Ressourcen
         updated_resources = update_extracted_resources( extracted_resources, patient_id, practitioner_id, serviceRequest_id, encounter_id, questionnaire_response_id)
         print(f"Updated resources: {json.dumps(updated_resources, indent=2)}")
-        posted_resources, posted_ids = post_updated_resources(updated_resources)
+        posted_resources, posted_ids = post_updRessourceated_resources(updated_resources)
         finalized_resources = update_posted_resources(posted_resources)
         print(f"Finalisierte Ressourcen: {json.dumps(finalized_resources, indent=2)}")
         put_finalized_resources(finalized_resources, posted_ids)

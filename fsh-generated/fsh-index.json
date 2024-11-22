@@ -3,7 +3,7 @@
     "outputFile": "DiagnosticReport-DiagnosticReportExample.json",
     "fshName": "DiagnosticReportExample",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\DiagnosticReportExample.fsh",
+    "fshFile": "MinimalBeispiel/DiagnosticReportExample.fsh",
     "startLine": 1,
     "endLine": 4
   },
@@ -11,7 +11,7 @@
     "outputFile": "Patient-PatientBeispiel.json",
     "fshName": "PatientBeispiel",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\PatientExample.fsh",
+    "fshFile": "MinimalBeispiel/PatientExample.fsh",
     "startLine": 1,
     "endLine": 2
   },
@@ -19,7 +19,7 @@
     "outputFile": "Questionnaire-MinimalPSAExample.json",
     "fshName": "MinimalPSAExample",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Questionnaire-minimal-example-PSA.fsh",
+    "fshFile": "MinimalBeispiel/Questionnaire-minimal-example-PSA.fsh",
     "startLine": 2,
     "endLine": 80
   },
@@ -27,7 +27,7 @@
     "outputFile": "Questionnaire-MinimalPSAExample2.json",
     "fshName": "MinimalPSAExample2",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Mini-example2.fsh",
+    "fshFile": "MinimalBeispiel/Mini-example2.fsh",
     "startLine": 1,
     "endLine": 70
   },
@@ -35,7 +35,7 @@
     "outputFile": "Questionnaire-MinimalPSAExample3.json",
     "fshName": "MinimalPSAExample3",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Mini-example3.fsh",
+    "fshFile": "MinimalBeispiel/Mini-example3.fsh",
     "startLine": 1,
     "endLine": 50
   },
@@ -43,7 +43,7 @@
     "outputFile": "Questionnaire-MinimalPSAExample4.json",
     "fshName": "MinimalPSAExample4",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Mini-example4.fsh",
+    "fshFile": "MinimalBeispiel/Mini-example4.fsh",
     "startLine": 1,
     "endLine": 56
   },
@@ -51,15 +51,23 @@
     "outputFile": "Questionnaire-MinimalPSAExample5.json",
     "fshName": "MinimalPSAExample5",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Mini-example5-SM.fsh",
+    "fshFile": "MinimalBeispiel/Mini-example5-SM.fsh",
     "startLine": 1,
     "endLine": 16
+  },
+  {
+    "outputFile": "Questionnaire-PHQ-SADS.json",
+    "fshName": "PHQ-SADS",
+    "fshType": "Instance",
+    "fshFile": "phq-sads.fsh",
+    "startLine": 1,
+    "endLine": 101
   },
   {
     "outputFile": "Questionnaire-Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr.json",
     "fshName": "Prostata-EingabeformularKlinischeAngabenStanzbiopsie-Def-Extr",
     "fshType": "Instance",
-    "fshFile": "Definition-based\\KlinischeAngabenBeiStanzbiopsie.fsh",
+    "fshFile": "Definition-based/KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
     "endLine": 198
   },
@@ -67,7 +75,7 @@
     "outputFile": "Questionnaire-Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien.json",
     "fshName": "Prostata-EingabeformularfuerKlinischeAngabenBeiStanzbiopsien",
     "fshType": "Instance",
-    "fshFile": "Observation-based\\KlinischeAngabenBeiStanzbiopsie.fsh",
+    "fshFile": "Observation-based/KlinischeAngabenBeiStanzbiopsie.fsh",
     "startLine": 1,
     "endLine": 142
   },
@@ -75,7 +83,7 @@
     "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene-Def-Extr.json",
     "fshName": "Prostata-StanzbiopsieFallebene-Def-Extr",
     "fshType": "Instance",
-    "fshFile": "Definition-based\\Stanzbiopsien_Fallebene.fsh",
+    "fshFile": "Definition-based/Stanzbiopsien_Fallebene.fsh",
     "startLine": 1,
     "endLine": 607
   },
@@ -83,7 +91,7 @@
     "outputFile": "Questionnaire-Prostata-StanzbiopsieFallebene.json",
     "fshName": "Prostata-StanzbiopsieFallebene",
     "fshType": "Instance",
-    "fshFile": "Observation-based\\Stanzbiopsien_Fallebene.fsh",
+    "fshFile": "Observation-based/Stanzbiopsien_Fallebene.fsh",
     "startLine": 1,
     "endLine": 361
   },
@@ -91,7 +99,7 @@
     "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze-Def-Extr.json",
     "fshName": "Prostata-StanzbiopsienEinzelstanze-Def-Extr",
     "fshType": "Instance",
-    "fshFile": "Definition-based\\Stanzbiopsien_Einzelstanze.fsh",
+    "fshFile": "Definition-based/Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
     "endLine": 571
   },
@@ -99,15 +107,23 @@
     "outputFile": "Questionnaire-Prostata-StanzbiopsienEinzelstanze.json",
     "fshName": "Prostata-StanzbiopsienEinzelstanze",
     "fshType": "Instance",
-    "fshFile": "Observation-based\\Stanzbiopsien_Einzelstanze.fsh",
+    "fshFile": "Observation-based/Stanzbiopsien_Einzelstanze.fsh",
     "startLine": 1,
     "endLine": 328
+  },
+  {
+    "outputFile": "Questionnaire-WorkshopDBE.json",
+    "fshName": "WorkshopDBE",
+    "fshType": "Instance",
+    "fshFile": "Workshop/Workshop-DEB.fsh",
+    "startLine": 2,
+    "endLine": 52
   },
   {
     "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",
     "fshName": "MinimalPSAExampleResponse",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\QuestionnaireResponse-minimal-example-PSA.fsh",
+    "fshFile": "MinimalBeispiel/QuestionnaireResponse-minimal-example-PSA.fsh",
     "startLine": 1,
     "endLine": 21
   },
@@ -115,7 +131,7 @@
     "outputFile": "Specimen-SpecimenBeispiel1.json",
     "fshName": "SpecimenBeispiel1",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\specimen.fsh",
+    "fshFile": "MinimalBeispiel/specimen.fsh",
     "startLine": 1,
     "endLine": 5
   },
@@ -123,7 +139,7 @@
     "outputFile": "Specimen-SpecimenBeispiel2.json",
     "fshName": "SpecimenBeispiel2",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\specimen2.fsh",
+    "fshFile": "MinimalBeispiel/specimen2.fsh",
     "startLine": 1,
     "endLine": 5
   },
@@ -131,7 +147,7 @@
     "outputFile": "Specimen-SpecimenBeispiel3.json",
     "fshName": "SpecimenBeispiel3",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\specimen3.fsh",
+    "fshFile": "MinimalBeispiel/specimen3.fsh",
     "startLine": 1,
     "endLine": 5
   },
@@ -139,7 +155,7 @@
     "outputFile": "StructureMap-Mini-exampleStructureMap.json",
     "fshName": "Mini-exampleStructureMap",
     "fshType": "Instance",
-    "fshFile": "MinimalBeispiel\\Mini-exampleStructureMap.fsh",
+    "fshFile": "MinimalBeispiel/Mini-exampleStructureMap.fsh",
     "startLine": 1,
     "endLine": 69
   }

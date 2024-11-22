@@ -56,7 +56,7 @@ Usage: #definition
         * item[+]
           * insert addPathoFindingStatusCode("PathoFinding_ProbenID_status", final)
         // * insert AnswerExpressionItem("2.16.840.1.113883.3.1937.777.18.2.29", #string, "Proben-ID -nummer", "List of all specimens of the ServiceRequest", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.specimen", "Specimen?subject={{%patient.id}}") // &Specimen?request={{%ServiceRequest.id}} Frage: Wie kommt man an die SR.id?
-        // Muss an ALLE Findings in diesem Formular übergeben werden (Referenz zur jeweiligen Probe über Observation.specimen!)
+        // Muss an ALLE Findings in diesem Formular übergeben werden (Referenz zur jeweiligen Probe über Observation.specimen!) http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-answerExpression testen!
 
   // Lokalisation der Entnahmestelle
       * item[+]

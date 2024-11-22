@@ -49,7 +49,7 @@
     {
       "linkId": "Observation_PSA-SerologieInitialQuantity",
       "type": "group",
-      "definition": "http://hl7.org/fhir/Observation#Observation",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation",
       "enableBehavior": "all",
       "extension": [
         {
@@ -61,8 +61,8 @@
         {
           "linkId": "SerologieInitialQuantity",
           "text": "Angaben zur PSA-Serologie",
-          "type": "decimal",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
+          "type": "quantity",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value",
           "initial": [
             {
               "valueQuantity": {
@@ -79,7 +79,7 @@
     {
       "linkId": "Observation_PSA-SerologieEinzeln",
       "type": "group",
-      "definition": "http://hl7.org/fhir/Observation#Observation",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation",
       "enableBehavior": "all",
       "extension": [
         {
@@ -92,7 +92,7 @@
           "linkId": "SerologieEinzeln",
           "text": "Angaben zur PSA-Serologie",
           "type": "decimal",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value",
           "initial": [
             {
               "valueDecimal": 1.234
@@ -108,7 +108,7 @@
           ],
           "linkId": "PSA-Serologie_Unit_Display",
           "type": "text",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.unit",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit",
           "enableBehavior": "all",
           "initial": [
             {
@@ -125,7 +125,7 @@
           ],
           "linkId": "PSA-Serologie_Unit_Code",
           "type": "text",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.code",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code",
           "enableBehavior": "all",
           "initial": [
             {
@@ -142,7 +142,7 @@
           ],
           "linkId": "PSA-Serologie_Unit_System",
           "type": "url",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.system",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system",
           "enableBehavior": "all",
           "initial": [
             {
@@ -155,7 +155,7 @@
     {
       "linkId": "Observation_PSA-SerologieUUNIT",
       "type": "group",
-      "definition": "http://hl7.org/fhir/Observation#Observation",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation",
       "enableBehavior": "all",
       "extension": [
         {
@@ -168,7 +168,7 @@
           "linkId": "SerologieUUNIT",
           "text": "Angaben zur PSA-Serologie",
           "type": "decimal",
-          "definition": "http://hl7.org/fhir/Observation#Observation.valueQuantity.value",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value",
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",

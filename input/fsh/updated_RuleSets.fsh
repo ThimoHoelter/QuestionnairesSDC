@@ -42,7 +42,7 @@ RuleSet: observationExtract
 RuleSet: observationExtract_laboratory_InCategory
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
-  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#{laboratory}
+  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 RuleSet: observationExtractSectionInCategory(code)
 * extension[+]
@@ -99,7 +99,6 @@ RuleSet: addExtractionHiddenItem(linkId, type, definition)
 * definition = {definition}
 * enableBehavior = #all
 //* initial.value...
-
 // PathoFinding Voraussetzung Observation.category  
 RuleSet: addPathoFindingLaboratoryCode(linkId)
 * insert hiddenItem(true)
@@ -108,6 +107,15 @@ RuleSet: addPathoFindingLaboratoryCode(linkId)
 * definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
 * enableBehavior = #all
 * initial.valueCoding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+
+// PathoFinding.status 
+RuleSet: addPathoFindingStatusCode(linkId, code)
+* insert hiddenItem(true)
+* linkId = {linkId}
+* type = #choice
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status"
+* enableBehavior = #all
+* initial.valueCoding = $Observation-Status#{code}
 
 RuleSet: addPathoListItemCategoryCode(linkId)
 * insert hiddenItem(true)
@@ -121,18 +129,10 @@ RuleSet: addPathoFindingSectionCode(linkId, code)
 * insert hiddenItem(true)
 * linkId = {linkId}
 * type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category"
+* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding"
 * enableBehavior = #all
 * initial.valueCoding = $loinc#{code}
 
-// PathoFinding.status 
-RuleSet: addPathoFindingStatusCode(linkId, code)
-* insert hiddenItem(true)
-* linkId = {linkId}
-* type = #choice
-* definition = "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.status"
-* enableBehavior = #all
-* initial.valueCoding = $Observation-Status#{code}
 
 // Population
 RuleSet: addPrePopListItem(linkId, type, text, expression)

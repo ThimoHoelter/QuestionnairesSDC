@@ -170,7 +170,7 @@
                       ],
                       "linkId": "PathoFinding_ProbenID_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -365,7 +365,7 @@
                       ],
                       "linkId": "PathoFinding_Entnahmestelle_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -542,7 +542,7 @@
                       ],
                       "linkId": "PathoFinding_Stanzenlaenge_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -655,7 +655,7 @@
                       ],
                       "linkId": "PathoFinding_AnzahlZylinder_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1137,7 +1137,7 @@
                       ],
                       "linkId": "PathoFinding_HistoTyp_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1250,7 +1250,7 @@
                       ],
                       "linkId": "PathoFinding_MorphText_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1413,7 +1413,7 @@
                       ],
                       "linkId": "PathoFinding_PrimaerGleason_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1576,7 +1576,7 @@
                       ],
                       "linkId": "PathoFinding_SekundaerGleason_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1788,7 +1788,7 @@
                       ],
                       "linkId": "PathoFinding_ProzentGleason_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -1944,7 +1944,7 @@
                       ],
                       "linkId": "PathoFinding_GleasonGrading_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2050,7 +2050,7 @@
                       ],
                       "linkId": "PathoFinding_VerhaeltnisPositiverStanzen_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2223,7 +2223,7 @@
                       ],
                       "linkId": "PathoFinding_Tumoranteil_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2387,7 +2387,7 @@
                       ],
                       "linkId": "PathoFinding_TumorbefallinLaenge_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2519,7 +2519,7 @@
                       ],
                       "linkId": "PathoFinding_PerineuraleInfiltration_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2651,7 +2651,7 @@
                       ],
                       "linkId": "PathoFinding_TumornachweisinSamenblase_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2783,7 +2783,7 @@
                       ],
                       "linkId": "PathoFinding_LymphovaskuläreInvasion_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -2915,7 +2915,7 @@
                       ],
                       "linkId": "PathoFinding_TumornachweisInFettgewebe_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -3047,7 +3047,7 @@
                       ],
                       "linkId": "PathoFinding_IntraduktalesKarzinom_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -3179,7 +3179,7 @@
                       ],
                       "linkId": "PathoFinding_ASAP_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -3316,7 +3316,7 @@
                       ],
                       "linkId": "PathoFinding_HighGradePIN_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {
@@ -3453,7 +3453,7 @@
                       ],
                       "linkId": "PathoFinding_GranulomatoeseProstatitis_category_section",
                       "type": "choice",
-                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.category.coding",
                       "enableBehavior": "all",
                       "initial": [
                         {

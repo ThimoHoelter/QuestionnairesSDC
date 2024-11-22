@@ -3,7 +3,7 @@ Instance: MinimalPSAExample
 InstanceOf: Questionnaire
 Usage: #definition
 * meta.lastUpdated = "2024-05-05T12:48:40Z"
-* url = "http://example.org/fhir/QuestionnairesSDC/Questionnaire/MinimalPSAExample"
+* url = "http://example.org/fhir/QuestionnairesSDC/Questionnaire/Minimal-Example"
 * identifier.system = "urn:ietf:rfc:3986"
 * identifier.value = "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
 * name = "Definition_based_extraction_example"
@@ -14,10 +14,9 @@ Usage: #definition
 * subjectType = $resourceType#Patient
 * extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType"
 * extension[=].valueCode = $resourceType#Practitioner
-/*
+
 // Observation-based extraction 
 * item[+]
-  * insert observationExtractSectionInCategory(22637-3 "Pathology report diagnosis")
 * item[=].linkId = "PSA-Serologie"
 * item[=].type = #decimal
 * item[=].text =  "Angaben zur PSA-Serologie"
@@ -35,7 +34,10 @@ Usage: #definition
 * item[=].extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
   * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-*/
+* item[=].extension[+]
+  * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
+  * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#22637-3 "Pathology report diagnosis"
+
 // Definition-based extraction
 * item[+] // Erstellung des Observations-Grouper
   * insert addExtractionContextGrouperNew("Observation_additional-Grouper", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-additional-specified-grouper#Observation", #Observation) 
@@ -48,12 +50,10 @@ Usage: #definition
     * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.code")
     * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
   * item[+] //Einziges Item welches im Formular angezeigt wird
-    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "The question", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value") 
-    * text =  "PSA-Serologie"
+    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "Angaben zur PSA-Serologie", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.value") 
     * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma" // noch notwendig?
     * initial.valueDecimal = 1.23
-    * extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit" //Maßeinheit für den Renderer
-    * extension[=].valueCoding = $unitsofmeasure#ng/mL "ng/mL"
+    * insert uunit(ng/mL)
   * item[+] // Maßeinheit (Displayname, System und Code werden ins Finding übertragen)
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#Observation.valueQuantity.unit")
     * initial.valueString = "ng/mL"

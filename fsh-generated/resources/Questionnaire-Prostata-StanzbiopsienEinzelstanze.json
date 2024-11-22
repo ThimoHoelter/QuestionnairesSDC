@@ -220,7 +220,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -273,7 +273,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -316,7 +316,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -731,7 +731,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -773,7 +773,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -869,7 +869,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -970,7 +970,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1050,7 +1050,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1139,7 +1139,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1174,7 +1174,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1216,7 +1216,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1258,7 +1258,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1323,7 +1323,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1388,7 +1388,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1453,7 +1453,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1518,7 +1518,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1583,7 +1583,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1648,7 +1648,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
@@ -1718,7 +1718,7 @@
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "code": "{laboratory}",
+                            "code": "laboratory",
                             "system": "http://terminology.hl7.org/CodeSystem/observation-category"
                           }
                         ]
