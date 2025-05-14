@@ -4,7 +4,7 @@ RuleSet: maxDecimalPlaces(maxPlaces)
   * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
   * valueInteger = {maxPlaces}
 
-  RuleSet: uunit(code)
+RuleSet: uunit(code)
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
   * valueCoding = $unitsofmeasure#{code}
@@ -61,12 +61,11 @@ RuleSet: addExtractionContextGrouperNew(linkId, definition, code)
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueCode = {code}
 
-RuleSet: addExtractionContextTextGrouperNew(linkId, text, definition, code)
+RuleSet: addExtractionContextTextGrouperNew(linkId, definition, code)
 * linkId = {linkId}
 * type = #group
 * definition = {definition}
 * enableBehavior = #all
-* text = {text}
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext"
   * valueCode = {code}

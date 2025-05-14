@@ -1,0 +1,152 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "templateBasedExtr",
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/templateBasedExtr",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.10"
+    }
+  ],
+  "name": "Template_based_extraction_example",
+  "title": "Example for template-based extraction",
+  "status": "draft",
+  "experimental": false,
+  "subjectType": [
+    "Patient"
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-performerType",
+      "valueCode": "Practitioner"
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extractAllocateId",
+      "valueString": "NewPsaObservationId"
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "Observation",
+      "id": "psaObservationTemplate",
+      "code": {
+        "coding": [
+          {
+            "code": "2857-1",
+            "system": "http://loinc.org",
+            "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+          }
+        ]
+      },
+      "status": "final",
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "ng/mL",
+        "unit": "ng/mL",
+        "_value": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "item.where(linkId = 'psaValue').answer.value"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resourceType": "Observation",
+      "id": "grouperObservationTemplate",
+      "code": {
+        "coding": [
+          {
+            "code": "83321-0",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "note": [
+        {
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "item.where(linkId = 'GrouperCode').answer.value"
+              }
+            ]
+          }
+        }
+      ],
+      "status": "final",
+      "hasMember": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+              "valueString": "%NewPsaObservationId"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "item": [
+    {
+      "linkId": "psaObservationitem",
+      "text": "Grouperitem für die PSA-Observation",
+      "type": "group",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+          "extension": [
+            {
+              "url": "template",
+              "valueReference": {
+                "reference": "#psaObservationTemplate"
+              }
+            },
+            {
+              "url": "fullUrl",
+              "valueString": "%NewPsaObservationId"
+            }
+          ]
+        }
+      ],
+      "item": [
+        {
+          "linkId": "psaValue",
+          "type": "decimal",
+          "text": "Angaben zur PSA-Serologie",
+          "initial": [
+            {
+              "valueDecimal": 1.23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "grouperObservationitem",
+      "text": "Grouperitem für die Grouper-Observation",
+      "type": "group",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract",
+          "extension": [
+            {
+              "url": "template",
+              "valueReference": {
+                "reference": "#grouperObservationTemplate"
+              }
+            }
+          ]
+        }
+      ],
+      "item": [
+        {
+          "linkId": "GrouperNote",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

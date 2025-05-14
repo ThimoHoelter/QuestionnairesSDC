@@ -1,0 +1,2018 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "2.16.840.1.113883.3.1937.777.18.27.17--20250102170615",
+  "meta": {
+    "lastUpdated": "2025-04-06T18:22:37Z",
+    "source": "https://art-decor.org/fhir/4.0/pathdv-",
+    "tag": [
+      {
+        "code": "4.0.1",
+        "system": "http://hl7.org/fhir/FHIR-version"
+      }
+    ]
+  },
+  "url": "https://art-decor.org/fhir/Questionnaire/2.16.840.1.113883.3.1937.777.18.27.17--20250102170615",
+  "language": "de-DE",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.3.1937.777.18.27.17"
+    }
+  ],
+  "version": "0.9",
+  "name": "ICCR_Fragebogen_fur_Prostata_Einzelstanzen",
+  "title": "ICCR Fragebogen für Prostata-Einzelstanzen",
+  "status": "draft",
+  "experimental": false,
+  "date": "2025-04-06T18:22:37Z",
+  "publisher": "Bundesverband Deutscher Pathologen e.V.",
+  "contact": [
+    {
+      "name": "Bundesverband Deutscher Pathologen e.V.",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "www.pathologie.de"
+        }
+      ]
+    }
+  ],
+  "description": "Modell für \"intelligentes\" Formular",
+  "copyright": "© Copyright 2017-2025 Berufsverband Deutscher Pathologinnen und Pathologen e.V. All rights reserved",
+  "effectivePeriod": {
+    "start": "2025-01-02T17:06:15Z"
+  },
+  "code": [
+    {
+      "code": "721967005",
+      "system": "http://snomed.info/sct",
+      "display": "Tissue pathology biopsy report (record artifact)"
+    }
+  ],
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+          "valueBoolean": false
+        }
+      ],
+      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10000",
+      "text": "Prostatakarzinome",
+      "type": "group",
+      "required": true,
+      "repeats": false,
+      "readOnly": false,
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": false
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.83",
+          "code": [
+            {
+              "code": "116154003",
+              "system": "http://snomed.info/sct",
+              "display": "Patient (person)"
+            }
+          ],
+          "text": "Patientendaten",
+          "type": "group",
+          "required": false,
+          "repeats": false,
+          "readOnly": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.84",
+              "definition": "http://hl7.org/fhir/Patient#Patient.name.family",
+              "code": [
+                {
+                  "code": "184096005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Patient surname (observable entity)"
+                }
+              ],
+              "text": "Familienname",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "en-US"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "Family Name"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "type": "string",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.85",
+              "definition": "http://hl7.org/fhir/Patient#Patient.name.given",
+              "code": [
+                {
+                  "code": "184095009",
+                  "system": "http://snomed.info/sct",
+                  "display": "Patient forename (observable entity)"
+                }
+              ],
+              "text": "Vorname",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "en-US"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "Surname"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "type": "string",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.86",
+              "definition": "http://hl7.org/fhir/Patient#Patient.birthDate",
+              "code": [
+                {
+                  "code": "184099003",
+                  "system": "http://snomed.info/sct",
+                  "display": "Date of birth (observable entity)"
+                }
+              ],
+              "text": "Geburtsdatum",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "en-US"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "Birth date"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "type": "date",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.87",
+              "definition": "http://hl7.org/fhir/Patient#Patient.identifier",
+              "code": [
+                {
+                  "code": "76435-7",
+                  "system": "http://loinc.org",
+                  "display": "Patient identifier"
+                }
+              ],
+              "text": "Patienten-Identifikator",
+              "type": "string",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.88",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-service-request.identifier:Placer-ID",
+              "code": [
+                {
+                  "code": "106194-4",
+                  "system": "http://loinc.org",
+                  "display": "Entity Placer Order Number"
+                }
+              ],
+              "text": "Auftragsnummer des Einsenders",
+              "type": "string",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.89",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-report.identifier:Set-ID",
+              "code": [
+                {
+                  "code": "106201-7",
+                  "system": "http://loinc.org",
+                  "display": "Accession number [Identifier] Unspecified body region"
+                },
+                {
+                  "code": "106183-7",
+                  "system": "http://loinc.org",
+                  "display": "Entity Filler Order Number"
+                }
+              ],
+              "text": "Eingangs-/Fallnummer",
+              "type": "string",
+              "enableBehavior": "all",
+              "required": false,
+              "repeats": false,
+              "readOnly": false
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": false
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10210",
+          "code": [
+            {
+              "code": "66117-3",
+              "system": "http://loinc.org",
+              "display": "Prostate Pathology biopsy report"
+            }
+          ],
+          "text": "Stanzbiopsien",
+          "type": "group",
+          "required": true,
+          "repeats": false,
+          "readOnly": false,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "code": "help",
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "display": "Help-Button"
+                      }
+                    ],
+                    "text": "Help-Button"
+                  }
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10210-help",
+              "text": "Die Berichte über die Prostatabiopsie können auf Proben- oder Fallebene erstellt werden. Die Berichterstattung auf Probenebene kann für jede positive Probenstelle verwendet werden und generiert mehrere Berichte. Die Berichterstattung auf Fallebene fasst alle positiven Probenstellen zusammen und generiert einen einzigen Bericht. So wird es beispielsweise für eine systematische Biopsie an 12 Stellen mit 5 krebspositiven Stellen 5 Berichte auf Probenebene oder 1 Bericht auf Fallebene geben. Die Berichterstattung entweder auf Proben- oder auf Fallebene ist ausreichend, Benutzer können aber auch beide verwenden. Die Wahl der zu verwendenden Berichterstattung hängt von Ihrer örtlichen Praxis oder Ihren institutionellen Präferenzen sowie von regionalen oder nationalen Empfehlungen ab. Bei der Berichterstattung auf Probenebene sind einzelne Berichte spezifisch für jede positive Probenstelle, und die Probenidentifikation und der Standort müssen dokumentiert werden. Bei der Berichterstattung auf Fallebene sollte der Standort aller positiven Probenstellen dokumentiert werden. Gezielte Biopsien müssen von systematischen Biopsien unterschieden werden.",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                    "valueMarkdown": "Die Berichte über die Prostatabiopsie können auf Proben- oder Fallebene erstellt werden. Die Berichterstattung auf Probenebene kann für jede positive Probenstelle verwendet werden und generiert mehrere Berichte. Die Berichterstattung auf Fallebene fasst alle positiven Probenstellen zusammen und                             generiert einen einzigen Bericht. So wird es beispielsweise für eine systematische Biopsie an 12 Stellen mit 5 krebspositiven Stellen 5 Berichte auf Probenebene oder 1 Bericht auf Fallebene geben. Die Berichterstattung entweder auf Proben- oder auf Fallebene ist ausreichend, Benutzer können aber auch beide verwenden. Die Wahl der zu verwendenden Berichterstattung hängt                             von Ihrer örtlichen Praxis oder Ihren institutionellen Präferenzen sowie von regionalen oder nationalen Empfehlungen ab. Bei der Berichterstattung auf Probenebene sind einzelne Berichte spezifisch für jede positive Probenstelle, und die Probenidentifikation und der Standort müssen dokumentiert werden. Bei der Berichterstattung auf Fallebene sollte der Standort aller                             positiven Probenstellen dokumentiert werden. Gezielte Biopsien müssen von systematischen Biopsien unterschieden werden."
+                  }
+                ]
+              },
+              "type": "display"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                  "valueBoolean": false
+                }
+              ],
+              "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11242",
+              "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-finding#observation.focus",
+              "code": [
+                {
+                  "code": "66117-3",
+                  "system": "http://loinc.org",
+                  "display": "Prostate Pathology biopsy report"
+                },
+                {
+                  "code": "441817003:116686009=309134005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Evaluation of biopsy specimen:Has specimen=Prostate tru-cut biopsy sample"
+                },
+                {
+                  "code": "271935000",
+                  "system": "http://snomed.info/sct",
+                  "display": "Biopsy interpretation (observable entity)"
+                },
+                {
+                  "code": "309132009",
+                  "system": "http://snomed.info/sct",
+                  "display": "Prostate biopsy specimen (specimen)"
+                }
+              ],
+              "text": "Befunde an Einzelstanzen",
+              "type": "group",
+              "enableBehavior": "all",
+              "required": true,
+              "repeats": true,
+              "readOnly": false,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "help",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "display": "Help-Button"
+                          }
+                        ],
+                        "text": "Help-Button"
+                      }
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11242-help",
+                  "text": "* Verwendung für jeden einzelnen Stanzzylinder oder * Berichterstattung auf Probenebene kann für jeden positiven Probenort verwendet werden, wodurch mehrere Berichte generiert werden.",
+                  "_text": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                        "valueMarkdown": "* Verwendung für jeden einzelnen Stanzzylinder oder\n* [Berichterstattung auf Probenebene ](https://www.iccr-cancer.org/wp-content/uploads/2024/12/ICCR-ProstateCoreBx-Part2-Speclevel-2nd-ed-v2.0-hyperlink.pdf)kann für jeden positiven                                         Probenort verwendet werden, wodurch mehrere Berichte generiert werden."
+                      }
+                    ]
+                  },
+                  "type": "display"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.29",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper#Observation.hasMember:pathology-finding:Observation.identifier",
+                  "code": [
+                    {
+                      "code": "80398-1",
+                      "system": "http://loinc.org",
+                      "display": "Unique identifier for Current sample"
+                    },
+                    {
+                      "code": "372274003",
+                      "system": "http://snomed.info/sct",
+                      "display": "Sample identification number (observable entity)"
+                    }
+                  ],
+                  "text": "Proben-ID (-bezeichnung)",
+                  "_text": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                        "extension": [
+                          {
+                            "url": "lang",
+                            "valueCode": "en-US"
+                          },
+                          {
+                            "url": "content",
+                            "valueString": "Specimen ID"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "string",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.29-help",
+                      "text": "Bei der Berichterstattung auf Probenebene sind die einzelnen Berichte spezifisch für jeden positiven Probenort und die Probenidentifikation und die Entnahmestelle müssen dokumentiert werden.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Bei der Berichterstattung auf Probenebene sind die einzelnen Berichte spezifisch für jeden positiven Probenort und die Probenidentifikation und die Entnahmestelle müssen dokumentiert werden."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11245",
+                  "definition": "medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper#Observation.hasMember:pathology-finding:Observation.identifier",
+                  "code": [
+                    {
+                      "code": "94736-6",
+                      "system": "urn:oid:2.16.840.113883.6.1",
+                      "display": "Tissue block identifier"
+                    }
+                  ],
+                  "text": "Block-ID",
+                  "_text": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                        "extension": [
+                          {
+                            "url": "lang",
+                            "valueCode": "en-US"
+                          },
+                          {
+                            "url": "content",
+                            "valueString": "Block ID"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "string",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11243",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen.collection.bodySite",
+                  "code": [
+                    {
+                      "code": "94738-2",
+                      "system": "http://loinc.org",
+                      "display": "Biopsy site"
+                    },
+                    {
+                      "code": "396991001",
+                      "system": "http://snomed.info/sct",
+                      "display": "Biopsy site (observable entity)"
+                    }
+                  ],
+                  "text": "Lokalisation der Entnahmestelle",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.14004"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "mm",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "mm"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+                      "valueInteger": 2
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11244",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44619-5",
+                      "system": "http://loinc.org",
+                      "display": "Length of tissue core(s)"
+                    }
+                  ],
+                  "text": "Länge der Stanzzylinder",
+                  "type": "quantity",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10240",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-macroscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44652-6",
+                      "system": "http://loinc.org",
+                      "display": "Total number of cores in Tissue core"
+                    }
+                  ],
+                  "text": "Anzahl der Stanzzylinder im Einsendungsgefäß",
+                  "type": "integer",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.49",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "911753521000004108",
+                      "system": "http://snomed.info/sct",
+                      "display": "Histologic type of primary malignant neoplasm of prostate (observable entity)"
+                    }
+                  ],
+                  "text": "Histologischer Tumortyp",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.18018--20241204150246",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.49-help",
+                      "text": "Die überwiegende Mehrheit (> 95 %) der Prostatakrebserkrankungen sind azinäre Adenokarzinome. Andere Karzinomtypen und -subtypen sind seltener, müssen aber bei Vorhandensein erfasst werden, da einige, wie das duktale Adenokarzinom, das sarkomatoide Karzinom und das pleomorphe Riesenzellkarzinom, eine deutlich schlechtere Prognose haben. Der Tumortyp sollte gemäß der WHO-Klassifikation 2022 zugeordnet werden, und Mischungen verschiedener Typen sollten angegeben werden .Bei einigen Prostatakarzinomsubtypen, wie dem duktalen und dem siegelringzellartigen Karzinom, ist zur Diagnosestellung eine vollständige Untersuchung des resezierten Tumors mit prozentualen Grenzwerten erforderlich. Daher wird bei der Biopsie die Verwendung einer beschreibenden Diagnose empfohlen, z. B. „Adenokarzinom mit duktalen Merkmalen“. Subtypen des Prostatakarzinoms werden oft in Kombination mit azinärem Adenokarzinom identifiziert, und in solchen Fällen sollte der Tumortyp entsprechend dem/den vorhandenen Subtyp(en) klassifiziert werden. Informationen zum histologischen Tumortyp können je nach lokaler Praxis auf Probenebene oder auf Fallebene aufgezeichnet werden. Der Antworttyp „Kein Hinweis auf Primärtumor“ sollte nur verwendet werden, wenn die Berichterstattung auf Probenebene erfolgt.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die überwiegende Mehrheit (> 95 %) der Prostatakrebserkrankungen sind azinäre Adenokarzinome. Andere Karzinomtypen und -subtypen sind seltener, müssen aber bei Vorhandensein erfasst werden, da einige, wie das duktale Adenokarzinom, das sarkomatoide Karzinom und das pleomorphe                                     Riesenzellkarzinom, eine deutlich schlechtere Prognose haben. Der Tumortyp sollte gemäß der WHO-Klassifikation 2022 zugeordnet werden, und Mischungen verschiedener Typen sollten angegeben werden .Bei einigen Prostatakarzinomsubtypen, wie dem duktalen und dem siegelringzellartigen Karzinom, ist zur Diagnosestellung eine vollständige Untersuchung des resezierten                                     Tumors mit prozentualen Grenzwerten erforderlich. Daher wird bei der Biopsie die Verwendung einer beschreibenden Diagnose empfohlen, z. B. „Adenokarzinom mit duktalen Merkmalen“. Subtypen des Prostatakarzinoms werden oft in Kombination mit azinärem Adenokarzinom identifiziert, und in solchen Fällen sollte der Tumortyp entsprechend dem/den vorhandenen Subtyp(en)                                     klassifiziert werden. Informationen zum histologischen Tumortyp können je nach lokaler Praxis auf Probenebene oder auf Fallebene aufgezeichnet werden. Der Antworttyp „Kein Hinweis auf Primärtumor“ sollte nur verwendet werden, wenn die Berichterstattung auf Probenebene erfolgt."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10250",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "59847-4",
+                      "system": "http://loinc.org",
+                      "display": "Histology and Behavior ICD-O-3 Cancer"
+                    }
+                  ],
+                  "text": "Histologischer Typ ICD-O-3",
+                  "type": "open-choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "=",
+                      "answerCoding": {
+                        "code": "74964007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Andere, bitte spezifizieren"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": true,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.14008|2018-02-10T00:00:00",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "code": "8140/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Azinäres Adenokarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8490/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Siegelringzelliges Adenokarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8572/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Karzinom mit spindelzelliger Differenzierung"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8148/2",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Hochgradige PIN"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8500/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Duktales Adenokarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8070/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Plattenepithelkarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8560/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Adenosquamöses Karzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8147/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Adenoid-zystisches (Basalzell-) Karzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8574/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Neuroendokrin differenziertes Adenokarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8935/1",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Stromatumor mit unklarem malignen Potential"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8935/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Stromasarkom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8440/0",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Zystadenom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8140/3",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "PIN-ähnliches azinäres Adenokarzinom"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "code": "8500/2",
+                        "system": "urn:oid:2.16.840.1.113883.3.1937.777.18.5.5",
+                        "display": "Intraduktales Karzinom"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10260",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "33731-1",
+                      "system": "http://loinc.org",
+                      "display": "Histology type in Cancer specimen Narrative"
+                    }
+                  ],
+                  "text": "Morphologie Freitext",
+                  "type": "text",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.54",
+                  "code": [
+                    {
+                      "code": "35266-6",
+                      "system": "http://loinc.org",
+                      "display": "Gleason score in Specimen Qualitative"
+                    },
+                    {
+                      "code": "1850001000004102",
+                      "system": "http://snomed.info/sct",
+                      "display": "Histologic grade of primary malignant neoplasm (observable entity)"
+                    }
+                  ],
+                  "text": "Histologic grade / Gleason Score (ISUP 2014, WHO 2016)",
+                  "_text": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                        "valueMarkdown": "Histologic grade / Gleason Score (ISUP 2014, WHO 2016)"
+                      }
+                    ]
+                  },
+                  "type": "group",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.54-help",
+                      "text": "Das Gleason-Bewertungssystem ist die Grundlage für die Bewertung von Prostatakarzinomen. Der Gleason-Score wird traditionell durch Addition der beiden vorherrschenden Gleason-Muster oder durch Verdoppelung des Musters in Fällen mit einheitlichem Grad ermittelt. Dies wurde in der Revision 2005 der International Society of Urological Pathology (ISUP) geändert, indem immer der höchste Grad in den Gleason-Score von Nadelbiopsien aufgenommen wird, unabhängig von seiner Menge. Auf der ISUP-Konsenskonferenz 2014 wurde das Gleason-System weiter modifiziert und konzentrierte sich hauptsächlich auf die Gleason-Muster. Es wurde entschieden, dass das Gleason-Muster 4 verschmolzene oder schlecht geformte Drüsen, Glomerulationen und alle kribriformen Muster von azinären Adenokarzinomen umfassen sollte. Weitere Verfeinerungen wurden auf der ISUP-Konsenskonferenz 2019 und im „Weißbuch“ der Genitourinary Pathology Society (GUPS) 2019 vorgenommen, hauptsächlich in Bezug auf die Berichterstattung über Gleason-Scores und deren Komponenten.Viele dieser Änderungen wurden in die 4. und 5. Ausgabe der WHO-Klassifikation aufgenommen. Der Übersichtlichkeit halber sollten immer sowohl der Gleason-Score als auch der WHO/ISUP-Grad angegeben werden. Bei der Berichterstattung auf Probenebene wird für jede positive Probenstelle ein separater Grad angegeben. Bei gezielten Biopsien sollte der Grad für jede positive Läsion angegeben werden. Gelegentlich werden mehrere Stanzen aus einer Zielläsion entnommen und ein Gesamtgrad (globaler Grad) angegeben.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Das Gleason-Bewertungssystem ist die Grundlage für die Bewertung von Prostatakarzinomen. Der Gleason-Score wird traditionell durch Addition der beiden vorherrschenden Gleason-Muster oder durch Verdoppelung des Musters in Fällen mit einheitlichem Grad ermittelt. Dies wurde in der Revision 2005                                     der International Society of Urological Pathology (ISUP) geändert, indem immer der höchste Grad in den Gleason-Score von Nadelbiopsien aufgenommen wird, unabhängig von seiner Menge. Auf der ISUP-Konsenskonferenz 2014 wurde das Gleason-System weiter modifiziert und konzentrierte sich hauptsächlich auf die Gleason-Muster. Es wurde entschieden, dass das                                     Gleason-Muster 4 verschmolzene oder schlecht geformte Drüsen, Glomerulationen und alle kribriformen Muster von azinären Adenokarzinomen umfassen sollte. Weitere Verfeinerungen wurden auf der ISUP-Konsenskonferenz 2019 und im „Weißbuch“ der Genitourinary Pathology Society (GUPS) 2019 vorgenommen, hauptsächlich in Bezug auf die Berichterstattung über                                     Gleason-Scores und deren Komponenten.Viele dieser Änderungen wurden in die 4. und 5. Ausgabe der WHO-Klassifikation aufgenommen.\n                                 \nDer Übersichtlichkeit halber sollten immer sowohl der Gleason-Score als auch der WHO/ISUP-Grad angegeben werden. Bei der Berichterstattung auf Probenebene wird für jede positive Probenstelle ein separater Grad angegeben. Bei gezielten Biopsien sollte der Grad für jede positive Läsion angegeben werden. Gelegentlich werden mehrere Stanzen aus einer Zielläsion                                     entnommen und ein Gesamtgrad (globaler Grad) angegeben."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                          "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                      "code": [
+                        {
+                          "code": "44641-9",
+                          "system": "http://loinc.org",
+                          "display": "Gleason pattern.primary in Prostate tumor"
+                        }
+                      ],
+                      "text": "Primäres Gleason Muster (Epstein 2005)",
+                      "type": "choice",
+                      "enableWhen": [
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                          "operator": "!=",
+                          "answerCoding": {
+                            "code": "110396000",
+                            "system": "http://snomed.info/sct",
+                            "display": "Kein Anhalt für Malignität"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "all",
+                      "required": true,
+                      "repeats": false,
+                      "readOnly": false,
+                      "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.14011--20180210000000"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                          "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                      "code": [
+                        {
+                          "code": "44642-7",
+                          "system": "http://loinc.org",
+                          "display": "Gleason pattern.secondary in Prostate tumor"
+                        }
+                      ],
+                      "text": "Sekundäres (höchstes übrigbleibendes) Gleason Muster (Epstein 2005)",
+                      "type": "choice",
+                      "enableWhen": [
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                          "operator": "!=",
+                          "answerCoding": {
+                            "code": "110396000",
+                            "system": "http://snomed.info/sct",
+                            "display": "Kein Anhalt für Malignität"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "all",
+                      "required": true,
+                      "repeats": false,
+                      "readOnly": false,
+                      "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.14011--20180210000000"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "94734-1",
+                      "system": "http://loinc.org",
+                      "display": "Prostate cancer grade group"
+                    },
+                    {
+                      "code": "1812491000004107",
+                      "system": "http://snomed.info/sct",
+                      "display": "Histologic grade of primary malignant neoplasm of prostate by International Society of Urological Pathology technique (observable entity)"
+                    }
+                  ],
+                  "text": "Gradinggruppe nach ISUP 2014/WHO 2016",
+                  "type": "choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.14009"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "%",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "Prozent"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.53",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "1287180006",
+                      "system": "http://snomed.info/sct",
+                      "display": "Percentage of primary malignant neoplasm of prostate with Gleason histologic pattern 4 (observable entity)"
+                    }
+                  ],
+                  "text": "Prozentualer Anteil Gleasonmuster 4",
+                  "type": "quantity",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                      "operator": "=",
+                      "answerCoding": {
+                        "code": "1255775000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Muster 4"
+                      }
+                    },
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                      "operator": "=",
+                      "answerCoding": {
+                        "code": "1255775000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Muster 4"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.53-help",
+                      "text": "Die ISUP-Konsenskonferenz 2019 und das GUPS-Weißbuch 2019 empfahlen zudem, den Prozentsatz des Gleason-Musters 4 in Fällen mit WHO/ISUP-Grad 2 oder 3 anzugeben. Der Grund dafür besteht darin, anzuzeigen, ob der Tumor an die untere oder obere Grenze des Gleason-Scores 7 grenzt. In einigen Protokollen werden Tumoren mit Gleason-Score 7 und niedrigem oder ≤ 10 % Muster 4 für die aktive Überwachung in Betracht gezogen. Da diese Informationen klinisch hauptsächlich zur aktiven Überwachung verwendet wurden, ist die Angabe des Prozentsatzes des Gleason-Musters 4 derzeit nur für Tumoren mit Gleason 3+4 erforderlich.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die ISUP-Konsenskonferenz 2019 und das GUPS-Weißbuch 2019 empfahlen zudem, den Prozentsatz des Gleason-Musters 4 in Fällen mit WHO/ISUP-Grad 2 oder 3 anzugeben. Der Grund dafür besteht darin, anzuzeigen, ob der Tumor an die untere oder obere Grenze des Gleason-Scores 7 grenzt. In einigen                                     Protokollen werden Tumoren mit Gleason-Score 7 und niedrigem oder ≤ 10 % Muster 4 für die aktive Überwachung in Betracht gezogen. Da diese Informationen klinisch hauptsächlich zur aktiven Überwachung verwendet wurden, ist die Angabe des Prozentsatzes des Gleason-Musters 4 derzeit nur für Tumoren mit Gleason 3+4 erforderlich."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "%",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "Prozent"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11144",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "94735-8",
+                      "system": "http://loinc.org",
+                      "display": "Prostate tumor area with Gleason pattern 4+5/Total tumor area"
+                    }
+                  ],
+                  "text": "Prozentualer Anteil Gleasonmuster 5",
+                  "type": "quantity",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+                      "operator": "=",
+                      "answerCoding": {
+                        "code": "1255776004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Muster 5"
+                      }
+                    },
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+                      "operator": "=",
+                      "answerCoding": {
+                        "code": "1255776004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Muster 5"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11144-help",
+                      "text": "Der Prozentsatz des Gleason-Musters 4 und 5 wird von einigen Pathologen für Tumoren mit Gleason-Score 4+3 und höher angegeben, aber diese Information wird bei klinischen Entscheidungen nicht häufig verwendet. Dieses Element ist daher optional.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Der Prozentsatz des Gleason-Musters 4 und 5 wird von einigen Pathologen für Tumoren mit Gleason-Score 4+3 und höher angegeben, aber diese Information wird bei klinischen Entscheidungen nicht häufig verwendet. Dieses Element ist daher optional."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.62",
+                  "code": [
+                    {
+                      "code": "1287162002",
+                      "system": "http://snomed.info/sct",
+                      "display": "Neoplasm growth pattern (observable entity)"
+                    }
+                  ],
+                  "text": "Spezielle Wachstumsmuster",
+                  "type": "group",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.62-help",
+                      "text": "Mehrere Studien haben die Bedeutung des invasiven kribriformen Karzinoms (ICC) und des intraduktalen Karzinoms der Prostata (IDC-P) als unabhängige ungünstige Prognosefaktoren gezeigt. Das invasive kribriforme Karzinom (ICC) ist eine der grundlegenden Architekturen für das Gleason-Muster 4. Das Vorhandensein einer luminalen Nekrose stuft die kribriforme Drüse auf das Gleason-Muster 5 hoch. Unter den Gleason-Muster-4-Architekturen wurde gezeigt, dass die kribriforme Morphologie mit einer höheren biochemischen Rezidivrate oder einer schlechteren Überlebensrate nach radikaler Prostatektomie oder Strahlentherapie verbunden ist. Viele dieser Ergebnisse wurden bei Prostatakrebs mit Gleason-Score 7 gezeigt",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Mehrere Studien haben die Bedeutung des invasiven kribriformen Karzinoms (ICC) und des intraduktalen Karzinoms der Prostata (IDC-P) als unabhängige ungünstige Prognosefaktoren gezeigt. Das invasive kribriforme Karzinom (ICC) ist eine der grundlegenden Architekturen für das Gleason-Muster 4. Das                                     Vorhandensein einer luminalen Nekrose stuft die kribriforme Drüse auf das Gleason-Muster 5 hoch. Unter den Gleason-Muster-4-Architekturen wurde gezeigt, dass die kribriforme Morphologie mit einer höheren biochemischen Rezidivrate oder einer schlechteren Überlebensrate nach radikaler Prostatektomie oder Strahlentherapie verbunden ist. Viele dieser Ergebnisse                                     wurden bei Prostatakrebs mit Gleason-Score 7 gezeigt"
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.63",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                      "code": [
+                        {
+                          "code": "1279782006",
+                          "system": "http://snomed.info/sct",
+                          "display": "Histologic architectural pattern in primary malignant neoplasm of prostate (observable entity)"
+                        }
+                      ],
+                      "text": "IDC-P und/oder ICC",
+                      "type": "choice",
+                      "enableBehavior": "all",
+                      "required": true,
+                      "repeats": false,
+                      "readOnly": false,
+                      "answerOption": [
+                        {
+                          "valueString": "Unbestimmt"
+                        },
+                        {
+                          "valueString": "Nicht identifiziert"
+                        },
+                        {
+                          "valueString": "Vorhanden"
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                          "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.28",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                      "code": [
+                        {
+                          "code": "1178981001",
+                          "system": "http://snomed.info/sct",
+                          "display": "Presence of direct invasion by primary carcinoma of prostate to prostatic duct structure (observable entity)"
+                        }
+                      ],
+                      "text": "Intraduktales Karzinom",
+                      "type": "open-choice",
+                      "enableWhen": [
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.63",
+                          "operator": "=",
+                          "answerCoding": {
+                            "code": "52101004",
+                            "system": "http://snomed.info/sct",
+                            "display": "Vorhanden"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "all",
+                      "required": false,
+                      "repeats": false,
+                      "readOnly": false,
+                      "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                          "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                        },
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.64",
+                      "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                      "code": [
+                        {
+                          "code": "30156004",
+                          "system": "http://snomed.info/sct",
+                          "display": "Cribriform carcinoma (morphologic abnormality)"
+                        }
+                      ],
+                      "text": "Invasives kribriformes Karzinom",
+                      "type": "open-choice",
+                      "enableWhen": [
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+                          "operator": "=",
+                          "answerCoding": {
+                            "code": "1279714001",
+                            "system": "http://snomed.info/sct",
+                            "display": "Gradinggruppe 2"
+                          }
+                        },
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+                          "operator": "=",
+                          "answerCoding": {
+                            "code": "1279716004",
+                            "system": "http://snomed.info/sct",
+                            "display": "Gradinggruppe 3"
+                          }
+                        },
+                        {
+                          "question": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+                          "operator": "=",
+                          "answerCoding": {
+                            "code": "1525791000004100",
+                            "system": "http://snomed.info/sct",
+                            "display": "Gradinggruppe 4"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "any",
+                      "required": false,
+                      "repeats": false,
+                      "readOnly": false,
+                      "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12--20190811122751"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.30",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44651-8",
+                      "system": "http://loinc.org",
+                      "display": "Tissue cores.positive.carcinoma in Tissue core"
+                    },
+                    {
+                      "code": "372303007",
+                      "system": "http://snomed.info/sct",
+                      "display": "Ratio of blocks with prostate tumor to total number of blocks obtained (observable entity)"
+                    }
+                  ],
+                  "text": "Verhältnis positiver zu allen Stanzen",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.30-help",
+                      "text": "Die Anzahl der Stanzbiopsien, die positiv auf Krebs getestet wurden, und die lineare Ausdehnung des Krebses in den Stanzen korrelieren mit Tumorvolumen, postoperativem Stadium und Ergebnis.74-76 Die Anzahl der positiven Stanzen sollte gemeldet werden, kann aber aufgrund der Fragmentierung schwierig zu ermitteln sein, wenn mehrere Stanzen zusammen eingesandt wurden. Die Anzahl der positiven Stanzen sollte nicht größer sein als die Anzahl der entnommenen Stanzen (wie in Teil 1 „Leitfaden zur Meldung von klinischen Informationen/Probeneingängen“ angegeben). Eine ortsspezifische Kennzeichnung und die Einreichung einer einzelnen Stanze erleichtern die Beurteilung des Krebsausmaßes.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die Anzahl der Stanzbiopsien, die positiv auf Krebs getestet wurden, und die lineare Ausdehnung des Krebses in den Stanzen korrelieren mit Tumorvolumen, postoperativem Stadium und Ergebnis.74-76 Die Anzahl der positiven Stanzen sollte gemeldet werden, kann aber aufgrund der Fragmentierung                                     schwierig zu ermitteln sein, wenn mehrere Stanzen zusammen eingesandt wurden. Die Anzahl der positiven Stanzen sollte nicht größer sein als die Anzahl der entnommenen Stanzen (wie in Teil 1 „Leitfaden zur Meldung von klinischen Informationen/Probeneingängen“ angegeben). Eine ortsspezifische Kennzeichnung und die Einreichung einer einzelnen Stanze erleichtern die                                     Beurteilung des Krebsausmaßes."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "%",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "Prozent"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10330",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "385396009",
+                      "system": "http://snomed.info/sct",
+                      "display": "Percentage of prostatic tissue, obtained by needle biopsy, involved by carcinoma (observable entity)"
+                    }
+                  ],
+                  "text": "ProzentualerTumoranteil",
+                  "type": "quantity",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",
+                      "valueCoding": {
+                        "code": "mm",
+                        "system": "http://unitsofmeasure.org",
+                        "display": "mm"
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10340",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44618-7",
+                      "system": "http://loinc.org",
+                      "display": "Total linear mm of carcinoma"
+                    }
+                  ],
+                  "text": "Tumorbefall für befallene Stanze in Länge in mm",
+                  "type": "quantity",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10340-help",
+                      "text": "Die lineare Ausdehnung ist ein zentrales Datenelement und kann entweder als Prozentsatz des Krebses oder als Millimeter (mm) Krebslänge in jeder Stanze oder als zusammengesetztes Maß der linearen Ausdehnung (mm oder Prozentsatz) in mehreren oder fragmentierten Stanzen in einer Probe erfasst werden. Eine Methode zur Berechnung des Krebsprozentsatzes besteht darin, die Länge des Krebses zu messen und durch die Gesamtlänge des Prostatagewebes zu teilen. Die Methoden zur Meldung von diskontinuierlichem Krebs sind nach wie vor umstritten. Die meisten (78%) diskontinuierlichen Tumorherde in der Biopsie entsprachen einem einzelnen Tumorherd bei radikaler Prostatektomie und können einschließlich des dazwischenliegenden Stromas als ein kontinuierlicher Tumor gemessen werden. Diese Methode führt jedoch in einer Minderheit der Fälle auch zu einer Überschätzung der Tumorausdehnung. Ob dazwischenliegendes gutartiges Gewebe in die Ausdehnungsmessung einbezogen oder davon abgezogen wird, kann die Eignung für eine aktive Überwachung bestimmen. Ein Patient mit Krebs des WHO/ISUP-Grades 1 in nicht mehr als drei Stanzen kann ein Kandidat für eine aktive Überwachung sein. In einigen Protokollen ist ein Patient nicht für die aktive Überwachung geeignet, wenn eine positiver Stanze zu mehr als 50 % vom Tumor befallen ist. In einem solchen Fall wird empfohlen, das Tumorausmaß eines diskontinuierlichen Krebses sowohl durch Einbeziehung als auch durch Abzug des dazwischenliegenden gutartigen Gewebes anzugeben. Beispielsweise befinden sich in einer 20 mm großen Stanze zwei 1 mm große diskontinuierliche Krebsherde des WHO/ISUP-Grades 1, die sich über eine Distanz von 12 mm (60 % lineare Ausdehnung) erstrecken und 1+1 mm (10 % lineare Ausdehnung) messen. Da die meisten aktiven Überwachungsprotokolle einen Cut-off verwenden, der durch das größte Ausmaß des Stanzenbefalls bestimmt wird, ist die Dokumentation der größten linearen Ausdehnung und/oder Länge des vom Karzinom befallenen Gewebes für die Berichterstattung auf Fallebene ausreichend.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die lineare Ausdehnung ist ein zentrales Datenelement und kann entweder als Prozentsatz des Krebses oder als Millimeter (mm) Krebslänge in jeder Stanze oder als zusammengesetztes Maß der linearen Ausdehnung (mm oder Prozentsatz) in mehreren oder fragmentierten Stanzen in einer Probe erfasst                                     werden. Eine Methode zur Berechnung des Krebsprozentsatzes besteht darin, die Länge des Krebses zu messen und durch die Gesamtlänge des Prostatagewebes zu teilen. Die Methoden zur Meldung von diskontinuierlichem Krebs sind nach wie vor umstritten. Die meisten (78%) diskontinuierlichen Tumorherde in der Biopsie entsprachen einem einzelnen Tumorherd bei radikaler                                     Prostatektomie und können einschließlich des dazwischenliegenden Stromas als ein kontinuierlicher Tumor gemessen werden. Diese Methode führt jedoch in einer Minderheit der Fälle auch zu einer Überschätzung der Tumorausdehnung. Ob dazwischenliegendes gutartiges Gewebe in die Ausdehnungsmessung einbezogen oder davon abgezogen wird, kann die Eignung für eine aktive                                     Überwachung bestimmen. Ein Patient mit Krebs des WHO/ISUP-Grades 1 in nicht mehr als drei Stanzen kann ein Kandidat für eine aktive Überwachung sein. In einigen Protokollen ist ein Patient nicht für die aktive Überwachung geeignet, wenn eine positiver Stanze zu mehr als 50 % vom Tumor befallen ist. In einem solchen Fall wird empfohlen, das Tumorausmaß eines                                     diskontinuierlichen Krebses sowohl durch Einbeziehung als auch durch Abzug des dazwischenliegenden gutartigen Gewebes anzugeben. Beispielsweise befinden sich in einer 20 mm großen Stanze zwei 1 mm große diskontinuierliche Krebsherde des WHO/ISUP-Grades 1, die sich über eine Distanz von 12 mm (60 % lineare Ausdehnung) erstrecken und 1+1 mm (10 % lineare                                     Ausdehnung) messen. Da die meisten aktiven Überwachungsprotokolle einen Cut-off verwenden, der durch das größte Ausmaß des Stanzenbefalls bestimmt wird, ist die Dokumentation der größten linearen Ausdehnung und/oder Länge des vom Karzinom befallenen Gewebes für die Berichterstattung auf Fallebene ausreichend."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10360",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44625-2",
+                      "system": "http://loinc.org",
+                      "display": "Periprostatic fat invasion [Identifier] in Specimen by CAP cancer protocols"
+                    },
+                    {
+                      "code": "385009003",
+                      "system": "http://snomed.info/sct",
+                      "display": "Presence of direct invasion by primary malignant neoplasm of prostate to periprostatic tissue (observable entity)"
+                    }
+                  ],
+                  "text": "Extraprostatische Ausbreitung",
+                  "type": "choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": true,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12--20190811122751",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10360-help",
+                      "text": "Die extraprostatische Ausdehnung (EPE) ist mittlerweile die anerkannte Terminologie und ersetzt frühere mehrdeutige Begriffe wie Kapselpenetration, Perforation oder Invasion.Bei Proben aus einer radikalen Prostatektomie ist EPE ein unabhängiger Prognoseindikator für ein erhöhtes Rezidivrisiko nach einer radikalen Prostatektomie und wichtig für die Zuweisung der Kategorie T der Union for International Cancer Control (UICC)/American Joint Committee on Cancer (AJCC). Es gibt nur begrenzte Daten speziell zur Bedeutung von EPE bei Stanzbiopsien, da es relativ selten ist; es kann jedoch gelegentlich auftreten und sollte gemeldet werden, wenn.vorhanden. Eine Studie zeigte, dass EPE bei Biopsien stark mit aggressiven Krankheitsmerkmalen korreliert.85 Bei Stanzbiopsien wird EPE als mit Adipozyten vermischter Tumor definiert, normalerweise am Ende eines Stanzzylinders. „Unbestimmt“ sollte sparsam verwendet werden, kann aber in Fällen anwendbar sein, in denen der Tumor Bindegewebe ohne direkte Beteiligung von Adipozyten betrifft. Es wird empfohlen, die Stelle eines vorhandenen EPE aufzuzeichnen, da diese Information für die Korrelation mit MRT-Ergebnissen nützlich ist und dem Urologen oder Strahlentherapeuten bei den technischen Aspekten der Behandlungsplanung helfen kann.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die extraprostatische Ausdehnung (EPE) ist mittlerweile die anerkannte Terminologie und ersetzt frühere mehrdeutige Begriffe wie Kapselpenetration, Perforation oder Invasion.Bei Proben aus einer radikalen Prostatektomie ist EPE ein unabhängiger Prognoseindikator für ein erhöhtes Rezidivrisiko                                     nach einer radikalen Prostatektomie und wichtig für die Zuweisung der Kategorie T der Union for International Cancer Control (UICC)/American Joint Committee on Cancer (AJCC). Es gibt nur begrenzte Daten speziell zur Bedeutung von EPE bei Stanzbiopsien, da es relativ selten ist; es kann jedoch gelegentlich auftreten und sollte gemeldet werden, wenn.vorhanden.                                     Eine Studie zeigte, dass EPE bei Biopsien stark mit aggressiven Krankheitsmerkmalen korreliert.85 Bei Stanzbiopsien wird EPE als mit Adipozyten vermischter Tumor definiert, normalerweise am Ende eines Stanzzylinders. „Unbestimmt“ sollte sparsam verwendet werden, kann aber in Fällen anwendbar sein, in denen der Tumor Bindegewebe ohne direkte Beteiligung von                                     Adipozyten betrifft. Es wird empfohlen, die Stelle eines vorhandenen EPE aufzuzeichnen, da diese Information für die Korrelation mit MRT-Ergebnissen nützlich ist und dem Urologen oder Strahlentherapeuten bei den technischen Aspekten der Behandlungsplanung helfen kann."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10370",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "44626-0",
+                      "system": "http://loinc.org",
+                      "display": "Seminal vesicle invasion [Identifier] in Specimen by CAP cancer protocols"
+                    }
+                  ],
+                  "text": "Tumornachweis in Samenblasen",
+                  "type": "choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12--20190811122751",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10370-help",
+                      "text": "Eine Invasion der Samenbläschen (SVI) wird bei Stanzbiopsien nur selten festgestellt, ihr Fehlen muss daher nicht explizit festgestellt werden. Liegt jedoch eine Invasion der Samenbläschen/Ejakulationsgänge vor, sollte dies dokumentiert werden und es gelten die folgenden Anmerkungen: Unter Samenbläscheninvasion (SVI) versteht man die Beteiligung der Muskelwand des extraprostatischen Anteils der Samenbläschen. Wenn mögliches Samenbläschengewebe vorhanden ist (entweder unbeabsichtigt oder absichtlich, wie bei einer gezielten Biopsie) und von einem Karzinom befallen ist, kann dies von Bedeutung sein, da es darauf hinweist, dass der Tumor im UICC/AJCC-Staging-System T3b sein könnte. Allerdings ist die Beurteilung von SVI bei Nadelbiopsieproben problematisch, da es unmöglich ist, zuverlässig zwischen extraprostatischen Samenbläschen und intraprostatischen Samenbläschen- oder Ejakulationsganggewebe zu unterscheiden. Deshalb ist es wichtig, eine Invasion der beiden letztgenannten Strukturen nicht überzuinterpretieren als SVI, da ihre Befall durch einen Tumor keine T3b-Erkrankung darstellt. Sofern es sich nicht um eine gezielte Samenbläschenbiopsie handelt, wird empfohlen, eine Tumorbeteiligung solcher Strukturen bei einer Stanzbiopsie als „Samenbläschen-/Ejakulationsganginvasion“ und nicht als SVI zu melden.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Eine Invasion der Samenbläschen (SVI) wird bei Stanzbiopsien nur selten festgestellt, ihr Fehlen muss daher nicht explizit festgestellt werden. Liegt jedoch eine Invasion der Samenbläschen/Ejakulationsgänge vor, sollte dies dokumentiert werden und es gelten die folgenden Anmerkungen: Unter                                     Samenbläscheninvasion (SVI) versteht man die Beteiligung der Muskelwand des extraprostatischen Anteils der Samenbläschen. Wenn mögliches Samenbläschengewebe vorhanden ist (entweder unbeabsichtigt oder absichtlich, wie bei einer gezielten Biopsie) und von einem Karzinom befallen ist, kann dies von Bedeutung sein, da es darauf hinweist, dass der Tumor im                                     UICC/AJCC-Staging-System T3b sein könnte. Allerdings ist die Beurteilung von SVI bei Nadelbiopsieproben problematisch, da es unmöglich ist, zuverlässig zwischen extraprostatischen Samenbläschen und intraprostatischen Samenbläschen- oder Ejakulationsganggewebe zu unterscheiden. Deshalb ist es wichtig, eine Invasion der beiden letztgenannten Strukturen nicht                                     überzuinterpretieren als SVI, da ihre Befall durch einen Tumor keine T3b-Erkrankung darstellt. Sofern es sich nicht um eine gezielte Samenbläschenbiopsie handelt, wird empfohlen, eine Tumorbeteiligung solcher Strukturen bei einer Stanzbiopsie als „Samenbläschen-/Ejakulationsganginvasion“ und nicht als SVI zu melden."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11206",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "33761-8",
+                      "system": "http://loinc.org",
+                      "display": "Venous + Lymphatic small vessel invasion in Specimen by CAP cancer protocols"
+                    }
+                  ],
+                  "text": "Lymphovaskuläre Invasion",
+                  "type": "choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11206-help",
+                      "text": "Eine lymphovaskuläre Invasion (LVI) wird in Stanzbiopsien selten festgestellt, daher muss ihr Fehlen nicht explizit festgestellt werden. Wenn jedoch eine LVI vorhanden ist, sollte sie aufgezeichnet werden. Eine Invasion von Lymph- oder Blutgefäßen (d. h. dünnwandige, mit Endothel ausgekleidete Räume) wird in Stanzbiopsieproben selten festgestellt, und es gibt nur wenige veröffentlichte Daten zu ihrer Bedeutung, insbesondere in Bezug auf Prostata-Stanzbiopsien. Es gibt jedoch gute Beweise dafür, dass eine bei einer radikalen Prostatektomie festgestellte LVI ein unabhängiger Prognosefaktor ist, der mit ungünstiger Pathologie, häufigerem Wiederauftreten, Metastasierung und schlechterem Ausgang, einschließlich bei Patienten mit Strahlentherapie, verbunden ist. Wenn also eine LVI in einer Stanzbiopsie festgestellt wird, kann sie durchaus von Bedeutung sein, und ihr Vorhandensein sollte aufgezeichnet werden. Das Vorhandensein einer LVI hat keinen Einfluss auf die Zuweisung der UICC/AJCC-Kategorie T.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Eine lymphovaskuläre Invasion (LVI) wird in Stanzbiopsien selten festgestellt, daher muss ihr Fehlen nicht explizit festgestellt werden. Wenn jedoch eine LVI vorhanden ist, sollte sie aufgezeichnet werden. Eine Invasion von Lymph- oder Blutgefäßen (d. h. dünnwandige, mit Endothel ausgekleidete                                     Räume) wird in Stanzbiopsieproben selten festgestellt, und es gibt nur wenige veröffentlichte Daten zu ihrer Bedeutung, insbesondere in Bezug auf Prostata-Stanzbiopsien. Es gibt jedoch gute Beweise dafür, dass eine bei einer radikalen Prostatektomie festgestellte LVI ein unabhängiger Prognosefaktor ist, der mit ungünstiger Pathologie, häufigerem Wiederauftreten,                                     Metastasierung und schlechterem Ausgang, einschließlich bei Patienten mit Strahlentherapie, verbunden ist. Wenn also eine LVI in einer Stanzbiopsie festgestellt wird, kann sie durchaus von Bedeutung sein, und ihr Vorhandensein sollte aufgezeichnet werden. Das Vorhandensein einer LVI hat keinen Einfluss auf die Zuweisung der UICC/AJCC-Kategorie                                 T."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10380",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "92837-4",
+                      "system": "http://loinc.org",
+                      "display": "Perineural invasion [Presence] in Cancer specimen"
+                    }
+                  ],
+                  "text": "Perineurale Infiltration",
+                  "type": "choice",
+                  "enableWhen": [
+                    {
+                      "question": "2.16.840.1.113883.3.1937.777.18.2.49",
+                      "operator": "!=",
+                      "answerCoding": {
+                        "code": "110396000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kein Anhalt für Malignität"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12--20190811122751",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10380-help",
+                      "text": "Die Bedeutung der perineuralen Invasion in Prostata-Stanzbiopsien ist unklar. Einige Studien zeigen eine Korrelation mit EPE in den entsprechenden Proben nach radikaler Prostatektomie oder einen Zusammenhang mit ungünstigen Ergebnissen bei Patienten, die mit radikaler Prostatektomie oder Strahlentherapie behandelt wurden. Andere Forscher haben den Prognosewert der perineuralen Invasion in der Biopsie in univariaten oder multivariaten Analysen in Frage gestellt. Die Beweislage deutet darauf hin, dass bei klinisch lokalisierter Erkrankung die perineurale Invasion ein signifikanter Prognosefaktor für EPE und nachfolgende lokale Rezidive ist. Bei fortgeschrittener Erkrankung ist eine perineurale Invasion häufig und wahrscheinlich nicht von prognostischer Bedeutung. Es sollte auch beachtet werden, dass im Biopsiematerial nicht unbedingt Nerven vorhanden sind, weshalb die Möglichkeit einer perineuralen Invasion nicht immer beurteilt werden kann.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "Die Bedeutung der perineuralen Invasion in Prostata-Stanzbiopsien ist unklar. Einige Studien zeigen eine Korrelation mit EPE in den entsprechenden Proben nach radikaler Prostatektomie oder einen Zusammenhang mit ungünstigen Ergebnissen bei Patienten, die mit radikaler Prostatektomie oder                                     Strahlentherapie behandelt wurden. Andere Forscher haben den Prognosewert der perineuralen Invasion in der Biopsie in univariaten oder multivariaten Analysen in Frage gestellt. Die Beweislage deutet darauf hin, dass bei klinisch lokalisierter Erkrankung die perineurale Invasion ein signifikanter Prognosefaktor für EPE und nachfolgende lokale Rezidive ist. Bei                                     fortgeschrittener Erkrankung ist eine perineurale Invasion häufig und wahrscheinlich nicht von prognostischer Bedeutung. Es sollte auch beachtet werden, dass im Biopsiematerial nicht unbedingt Nerven vorhanden sind, weshalb die Möglichkeit einer perineuralen Invasion nicht immer beurteilt werden kann."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.81",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "106166-2",
+                      "system": "http://loinc.org",
+                      "display": "Associated Condition"
+                    }
+                  ],
+                  "text": "Begleiterkrankungen",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12--20190811122751",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "help",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "display": "Help-Button"
+                              }
+                            ],
+                            "text": "Help-Button"
+                          }
+                        }
+                      ],
+                      "linkId": "2.16.840.1.113883.3.1937.777.18.2.81-help",
+                      "text": "In einigen Fällen können klinische Behandlungsentscheidungen durch das Wissen über koexistierende Pathologien wie HGPIN, glanduläre Atypie mit Verdacht auf Malignität (atypische kleine azinäre Proliferation (ASAP)), AIP, granulomatöse Prostatitis usw. unterstützt werden. Wenn ein Karzinom vorhanden ist, ist das Vorhandensein von HGPIN im Allgemeinen klinisch nicht bedeutsam. Selbst wenn in der Probe kein Krebs identifiziert wird, ist die Bedeutung des Nachweises von HGPIN in Stanzbiopsien umstritten. Einige Studien stellten ein erhöhtes Risiko für die Entdeckung von Prostataadenokarzinomen in nachfolgenden Biopsien fest, während dies in anderen Studien nicht der Fall war. Studien, darunter eine, die Daten einer großen kanadischen Kohorte analysierte, fanden heraus, dass dieses Risiko mit dem Ausmaß der HGPIN zusammenhängt, d. h. mit der Anzahl der betroffenen Stellen; nur Patienten mit multifokaler HGPIN hatten ein signifikant erhöhtes Risiko für Prostatakrebs. Niedriggradige intraepitheliale Prostataneoplasie (PIN) sollte nicht gemeldet werden. Ebenso ist das Vorhandensein von ASAP im Allgemeinen nicht signifikant, wenn in einer Probe Karzinom vorhanden ist, außer gelegentlich in Situationen, in denen das Karzinom die Kriterien für eine aktive Überwachung erreicht. In dieser Situation kann eine gründliche Bewertung und Neuklassifizierung von glandulärer Atypie zu Karzinom die Behandlungsentscheidung beeinflussen. Bei Proben, bei denen kein Krebs identifiziert wurde, aber glanduläre Atypie vorliegt, beträgt das Risiko, dass in nachfolgenden Biopsien Karzinom vorhanden ist, etwa 35 %, wobei ein hoher Anteil davon klinisch unbedeutender Krebs ist. Atypische intraduktale Proliferation (AIP) ist der bevorzugte Begriff zur Beschreibung intraduktaler Neoplasien, die eine größere Komplexität oder Atypie als HGPIN aufweisen, aber nicht für die Diagnose von IDC-P ausreichen. AIP ist durch lockere kribriforme Proliferation und/oder Kernatypie gekennzeichnet, die nicht für IDC-P ausreicht, und umfasst das, was früher als kribriforme HGPIN bekannt war. Aufgrund der Verbindung von AIP mit IDC-P wird empfohlen, ihr Vorhandensein in der Biopsie zu dokumentieren, insbesondere bei Prostatakrebs niedrigeren Grades. Das Vorhandensein von AIP allein in Biopsieproben ist selten und wird durch wiederholte Folgebiopsien behandelt. Aktive Prostatitis und granulomatöse Prostatitis können einen Anstieg des prostataspezifischen Antigens (PSA) im Serum verursachen, obwohl entzündliche Läsionen zusammen mit Karzinomen auftreten können und es wichtig ist, nicht davon auszugehen, dass ihr Vorhandensein immer für einen unerklärlichen oder unverhältnismäßigen Anstieg des PSA eines Patienten verantwortlich ist. Bei einer negativen gezielten Biopsie empfiehlt ISUP, das Vorhandensein nicht krebsartiger Läsionen zu melden, die die radiologische Anomalie erklären könnten.",
+                      "_text": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown",
+                            "valueMarkdown": "In einigen Fällen können klinische Behandlungsentscheidungen durch das Wissen über koexistierende Pathologien wie HGPIN, glanduläre Atypie mit Verdacht auf Malignität (atypische kleine azinäre Proliferation (ASAP)), AIP, granulomatöse Prostatitis usw. unterstützt werden. Wenn ein Karzinom                                     vorhanden ist, ist das Vorhandensein von HGPIN im Allgemeinen klinisch nicht bedeutsam. Selbst wenn in der Probe kein Krebs identifiziert wird, ist die Bedeutung des Nachweises von HGPIN in Stanzbiopsien umstritten. Einige Studien stellten ein erhöhtes Risiko für die Entdeckung von Prostataadenokarzinomen in nachfolgenden Biopsien fest, während dies in anderen                                     Studien nicht der Fall war. Studien, darunter eine, die Daten einer großen kanadischen Kohorte analysierte, fanden heraus, dass dieses Risiko mit dem Ausmaß der HGPIN zusammenhängt, d. h. mit der Anzahl der betroffenen Stellen; nur Patienten mit multifokaler HGPIN hatten ein signifikant erhöhtes Risiko für Prostatakrebs. Niedriggradige intraepitheliale                                     Prostataneoplasie (PIN) sollte nicht gemeldet werden. Ebenso ist das Vorhandensein von ASAP im Allgemeinen nicht signifikant, wenn in einer Probe Karzinom vorhanden ist, außer gelegentlich in Situationen, in denen das Karzinom die Kriterien für eine aktive Überwachung erreicht. In dieser Situation kann eine gründliche Bewertung und Neuklassifizierung von                                     glandulärer Atypie zu Karzinom die Behandlungsentscheidung beeinflussen. Bei Proben, bei denen kein Krebs identifiziert wurde, aber glanduläre Atypie vorliegt, beträgt das Risiko, dass in nachfolgenden Biopsien Karzinom vorhanden ist, etwa 35 %, wobei ein hoher Anteil davon klinisch unbedeutender Krebs ist. Atypische intraduktale Proliferation (AIP) ist der                                     bevorzugte Begriff zur Beschreibung intraduktaler Neoplasien, die eine größere Komplexität oder Atypie als HGPIN aufweisen, aber nicht für die Diagnose von IDC-P ausreichen. AIP ist durch lockere kribriforme Proliferation und/oder Kernatypie gekennzeichnet, die nicht für IDC-P ausreicht, und umfasst das, was früher als kribriforme HGPIN bekannt war. Aufgrund der                                     Verbindung von AIP mit IDC-P wird empfohlen, ihr Vorhandensein in der Biopsie zu dokumentieren, insbesondere bei Prostatakrebs niedrigeren Grades. Das Vorhandensein von AIP allein in Biopsieproben ist selten und wird durch wiederholte Folgebiopsien behandelt. Aktive Prostatitis und granulomatöse Prostatitis können einen Anstieg des prostataspezifischen Antigens                                     (PSA) im Serum verursachen, obwohl entzündliche Läsionen zusammen mit Karzinomen auftreten können und es wichtig ist, nicht davon auszugehen, dass ihr Vorhandensein immer für einen unerklärlichen oder unverhältnismäßigen Anstieg des PSA eines Patienten verantwortlich ist. Bei einer negativen gezielten Biopsie empfiehlt ISUP, das Vorhandensein nicht krebsartiger                                     Läsionen zu melden, die die radiologische Anomalie erklären könnten."
+                          }
+                        ]
+                      },
+                      "type": "display"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11112",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "16294321000119104",
+                      "system": "http://snomed.info/sct",
+                      "display": "Atypical small acinar proliferation of prostate (disorder)"
+                    }
+                  ],
+                  "text": "ASAP",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12|2019-08-11T12:27:51"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10390",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "94666-5",
+                      "system": "http://loinc.org",
+                      "display": "High grade prostatic intraepithelial neoplasia"
+                    },
+                    {
+                      "code": "446711009",
+                      "system": "http://snomed.info/sct",
+                      "display": "High grade prostatic intraepithelial neoplasia (disorder)"
+                    }
+                  ],
+                  "text": "Begleitende High-grade-PIN",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+                      "valueUrl": "https://art-decor.org/fhir/4.0/public"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": false
+                    }
+                  ],
+                  "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10410",
+                  "definition": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-microscopic-grouper#Observation.hasMember:pathology-finding",
+                  "code": [
+                    {
+                      "code": "94665-7",
+                      "system": "http://loinc.org",
+                      "display": "Granulomatous prostatitis"
+                    },
+                    {
+                      "code": "61500009",
+                      "system": "http://snomed.info/sct",
+                      "display": "Granulomatous prostatitis (disorder)"
+                    }
+                  ],
+                  "text": "Granulomatöse Prostatitis",
+                  "type": "open-choice",
+                  "enableBehavior": "all",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": false,
+                  "answerValueSet": "https://art-decor.org/fhir/ValueSet/2.16.840.1.113883.3.1937.777.18.11.12"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

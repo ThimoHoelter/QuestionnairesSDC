@@ -16,6 +16,22 @@
     "endLine": 2
   },
   {
+    "outputFile": "Questionnaire-2.16.840.1.113883.3.1937.777.18.27.16--20241221120534.json",
+    "fshName": "2.16.840.1.113883.3.1937.777.18.27.16--20241221120534",
+    "fshType": "Instance",
+    "fshFile": "questionnaireAD/ICCR Fragebogen für Klinische Angaben bei Prostata-Stanzbiopsien.fsh",
+    "startLine": 7,
+    "endLine": 334
+  },
+  {
+    "outputFile": "Questionnaire-2.16.840.1.113883.3.1937.777.18.27.17--20250102170615.json",
+    "fshName": "2.16.840.1.113883.3.1937.777.18.27.17--20250102170615",
+    "fshType": "Instance",
+    "fshFile": "questionnaireAD/ICCR Fragebogen für Prostata-Einzelstanzen.fsh",
+    "startLine": 7,
+    "endLine": 754
+  },
+  {
     "outputFile": "Questionnaire-MinimalPSAExample.json",
     "fshName": "MinimalPSAExample",
     "fshType": "Instance",
@@ -112,12 +128,12 @@
     "endLine": 328
   },
   {
-    "outputFile": "Questionnaire-WorkshopDBE.json",
-    "fshName": "WorkshopDBE",
+    "outputFile": "Questionnaire-templateBasedExtr.json",
+    "fshName": "templateBasedExtr",
     "fshType": "Instance",
-    "fshFile": "Workshop/Workshop-DEB.fsh",
-    "startLine": 2,
-    "endLine": 52
+    "fshFile": "MinimalBeispiel/templatebased.fsh",
+    "startLine": 36,
+    "endLine": 76
   },
   {
     "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",

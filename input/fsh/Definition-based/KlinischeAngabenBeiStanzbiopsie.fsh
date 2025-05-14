@@ -113,7 +113,7 @@ Usage: #definition
 // Grouper Angaben zur Probe
     * item[+]
       // Erstellung der Probe(n)
-      * insert addExtractionContextTextGrouperNew("2.16.840.1.113883.3.1937.777.18.2.4.10060", "Angaben zur Herkunft und Eigenschaften von Proben", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen", #Specimen)
+      * insert addExtractionContextTextGrouperNew("2.16.840.1.113883.3.1937.777.18.2.4.10060", "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/StructureDefinition/mii-pr-patho-specimen#Specimen", #Specimen)
       * code = $sct#399435001 "Specimen measurable (observable entity)"
       * required = true
       * repeats = true
