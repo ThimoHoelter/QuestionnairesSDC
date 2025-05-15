@@ -133,7 +133,7 @@
     "fshType": "Instance",
     "fshFile": "MinimalBeispiel/templatebased.fsh",
     "startLine": 36,
-    "endLine": 76
+    "endLine": 74
   },
   {
     "outputFile": "QuestionnaireResponse-MinimalPSAExampleResponse.json",

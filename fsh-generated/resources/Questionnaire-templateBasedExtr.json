@@ -79,12 +79,14 @@
       "status": "final",
       "hasMember": [
         {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
-              "valueString": "%NewPsaObservationId"
-            }
-          ]
+          "_reference": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue",
+                "valueString": "%NewPsaObservationId"
+              }
+            ]
+          }
         }
       ]
     }

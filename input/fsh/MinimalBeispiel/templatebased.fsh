@@ -30,8 +30,8 @@ Description: "Grouper"
 * note.text.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
 * note.text.extension.valueString = "item.where(linkId = 'GrouperCode').answer.value"
 * status = #final
-* hasMember.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
-* hasMember.extension.valueString = "%NewPsaObservationId"
+* hasMember.reference.extension.url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtractValue"
+* hasMember.reference.extension.valueString = "%NewPsaObservationId"
 
 Instance: templateBasedExtr
 InstanceOf: Questionnaire
@@ -54,8 +54,6 @@ Usage: #definition
 * item[+].linkId = "psaObservationitem"
 * item[=].text = "Grouperitem für die PSA-Observation"
 * item[=].type = #group
-// * item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-extractAllocateId"
-// * item[=].extension[=].valueString = "NewPsaObservationId"
 * item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-templateExtract"
 * item[=].extension[=].extension[+].url = "template"
 * item[=].extension[=].extension[=].valueReference.reference = "#psaObservationTemplate"
